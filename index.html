@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>snow-village-compass | SWT 2026 コミュニティ診断</title>
+    <title>Snow Village Compass | SWT 2026 コミュニティ診断</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,21 +11,21 @@
       <div class="header-left">
         <span class="header-icon">🧭</span>
         <div>
-          <h1>snow-village-compass</h1>
-          <p>SWT 2026 コミュニティ診断</p>
+          <h1>Snow Village Compass</h1>
+          <p>SWT 2026 コミュニティ＆スタイル診断</p>
         </div>
       </div>
-      <button id="theme-toggle" type="button">🌙 / ☀️</button>
+      <button id="theme-toggle" type="button" aria-label="テーマ切替">🌙 / ☀️</button>
     </header>
 
     <main class="container">
 
-      <!-- ── Intro ─────────────────────────────────────────── -->
+      <!-- ── Intro View ───────────────────────────────────────── -->
       <section id="intro-view" class="card">
         <div class="intro-hero">
           <div class="hero-icon">❄️🧭</div>
           <h2>あなたに合う Snow Village を見つけよう</h2>
-          <p>8問・約2分で、あなたに合うコミュニティ・ネイバー・Snowflake機能を提案します。</p>
+          <p>8問・約2分で、あなたのデータ活用スタイル・コミュニティ・ネイバー・おすすめSnowflake機能を提案します。</p>
           <div class="intro-features">
             <div class="intro-feature">
               <span class="fi">👥</span>
@@ -33,15 +33,15 @@
             </div>
             <div class="intro-feature">
               <span class="fi">🤝</span>
-              <span>会場で話しかけやすいネイバー紹介</span>
+              <span>回答の同じ会場ネイバー紹介</span>
             </div>
             <div class="intro-feature">
               <span class="fi">⚡</span>
-              <span>あなたに合うSnowflake機能を紹介</span>
+              <span>スタイルに合うSnowflake機能を紹介</span>
             </div>
             <div class="intro-feature">
               <span class="fi">🎴</span>
-              <span>SWT連動: タイプ別カードと交流導線</span>
+              <span>16タイプのデジタルカード診断</span>
             </div>
           </div>
           <button id="start-button" class="primary-button" type="button">🚀 診断をはじめる</button>
@@ -49,10 +49,11 @@
         </div>
       </section>
 
-      <!-- ── Quiz ──────────────────────────────────────────── -->
+      <!-- ── Quiz View ────────────────────────────────────────── -->
       <section id="quiz-view" class="card hidden">
         <div class="progress-wrapper">
           <div class="progress-meta">
+            <button id="back-button" class="ghost-button back-button" type="button">← 前の質問に戻る</button>
             <span id="progress-label">Q1 / 8</span>
             <span id="progress-pct">12%</span>
           </div>
@@ -61,23 +62,29 @@
           </div>
         </div>
         <h2 id="question-text"></h2>
-        <div id="options" class="options"></div>
+        <div id="options" class="options options-2col"></div>
       </section>
 
-      <!-- ── Result ─────────────────────────────────────────── -->
+      <!-- ── Result View ──────────────────────────────────────── -->
       <section id="result-view" class="card hidden">
 
-        <div class="result-header">
-          <div class="result-header-icon" id="result-icon">🌟</div>
-          <div class="result-header-text">
-            <h2>あなたのタイプ</h2>
-            <p id="result-title" class="result-title"></p>
-            <p id="result-description" class="result-description"></p>
+        <!-- デジタルカード風結果ヘッダー -->
+        <div class="result-digital-card">
+          <div class="card-badge-row" id="badge-container"></div>
+          <div class="result-header-content">
+            <div class="result-header-icon" id="result-icon">🌟</div>
+            <div class="result-header-text">
+              <span class="type-tag">YOUR STYLE TYPE</span>
+              <h2 id="result-title" class="result-title"></h2>
+              <div id="result-subtitle" class="result-subtitle"></div>
+            </div>
           </div>
+          <p id="result-catchphrase" class="result-catchphrase"></p>
+          <p id="result-description" class="result-description"></p>
         </div>
 
         <div class="result-section">
-          <h3>👥 おすすめネイバー</h3>
+          <h3>👥 あなたと同じスタイルのネイバー</h3>
           <div id="neighbor-list"></div>
         </div>
 
@@ -103,12 +110,22 @@
 
         <div class="share-actions">
           <button id="share-x" class="share-x" type="button">𝕏 Xで共有</button>
-          <button id="share-mail" class="share-mail" type="button">✉️ メールで送る</button>
+          <button id="copy-link" class="secondary-button" type="button">📋 結果リンクをコピー</button>
+          <button id="share-mail" class="ghost-button" type="button">✉️ メールで送る</button>
           <button id="restart" class="ghost-button" type="button">↺ もう一度診断する</button>
         </div>
+        <div id="copy-toast" class="toast hidden">リンクをクリップボードにコピーしました！</div>
       </section>
 
     </main>
+
+    <!-- ── Detail Modal ─────────────────────────────────────── -->
+    <div id="detail-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button id="modal-close" class="modal-close-btn" type="button" aria-label="閉じる">✕</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
 
     <script src="js-yaml.min.js"></script>
     <script src="app.js"></script>

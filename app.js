@@ -1,74 +1,84 @@
+// ── 8問・2択の設問定義（4軸×2問） ──────────────────────────────────────────
+// Axis 1 (E/B): Explorer (E) vs Builder (B) — データとの向き合い方
+// Axis 2 (S/T): Solo (S) vs Team (T) — コラボレーションスタイル
+// Axis 3 (C/Z): Technical (C) vs Business (Z) — 関心領域
+// Axis 4 (I/O): Innovator (I) vs Optimizer (O) — アプローチ
+
 const questions = [
+  // Axis 1: E vs B
   {
     id: 1,
-    text: "SWT会場で一番やってみたいことは？",
+    axis: "EB",
+    text: "新しいデータセットや機能を触るとき、まず何をする？",
     options: [
-      { text: "セッションを回って知識を集める", score: { analysis: 2, governance: 1 } },
-      { text: "ブースで実際に手を動かして試す", score: { build: 2, creativity: 1 } },
-      { text: "人に話しかけて仲間を増やす", score: { community: 2, leadership: 1 } }
+      { text: "とりあえずクエリを投げて中身を探索してみる", val: "E" },
+      { text: "まず全体の設計やパイプラインの構成を考える", val: "B" }
     ]
   },
   {
     id: 2,
-    text: "新しい技術に触れるときのスタイルは？",
+    axis: "EB",
+    text: "Snowflakeで一番ワクワクする瞬間は？",
     options: [
-      { text: "まず資料を読んで全体像をつかむ", score: { analysis: 2 } },
-      { text: "まず触って動かしてみる", score: { build: 2 } },
-      { text: "誰かと一緒に試して学ぶ", score: { community: 2 } }
+      { text: "思いがけないインサイトや新たな発見があったとき", val: "E" },
+      { text: "安定して動くデータ基盤や仕組みが完成したとき", val: "B" }
     ]
   },
+  // Axis 2: S vs T
   {
     id: 3,
-    text: "チームでの役割として近いのは？",
+    axis: "ST",
+    text: "理想的な学び方・仕事の進め方は？",
     options: [
-      { text: "進行を整えるファシリテーター", score: { leadership: 2, governance: 1 } },
-      { text: "実装を前進させるビルダー", score: { build: 2, leadership: 1 } },
-      { text: "洞察を出すアナリスト", score: { analysis: 2, creativity: 1 } }
+      { text: "集中して一人でじっくり深く学びたい", val: "S" },
+      { text: "チームで議論しながら一緒に形にしたい", val: "T" }
     ]
   },
   {
     id: 4,
-    text: "惹かれるSnowflakeトピックは？",
+    axis: "ST",
+    text: "SWT会場で一番楽しみにしていることは？",
     options: [
-      { text: "データ基盤・パイプライン", score: { build: 2, analysis: 1 } },
-      { text: "ガバナンス・セキュリティ", score: { governance: 2, analysis: 1 } },
-      { text: "アプリ開発・体験設計", score: { creativity: 2, community: 1 } }
+      { text: "最新セッションの聴講や一人でのハンズオン", val: "S" },
+      { text: "参加者同士の交流やナイトパーティーでの会話", val: "T" }
     ]
   },
+  // Axis 3: C vs Z
   {
     id: 5,
-    text: "コミュニティに参加する目的は？",
+    axis: "CZ",
+    text: "会場やコミュニティで会話したいトピックは？",
     options: [
-      { text: "同じ関心の仲間とつながりたい", score: { community: 2 } },
-      { text: "スキルを磨いて成果を出したい", score: { build: 2, analysis: 1 } },
-      { text: "挑戦を後押ししてもらいたい", score: { leadership: 1, community: 1, creativity: 1 } }
+      { text: "最新のSQL・アーキテクチャ・技術的な裏側", val: "C" },
+      { text: "データ活用によるビジネス成果・ユースケース", val: "Z" }
     ]
   },
   {
     id: 6,
-    text: "課題にぶつかったとき、まずどうする？",
+    axis: "CZ",
+    text: "参加したい勉強会やセッションのタイプは？",
     options: [
-      { text: "原因を切り分けて整理する", score: { analysis: 2, governance: 1 } },
-      { text: "最小のプロトタイプを作る", score: { build: 2, creativity: 1 } },
-      { text: "詳しい人に相談しながら進める", score: { community: 2, leadership: 1 } }
+      { text: "技術的な深さやコードレベルのベストプラクティス", val: "C" },
+      { text: "他社の導入事例やROI、組織活用の話", val: "Z" }
     ]
   },
+  // Axis 4: I vs O
   {
     id: 7,
-    text: "2日目ナイトパーティーで楽しみなのは？",
+    axis: "IO",
+    text: "チームやプロジェクトで得意な立ち位置は？",
     options: [
-      { text: "タイプ別チームで会話すること", score: { community: 2, leadership: 1 } },
-      { text: "プロダクトや作品の話をすること", score: { creativity: 2, build: 1 } },
-      { text: "知見交換して次の学びを決めること", score: { analysis: 2, governance: 1 } }
+      { text: "新しい技術やアプローチを次々と試して提案する人", val: "I" },
+      { text: "既存の仕組みを磨き上げて効率化・最適化する人", val: "O" }
     ]
   },
   {
     id: 8,
-    text: "この診断の後に一番やりたいアクションは？",
+    axis: "IO",
+    text: "コミュニティでやってみたいアクションは？",
     options: [
-      { text: "気になるグループへすぐ登録する", score: { community: 2, leadership: 1 } },
-      { text: "機能を試せるハンズオンに出る", score: { build: 2, creativity: 1 } },
-      { text: "おすすめネイバーに声をかける", score: { community: 1, analysis: 1, leadership: 1 } }
+      { text: "新機能の実験や新しい挑戦の共有", val: "I" },
+      { text: "運用ノウハウやトラブルシューティングの整理", val: "O" }
     ]
   }
 ];
@@ -77,112 +87,53 @@ const NEIGHBORS_REMOTE_URL = "https://raw.githubusercontent.com/snowvillage-clou
 const GROUPS_REMOTE_URL = "https://raw.githubusercontent.com/mshdtksk/snow-village-compass/main/sub-community-list.yaml";
 const NEIGHBOR_PHOTO_BASE = "https://snowvillage-cloud.github.io/images/neighbors/";
 
-const typeDefinitions = {
-  dataSuperhero: {
-    title: "データスーパーヒーロー",
-    description: "分析力と実装力で、課題をデータで解決する実践派。まずはハンズオン系コミュニティから始めると仲間が見つかります。",
-    tags: ["analysis", "build", "data", "hands-on"],
-    featureRecommendations: ["Snowpark", "Dynamic Tables", "Tasks", "Notebooks"],
-    actionHints: ["ブースでタイプ別カードを受け取る", "ナイトパーティーで同タイプとチーム交流する", "会場でおすすめネイバーを探して声をかける"]
-  },
-  dreamTeamCreator: {
-    title: "ドリームチームクリエイター",
-    description: "人をつなげる力が強み。コミュニティの中心で、学びと交流の場を生み出すタイプです。",
-    tags: ["community", "leadership", "network", "event"],
-    featureRecommendations: ["Native Apps", "Streamlit in Snowflake", "Snowsight Dashboards", "Marketplace"],
-    actionHints: ["タイプ別カードで交流のきっかけを作る", "気になったグループにその場で登録する", "イベント告知から次回参加予定を決める"]
-  },
-  insightNavigator: {
-    title: "インサイトナビゲーター",
-    description: "ガバナンスと分析のバランス感覚が高く、チームの意思決定を支えるタイプです。",
-    tags: ["analysis", "governance", "quality", "architecture"],
-    featureRecommendations: ["Horizon Catalog", "Row Access Policy", "Masking Policy", "Data Quality Monitoring"],
-    actionHints: ["ガバナンス系セッションに参加する", "設計が得意なネイバーと会場で対話する", "関連グループへ登録して継続学習する"]
-  },
-  automationAlchemist: {
-    title: "オートメーションアルケミスト",
-    description: "試作と改善のループが速い、ものづくりタイプ。自動化の仕組み化が得意です。",
-    tags: ["build", "creativity", "automation", "engineering"],
-    featureRecommendations: ["Snowpipe", "Streams & Tasks", "Cortex Functions", "Git Integration"],
-    actionHints: ["ハンズオン中心のグループを優先登録する", "自動化事例をネイバーに相談する", "ナイトパーティーで制作系の仲間を見つける"]
-  },
-  trustGuardian: {
-    title: "トラストガーディアン",
-    description: "安全性と運用性を守りながら前進させる頼れるタイプ。組織に安心をもたらします。",
-    tags: ["governance", "leadership", "security", "ops"],
-    featureRecommendations: ["Object Tagging", "Access History", "Network Policies", "Tri-Secret Secure"],
-    actionHints: ["運用・セキュリティ系コミュニティに参加する", "会場で同領域のネイバーを探す", "チーム分け交流で運用課題を共有する"]
-  },
-  storySparkAmbassador: {
-    title: "ストーリースパークアンバサダー",
-    description: "伝える力で価値を広げるタイプ。発信やコミュニティ活性の場で力を発揮します。",
-    tags: ["creativity", "community", "story", "sharing"],
-    featureRecommendations: ["Snowsight", "Streamlit", "Semantic Views", "Cortex Analyst"],
-    actionHints: ["X共有で診断結果を発信する", "発信系・コミュニティ運営系グループに参加する", "ネイバーとコラボのきっかけを作る"]
-  },
-  frontierExplorer: {
-    title: "フロンティアエクスプローラー",
-    description: "新領域に飛び込み、学びを実践に変える挑戦型。最初の一歩が速いタイプです。",
-    tags: ["build", "community", "challenge", "beginner-friendly"],
-    featureRecommendations: ["Quickstarts", "Snowflake Marketplace", "Snowflake ML", "Container Services"],
-    actionHints: ["初心者歓迎グループに登録する", "おすすめネイバーに自己紹介してみる", "次回イベント参加をその場で決める"]
-  },
-  calmMentor: {
-    title: "カームメンター",
-    description: "落ち着いた視点で周囲を支えるタイプ。知見共有や相談相手として信頼されます。",
-    tags: ["leadership", "analysis", "mentoring", "support"],
-    featureRecommendations: ["Data Sharing", "Secure Views", "Notebooks", "Alerts"],
-    actionHints: ["相談しやすいネイバーとして交流する", "初心者支援系コミュニティに参加する", "タイプ別カードを使って会話を始める"]
+// ── インライン埋め込みタイプ定義（types.json読み込み失敗時のフォールバック） ──
+const FALLBACK_TYPES = {
+  "ESCI": {
+    "code": "ESCI", "title": "データスーパーヒーロー", "subtitle": "Data Superhero (Advanced Technologist)",
+    "emoji": "🦸", "catchphrase": "先端技術を自ら切り拓く、圧倒的データパイオニア",
+    "description": "高い技術的好奇心と深い探求心を持ち、一人で最先端機能を検証・実装して驚くべき成果を出すタイプ。",
+    "axes": ["Explorer", "Solo", "Technical", "Innovator"],
+    "recommendedGroups": ["snowvillage-datascience", "snowvillage-ai-data-cloud", "snowvillage-main"],
+    "recommendedFeatures": [{ "name": "Snowpark", "description": "Python/Java/Scalaでデータパイプライン実装", "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index" }],
+    "actionHints": ["ハンズオンブースで新機能を体験する", "DataScience/DE支部のイベントに参加する"]
   }
 };
 
-// ── インライン埋め込みデータ（リモート取得失敗時のフォールバック） ──────────────
 const INLINE_GROUPS = [
-  { id: "snowvillage-main",          abbr: "SV",     logoUrl: "logo/snowvillage.webp",                          name: "SnowVillage - Japan Snowflake User Group",           description: "日本最大級のSnowflakeユーザーコミュニティ。初心者から上級者まで参加歓迎。",                                          techplayUrl: "https://techplay.jp/community/snowvillage",                              tags: ["community", "beginner-friendly", "event", "data"] },
-  { id: "snowvillage-financial",     abbr: "金融",   logoUrl: "logo/snowvillage-financial.webp",                name: "Snowflake金融ユーザー会",                              description: "金融業界でのSnowflake活用をテーマに、ガバナンス・セキュリティ・分析の知見を業界横断で共有。",              techplayUrl: "https://techplay.jp/community/snowvillage-financial",                    tags: ["governance", "security", "analysis", "data"] },
-  { id: "snowvillage-data-management", abbr: "DM",   logoUrl: "logo/snowvillage-data-management.webp",          name: "SnowVillage - データマネジメント分科会 -",             description: "データ品質・カタログ・メタデータ管理を深掘りする分科会。",                                                    techplayUrl: "https://techplay.jp/community/snowvillage-data-management",              tags: ["governance", "data", "quality", "architecture"] },
-  { id: "snowflake-rookies-camp",    abbr: "RC",     logoUrl: "logo/snowvillage-snowflake-rookies-camp.webp",   name: "Snowflake Rookies Camp",                               description: "Snowflakeをこれから学びたい方向けの初心者コミュニティ。ハンズオンでベストプラクティスを学べる。",              techplayUrl: "https://techplay.jp/community/snowvillage-snowflake-rookies-camp",       tags: ["beginner-friendly", "hands-on", "community", "support"] },
-  { id: "snowvillage-west",          abbr: "WEST",   logoUrl: "logo/snowvillage-west.webp",                     name: "Snowflake WEST User Group",                           description: "関西地域を中心としたSnowflakeユーザーコミュニティ。ハンズオン・ミートアップを通じて西日本を活性化。",            techplayUrl: "https://techplay.jp/community/snowvillage-west",                         tags: ["community", "event", "hands-on", "data"] },
-  { id: "snowvillage-datascience",   abbr: "DS/DE",  logoUrl: "logo/snowvillage-datascience.webp",              name: "SnowVillage DataScience&DataEngineering支部",          description: "DataScience・DataEngineeringチャネルのイベントを運営するコミュニティ。",                                       techplayUrl: "https://techplay.jp/community/snowvillage-datascience",                  tags: ["analysis", "engineering", "data", "challenge"] },
-  { id: "snowvillage-women",         abbr: "女子会", logoUrl: "logo/snowvillage-women.webp",                    name: "Snowflake女子会",                                      description: "女性エンジニア同士のつながりと活躍の場を作るコミュニティ。初心者から経験者まで参加可能。",                      techplayUrl: "https://techplay.jp/community/snowvillage-women",                        tags: ["community", "support", "hands-on", "beginner-friendly"] },
-  { id: "snowvillage-unconference",  abbr: "UNC",    logoUrl: "logo/snowvillage-unconference.webp",             name: "SnowVillage Unconference支部",                         description: "参加者主体で知識共有と交流を深めるUnconferenceイベントを運営するコミュニティ。",                               techplayUrl: "https://techplay.jp/community/snowvillage-unconference",                 tags: ["event", "community", "leadership", "network"] },
-  { id: "snowvillage-kyushu",        abbr: "九州",   logoUrl: "logo/snowvillage-kyushu.webp",                   name: "Snowflake Kyushu User Group",                         description: "Snowflakeの良さを九州企業に届け、データで九州を盛り上げることを目指すグループ。",                            techplayUrl: "https://techplay.jp/community/snowvillage-kyushu",                       tags: ["community", "event", "data", "beginner-friendly"] },
-  { id: "snowvillage-ai-data-cloud", abbr: "AI",     logoUrl: "logo/snowvillage-ai-data-cloud.webp",            name: "SnowVillage AI DATA User Group",                       description: "SnowflakeのAI関連機能をテーマに定期的な勉強会・情報交換を行うコミュニティ。",                                  techplayUrl: "https://techplay.jp/community/snowvillage-ai-data-cloud",                tags: ["challenge", "data", "app", "creativity"] },
-  { id: "snowvillage-healthcare",    abbr: "HC",     logoUrl: "logo/snowvillage-healthcare.webp",               name: "Snowflakeヘルスケア・ライフサイエンスユーザー会",      description: "ヘルスケア・ライフサイエンス業界でのSnowflake活用をテーマに、事例共有を通じて業界全体の発展を目指す。",          techplayUrl: "https://techplay.jp/community/snowvillage-healthcare",                   tags: ["governance", "analysis", "data", "community"] },
-  { id: "sf2ug",                     abbr: "SF×SF",  logoUrl: "logo/sf2ug.webp",                                name: "Snowflake x Salesforce User Group",                   description: "Snowflake と Salesforce を掛け合わせたデータ活用について議論するUser Group。",                                techplayUrl: "https://techplay.jp/community/sf2ug",                                    tags: ["engineering", "app", "build", "data"] },
-  { id: "snowvillage-central",       abbr: "中部",   logoUrl: "logo/snowvillage-central.webp",                  name: "Snowflake CENTRAL User Group",                        description: "中部エリアを中心としたSnowflakeユーザーコミュニティ。活用事例・最新機能・データ分析の知見を共有。",              techplayUrl: "https://techplay.jp/community/snowvillage-central",                      tags: ["community", "event", "data", "analysis"] },
-  { id: "snowvillage-sustainability", abbr: "🌱SV", logoUrl: "logo/snowvillage-sustainability.webp",           name: "SnowVillage サステナvillage",                          description: "サステナビリティをテーマとするコミュニティ。Snowflakeを活用しながらサステナブルな取り組みを後押し。",          techplayUrl: "https://techplay.jp/community/snowvillage-sustainability",               tags: ["story", "community", "governance", "creativity"] },
-  { id: "snowvillage-okinawa",       abbr: "沖縄",   logoUrl: "logo/snowvillage-okinawa.webp",                  name: "Snowflake OKINAWA User Group",                        description: "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。",                          techplayUrl: "https://techplay.jp/community/snowvillage-okinawa",                      tags: ["community", "event", "beginner-friendly", "data"] }
+  { id: "snowvillage-main", abbr: "SV", logoUrl: "logo/snowvillage.webp", name: "SnowVillage - Japan Snowflake User Group", description: "日本最大級のSnowflakeユーザーコミュニティ。初心者から上級者まで参加歓迎。", techplayUrl: "https://techplay.jp/community/snowvillage", tags: ["community", "beginner-friendly", "event", "data"] },
+  { id: "snowvillage-financial", abbr: "金融", logoUrl: "logo/snowvillage-financial.webp", name: "Snowflake金融ユーザー会", description: "金融業界でのSnowflake活用をテーマに、ガバナンス・セキュリティ・分析の知見を共有。", techplayUrl: "https://techplay.jp/community/snowvillage-financial", tags: ["governance", "security", "analysis", "data"] },
+  { id: "snowvillage-data-management", abbr: "DM", logoUrl: "logo/snowvillage-data-management.webp", name: "SnowVillage - データマネジメント分科会 -", description: "データ品質・カタログ・メタデータ管理を深掘りする分科会。", techplayUrl: "https://techplay.jp/community/snowvillage-data-management", tags: ["governance", "data", "quality", "architecture"] },
+  { id: "snowflake-rookies-camp", abbr: "RC", logoUrl: "logo/snowvillage-snowflake-rookies-camp.webp", name: "Snowflake Rookies Camp", description: "Snowflakeをこれから学びたい方向けの初心者コミュニティ。ハンズオンでベストプラクティスを学べる。", techplayUrl: "https://techplay.jp/community/snowvillage-snowflake-rookies-camp", tags: ["beginner-friendly", "hands-on", "community", "support"] },
+  { id: "snowvillage-west", abbr: "WEST", logoUrl: "logo/snowvillage-west.webp", name: "Snowflake WEST User Group", description: "関西地域を中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-west", tags: ["community", "event", "hands-on"] },
+  { id: "snowvillage-datascience", abbr: "DS/DE", logoUrl: "logo/snowvillage-datascience.webp", name: "SnowVillage DataScience&DataEngineering支部", description: "DataScience・DataEngineeringチャネルのイベントを運営するコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-datascience", tags: ["analysis", "engineering", "data"] },
+  { id: "snowvillage-women", abbr: "女子会", logoUrl: "logo/snowvillage-women.webp", name: "Snowflake女子会", description: "女性エンジニア同士のつながりと活躍の場を作るコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-women", tags: ["community", "support"] },
+  { id: "snowvillage-unconference", abbr: "UNC", logoUrl: "logo/snowvillage-unconference.webp", name: "SnowVillage Unconference支部", description: "参加者主体で知識共有と交流を深めるUnconferenceイベントを運営。", techplayUrl: "https://techplay.jp/community/snowvillage-unconference", tags: ["event", "community"] },
+  { id: "snowvillage-kyushu", abbr: "九州", logoUrl: "logo/snowvillage-kyushu.webp", name: "Snowflake Kyushu User Group", description: "Snowflakeの良さを九州企業に届け、データで九州を盛り上げることを目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-kyushu", tags: ["community", "event"] },
+  { id: "snowvillage-ai-data-cloud", abbr: "AI", logoUrl: "logo/snowvillage-ai-data-cloud.webp", name: "SnowVillage AI DATA User Group", description: "SnowflakeのAI関連機能をテーマに定期的な勉強会を行うコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-ai-data-cloud", tags: ["data", "app"] },
+  { id: "snowvillage-healthcare", abbr: "HC", logoUrl: "logo/snowvillage-healthcare.webp", name: "Snowflakeヘルスケア・ライフサイエンスユーザー会", description: "ヘルスケア・ライフサイエンス業界でのSnowflake活用をテーマとするユーザー会。", techplayUrl: "https://techplay.jp/community/snowvillage-healthcare", tags: ["governance", "data"] },
+  { id: "sf2ug", abbr: "SF×SF", logoUrl: "logo/sf2ug.webp", name: "Snowflake x Salesforce User Group", description: "Snowflake と Salesforce を掛け合わせたデータ活用について議論する User Group。", techplayUrl: "https://techplay.jp/community/sf2ug", tags: ["engineering", "app"] },
+  { id: "snowvillage-central", abbr: "中部", logoUrl: "logo/snowvillage-central.webp", name: "Snowflake CENTRAL User Group", description: "中部エリアを中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-central", tags: ["community", "event"] },
+  { id: "snowvillage-sustainability", abbr: "🌱SV", logoUrl: "logo/snowvillage-sustainability.webp", name: "SnowVillage サステナvillage", description: "サステナビリティをテーマとするコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-sustainability", tags: ["story", "community"] },
+  { id: "snowvillage-okinawa", abbr: "沖縄", logoUrl: "logo/snowvillage-okinawa.webp", name: "Snowflake OKINAWA User Group", description: "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-okinawa", tags: ["community", "event"] }
 ];
 
 const INLINE_NEIGHBORS = [
-  { name: "Sate Katsuaki",      affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"sate_katsuaki.png",     x_url: "https://x.com/katsu_dailylake",  linkedin_url: "",                                                tags: ["community", "data"] },
-  { name: "安倍 航太",           affiliation: "株式会社BeeX",               photo_url: NEIGHBOR_PHOTO_BASE+"abe_kota.png",           x_url: "https://x.com/_coco_se",         linkedin_url: "https://www.linkedin.com/in/kota-abe-220010398",  tags: ["engineering", "build", "data"] },
-  { name: "Daisuke Onoe",       affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"daisuke_onoe.png",       x_url: "https://x.com/wonohe",           linkedin_url: "",                                                tags: ["community", "data"] },
-  { name: "山本 且秋",           affiliation: "株式会社アシスト",           photo_url: NEIGHBOR_PHOTO_BASE+"kayamamoto.png",         x_url: "https://x.com/kayamamoto_",      linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", tags: ["data", "analysis"] },
-  { name: "Tatchan",            affiliation: "AI Data Cloud",              photo_url: NEIGHBOR_PHOTO_BASE+"tatchan.png",            x_url: "https://x.com/tad_ao",           linkedin_url: "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/", tags: ["data", "community", "challenge"] },
-  { name: "Kaori Nishimura",    affiliation: "株式会社メソドロジック",     photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg",     x_url: "https://x.com/usakoyama",        linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", tags: ["community", "event"] },
-  { name: "ぬん",               affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"guen.png",               x_url: "https://x.com/guen",             linkedin_url: "",                                                tags: ["community"] },
-  { name: "萩野谷 旭洋",         affiliation: "インフォテック株式会社",     photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png",  x_url: "https://x.com/_hgny_s67",        linkedin_url: "",                                                tags: ["engineering", "data"] },
-  { name: "山口 歩夢",           affiliation: "DATUM STUDIO株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"yamaguchi_ayumu.png",    x_url: "https://x.com/Yamaguchi_aaaaa",  linkedin_url: "",                                                tags: ["engineering", "build", "data"] },
-  { name: "守川 耀",             affiliation: "DATUM STUDIO株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png",        x_url: "https://x.com/elc_small",        linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", tags: ["engineering", "build", "data"] },
-  { name: "tomo Wakamatsu",     affiliation: "Snowflake合同会社",           photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png",               x_url: "https://x.com/tomowk1",          linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/",     tags: ["community", "event", "data"] },
-  { name: "森田 将之",           affiliation: "株式会社ＪＥＲＡ",           photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png",    x_url: "https://x.com/mark_xxxx13",      linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", tags: ["data", "analysis"] },
-  { name: "神谷 篤司",           affiliation: "セキュリティ系の会社",       photo_url: NEIGHBOR_PHOTO_BASE+"atsushi_kamiya.jpg",     x_url: "https://x.com/baihebu",          linkedin_url: "https://www.linkedin.com/in/atsushi-kamiya-93584571", tags: ["security", "governance"] },
-  { name: "中山 晋一",           affiliation: "株式会社電通総研",           photo_url: NEIGHBOR_PHOTO_BASE+"nakayama_shinichi.jpg",  x_url: "https://x.com/datashin360",      linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", tags: ["data", "analysis", "engineering"] },
-  { name: "アスタ",              affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"tsunoda_katsuma.png",    x_url: "https://x.com/ASTOUND_",         linkedin_url: "https://www.linkedin.com/in/katsunoda-0339313a8",  tags: ["community", "challenge"] },
-  { name: "ロー / LowSE01",     affiliation: "ちゅらデータ株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg",            x_url: "https://x.com/VizFantasista",    linkedin_url: "https://www.linkedin.com/in/lowse01/",            tags: ["story", "creativity", "app"] },
-  { name: "伊佐 薫明",           affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"nobu_13.jpg",            x_url: "https://x.com/Nobu13tech",       linkedin_url: "https://www.linkedin.com/in/no-isa/",             tags: ["community", "data"] },
-  { name: "原田 雄斗",           affiliation: "クオリサイトテクノロジーズ", photo_url: NEIGHBOR_PHOTO_BASE+"harada_yuto.png",        x_url: "https://x.com/HYuto30325",       linkedin_url: "",                                                tags: ["data", "analysis"] },
-  { name: "横澤 直樹",           affiliation: "株式会社メディアフォース",   photo_url: NEIGHBOR_PHOTO_BASE+"naoki_yokozawa.jpeg",    x_url: "https://x.com/naoki_yokozawa",   linkedin_url: "",                                                tags: ["data", "community"] },
-  { name: "Masaki Moriyama",    affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"masaki_moriyama.png",    x_url: "https://x.com/masa_tectec",      linkedin_url: "",                                                tags: ["community"] },
-  { name: "柴田 祐大",           affiliation: "株式会社ロイヤリティマーケティング", photo_url: NEIGHBOR_PHOTO_BASE+"yoshihiro_shibata.png", x_url: "",                        linkedin_url: "",                                                tags: ["data", "analysis"] },
-  { name: "加藤 智也",           affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"tomoya_kato.png",        x_url: "",                               linkedin_url: "https://www.linkedin.com/in/tomoya-kato-466875394", tags: ["community"] },
-  { name: "滝川 皇",             affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"takigawa_mikoto.jpg",    x_url: "https://x.com/takimiko_gohan",   linkedin_url: "https://www.linkedin.com/in/mikoto-takigawa-baa587373", tags: ["community", "data"] },
-  { name: "Ryo Toshiki",        affiliation: "",                           photo_url: NEIGHBOR_PHOTO_BASE+"t_ryo.jpg",              x_url: "https://x.com/tryo_sing",        linkedin_url: "",                                                tags: ["community"] },
-  { name: "Kazuya Iwata",       affiliation: "DATUM STUDIO株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"iwata.png",              x_url: "",                               linkedin_url: "",                                                tags: ["engineering", "build", "data"] },
-  { name: "田代 学",             affiliation: "ちゅらデータ株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"gaku_tashiro.jpg",       x_url: "https://x.com/gak_t12",          linkedin_url: "https://www.linkedin.com/in/gakut12/",            tags: ["data", "engineering"] },
-  { name: "Yuta Hishinuma",     affiliation: "ちゅらデータ株式会社",       photo_url: NEIGHBOR_PHOTO_BASE+"yuta_hishinuma.jpg",     x_url: "https://x.com/foursue",          linkedin_url: "",                                                tags: ["data", "engineering"] }
+  { name: "Sate Katsuaki", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"sate_katsuaki.png", x_url: "https://x.com/katsu_dailylake", linkedin_url: "", code: "ESCI", tags: ["community", "data"] },
+  { name: "安倍 航太", affiliation: "株式会社BeeX", photo_url: NEIGHBOR_PHOTO_BASE+"abe_kota.png", x_url: "https://x.com/_coco_se", linkedin_url: "https://www.linkedin.com/in/kota-abe-220010398", code: "BSCI", tags: ["engineering", "build"] },
+  { name: "Daisuke Onoe", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"daisuke_onoe.png", x_url: "https://x.com/wonohe", linkedin_url: "", code: "ETZI", tags: ["community", "data"] },
+  { name: "山本 且秋", affiliation: "株式会社アシスト", photo_url: NEIGHBOR_PHOTO_BASE+"kayamamoto.png", x_url: "https://x.com/kayamamoto_", linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", code: "ESCO", tags: ["data", "analysis"] },
+  { name: "Tatchan", affiliation: "AI Data Cloud", photo_url: NEIGHBOR_PHOTO_BASE+"tatchan.png", x_url: "https://x.com/tad_ao", linkedin_url: "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/", code: "ETCI", tags: ["data", "community"] },
+  { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ETZO", tags: ["community", "event"] },
+  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ETZI", tags: ["community"] },
+  { name: "萩野谷 旭洋", affiliation: "インフォテック株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png", x_url: "https://x.com/_hgny_s67", linkedin_url: "", code: "BSCI", tags: ["engineering", "data"] },
+  { name: "山口 歩夢", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"yamaguchi_ayumu.png", x_url: "https://x.com/Yamaguchi_aaaaa", linkedin_url: "", code: "BTCI", tags: ["engineering", "build"] },
+  { name: "守川 耀", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png", x_url: "https://x.com/elc_small", linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", code: "BSZI", tags: ["engineering", "build"] },
+  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "ETZI", tags: ["community", "event"] },
+  { name: "森田 将之", affiliation: "株式会社ＪＥＲＡ", photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png", x_url: "https://x.com/mark_xxxx13", linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", code: "ESZO", tags: ["data", "analysis"] },
+  { name: "神谷 篤司", affiliation: "セキュリティ系の会社", photo_url: NEIGHBOR_PHOTO_BASE+"atsushi_kamiya.jpg", x_url: "https://x.com/baihebu", linkedin_url: "https://www.linkedin.com/in/atsushi-kamiya-93584571", code: "BSCO", tags: ["security", "governance"] },
+  { name: "中山 晋一", affiliation: "株式会社電通総研", photo_url: NEIGHBOR_PHOTO_BASE+"nakayama_shinichi.jpg", x_url: "https://x.com/datashin360", linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", code: "ETCO", tags: ["data", "analysis"] },
+  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BSZI", tags: ["creativity", "app"] }
 ];
 
 const INLINE_EVENTS = [
@@ -193,25 +144,15 @@ const INLINE_EVENTS = [
   { date: "2026-10-15", title: "SnowVillage DataScience&DE 支部 勉強会", location: "Online", url: "https://techplay.jp/community/snowvillage-datascience" }
 ];
 
-const INLINE_FEATURES = {
-  dataSuperhero:        [{ name: "Snowpark",        description: "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",  url: "https://docs.snowflake.com/ja/developer-guide/snowpark/index" }, { name: "Dynamic Tables", description: "宣言的にデータ変換パイプラインを定義し自動的に最新化", url: "https://docs.snowflake.com/ja/user-guide/dynamic-tables-intro" }, { name: "Notebooks", description: "Snowflake上でインタラクティブにデータ探索・分析・可視化", url: "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs" }],
-  dreamTeamCreator:     [{ name: "Native Apps",             description: "Snowflakeマーケットプレイスで配布できるアプリを構築・公開", url: "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about" }, { name: "Streamlit in Snowflake", description: "データアプリをコード1枚でSnowflake上に即デプロイ", url: "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit" }, { name: "Snowflake Marketplace", description: "データ・アプリ・モデルを社外と安全に共有・公開", url: "https://docs.snowflake.com/ja/user-guide/data-sharing-marketplace" }],
-  insightNavigator:     [{ name: "Horizon Catalog",     description: "メタデータ・系譜・品質を一元管理するデータカタログ機能",     url: "https://docs.snowflake.com/ja/guides-overview-govern" }, { name: "Row Access Policy", description: "行レベルでのアクセス制御をポリシーで一元管理", url: "https://docs.snowflake.com/ja/user-guide/security-row-intro" }, { name: "Data Quality Monitor", description: "データの品質指標を継続的に計測・アラートで監視", url: "https://docs.snowflake.com/ja/user-guide/data-quality-intro" }],
-  automationAlchemist:  [{ name: "Snowpipe",        description: "ファイル到着をトリガーにリアルタイムでデータをロード",           url: "https://docs.snowflake.com/ja/user-guide/data-load-snowpipe-intro" }, { name: "Streams & Tasks", description: "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン", url: "https://docs.snowflake.com/ja/user-guide/streams-intro" }, { name: "Git Integration", description: "GitHubリポジトリを直接Snowflakeに接続してコードを管理", url: "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up" }],
-  trustGuardian:        [{ name: "Object Tagging",   description: "テーブル・列にタグを付与してガバナンス・分類を自動化",         url: "https://docs.snowflake.com/ja/user-guide/object-tagging" }, { name: "Access History", description: "誰がいつどのデータにアクセスしたかを完全な監査ログで追跡", url: "https://docs.snowflake.com/ja/sql-reference/account-usage/access_history" }, { name: "Network Policies", description: "IPアドレス・プライベートリンクによる接続制限でセキュリティ強化", url: "https://docs.snowflake.com/ja/user-guide/network-policies" }],
-  storySparkAmbassador: [{ name: "Snowsight",        description: "インタラクティブなダッシュボードと可視化でデータをストーリーに", url: "https://docs.snowflake.com/ja/user-guide/ui-snowsight" }, { name: "Cortex Analyst", description: "自然言語でデータを問い合わせ・分析できるAIアシスタント", url: "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/cortex-analyst" }, { name: "Semantic Views", description: "ビジネス用語でデータモデルを定義しAIと人間が理解しやすく", url: "https://docs.snowflake.com/ja/user-guide/views-introduction" }],
-  frontierExplorer:     [{ name: "Quickstarts",      description: "Snowflakeを素早く試せるステップバイステップのガイド集",    url: "https://quickstarts.snowflake.com/" }, { name: "Snowflake ML", description: "Snowflake上でモデル学習から推論まで完結するML基盤", url: "https://docs.snowflake.com/ja/guides-overview-ml-functions" }, { name: "Container Services", description: "Snowflakeのエコシステム内でコンテナアプリを実行", url: "https://docs.snowflake.com/ja/developer-guide/snowpark-container-services/overview" }],
-  calmMentor:           [{ name: "Secure Data Sharing", description: "コピーなしでデータをリアルタイムに安全共有",             url: "https://docs.snowflake.com/ja/user-guide/data-sharing-intro" }, { name: "Notebooks", description: "Snowflake上でインタラクティブにデータ探索・分析・可視化", url: "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs" }, { name: "Alerts", description: "データ変化やしきい値超過を検知して通知・アクション自動化", url: "https://docs.snowflake.com/ja/user-guide/alerts" }]
-};
-// ──────────────────────────────────────────────────────────────────────────────
-
+// ── State Management ────────────────────────────────────────────────────────
 const state = {
   index: 0,
-  answers: [],
+  answers: {},
+  types: {},
   groups: [],
   neighbors: [],
   events: [],
-  features: {}
+  currentCode: null
 };
 
 const viewRefs = {
@@ -224,50 +165,82 @@ const questionText = document.getElementById("question-text");
 const optionRoot = document.getElementById("options");
 const progressLabel = document.getElementById("progress-label");
 const progressFill = document.getElementById("progress-fill");
+const backButton = document.getElementById("back-button");
+
+const resultIcon = document.getElementById("result-icon");
 const resultTitle = document.getElementById("result-title");
+const resultSubtitle = document.getElementById("result-subtitle");
+const resultCatchphrase = document.getElementById("result-catchphrase");
 const resultDescription = document.getElementById("result-description");
+const badgeContainer = document.getElementById("badge-container");
+
 const groupList = document.getElementById("group-list");
 const neighborList = document.getElementById("neighbor-list");
 const featureList = document.getElementById("feature-list");
 const eventList = document.getElementById("event-list");
 const actionList = document.getElementById("action-list");
+const detailModal = document.getElementById("detail-modal");
+const modalContent = document.getElementById("modal-content");
 
+// ── Event Listeners ─────────────────────────────────────────────────────────
 document.getElementById("start-button").addEventListener("click", startQuiz);
 document.getElementById("restart").addEventListener("click", resetApp);
 document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
 document.getElementById("share-x").addEventListener("click", shareToX);
 document.getElementById("share-mail").addEventListener("click", shareByMail);
+document.getElementById("copy-link").addEventListener("click", copyResultLink);
+document.getElementById("modal-close").addEventListener("click", closeModal);
+backButton.addEventListener("click", goBack);
+
+detailModal.addEventListener("click", (e) => {
+  if (e.target === detailModal) closeModal();
+});
 
 initializeTheme();
 const dataReady = initializeData();
 
+// ── Initialization & Data Load ──────────────────────────────────────────────
 async function initializeData() {
-  const [groups, neighbors, events, features] = await Promise.all([
+  const [types, groups, neighbors, events] = await Promise.all([
+    loadTypesData(),
     loadGroupsData(),
     loadNeighborsData(),
-    loadEventsData(),
-    loadFeaturesData()
+    loadEventsData()
   ]);
+  state.types = types;
   state.groups = groups;
   state.neighbors = neighbors;
   state.events = events;
-  state.features = features;
+
+  // URLパーマリンクチェック (?code=ESCI)
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramCode = urlParams.get("code");
+  if (paramCode && (types[paramCode] || FALLBACK_TYPES[paramCode])) {
+    showResultByCode(paramCode.toUpperCase());
+  }
+}
+
+async function loadTypesData() {
+  try {
+    const res = await fetch("data/types.json");
+    if (!res.ok) throw new Error(`status ${res.status}`);
+    return await res.json();
+  } catch {
+    return FALLBACK_TYPES;
+  }
 }
 
 async function loadGroupsData() {
-  // data/user-groups.json を優先（logoUrl/abbr情報を保持）
   try {
     const res = await fetch("data/user-groups.json");
     if (!res.ok) throw new Error(`status ${res.status}`);
     return normalizeGroups(await res.json());
   } catch { /* fallthrough */ }
-  // リモートYAMLへフォールバック
   try {
     const res = await fetch(GROUPS_REMOTE_URL);
     if (!res.ok) throw new Error(`status ${res.status}`);
     return normalizeGroups(jsyaml.load(await res.text()));
   } catch { /* fallthrough */ }
-  // 最終フォールバック: インラインデータ
   return INLINE_GROUPS;
 }
 
@@ -277,7 +250,6 @@ async function loadNeighborsData() {
     if (!res.ok) throw new Error(`status ${res.status}`);
     return normalizeNeighbors(jsyaml.load(await res.text()));
   } catch {
-    // リモート取得失敗 → インラインデータを使用
     return INLINE_NEIGHBORS;
   }
 }
@@ -292,16 +264,7 @@ async function loadEventsData() {
   }
 }
 
-async function loadFeaturesData() {
-  try {
-    const res = await fetch("data/features.json");
-    if (!res.ok) throw new Error(`status ${res.status}`);
-    return res.json();
-  } catch {
-    return INLINE_FEATURES;
-  }
-}
-
+// ── Theme Management ────────────────────────────────────────────────────────
 function initializeTheme() {
   const saved = localStorage.getItem("svc-theme");
   const theme = saved || "light";
@@ -315,17 +278,24 @@ function toggleTheme() {
   localStorage.setItem("svc-theme", next);
 }
 
+// ── View Switching & Quiz Flow ──────────────────────────────────────────────
 async function startQuiz() {
   await dataReady;
   state.index = 0;
-  state.answers = [];
+  state.answers = {};
   switchView("quiz");
   renderQuestion();
 }
 
 function resetApp() {
   state.index = 0;
-  state.answers = [];
+  state.answers = {};
+  state.currentCode = null;
+  // URLクエリのクリア
+  if (window.history.pushState) {
+    const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.pushState({ path: newUrl }, "", newUrl);
+  }
   switchView("intro");
 }
 
@@ -335,206 +305,172 @@ function switchView(key) {
   }
 }
 
-const TYPE_ICONS = {
-  dataSuperhero:        "🦸",
-  dreamTeamCreator:     "🌐",
-  insightNavigator:     "🔭",
-  automationAlchemist:  "⚗️",
-  trustGuardian:        "🛡️",
-  storySparkAmbassador: "✨",
-  frontierExplorer:     "🚀",
-  calmMentor:           "🌿"
-};
-
 function renderQuestion() {
   const question = questions[state.index];
-  const pct = Math.round(((state.index + 1) / questions.length) * 100);
-  progressLabel.textContent = `Q${state.index + 1} / ${questions.length}`;
+  const total = questions.length;
+  const pct = Math.round(((state.index + 1) / total) * 100);
+
+  progressLabel.textContent = `Q${state.index + 1} / ${total}`;
   document.getElementById("progress-pct").textContent = `${pct}%`;
   progressFill.style.width = `${pct}%`;
   questionText.textContent = question.text;
-  optionRoot.innerHTML = "";
 
-  question.options.forEach((option) => {
+  // 戻るボタンの可否
+  backButton.style.visibility = state.index > 0 ? "visible" : "hidden";
+
+  optionRoot.innerHTML = "";
+  question.options.forEach((option, idx) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "secondary-button option-button";
-    button.textContent = option.text;
-    button.addEventListener("click", () => selectAnswer(option.score));
+    button.className = "option-button-2col";
+
+    const badgeLabel = idx === 0 ? "A" : "B";
+    button.innerHTML = `
+      <div class="option-badge">${badgeLabel}</div>
+      <div class="option-content">${option.text}</div>
+    `;
+    button.addEventListener("click", () => selectAnswer(question.id, option.val));
     optionRoot.appendChild(button);
   });
 }
 
-function selectAnswer(score) {
-  state.answers.push(score);
+function selectAnswer(questionId, value) {
+  state.answers[questionId] = value;
   if (state.index < questions.length - 1) {
     state.index += 1;
     renderQuestion();
-    return;
+  } else {
+    const code = computeType(state.answers);
+    showResultByCode(code);
   }
-  showResult();
 }
 
-function showResult() {
-  const scores = aggregateScores(state.answers);
-  const topDimensions = getTopDimensions(scores);
-  const typeKey = resolveType(topDimensions);
-  const type = typeDefinitions[typeKey];
-  const recommendedGroups = getRecommendedGroups(type, topDimensions);
-  const recommendedNeighbors = getRecommendedNeighbors(type, topDimensions);
-  const features = (state.features[typeKey] || type.featureRecommendations || []).slice(0, 3);
+function goBack() {
+  if (state.index > 0) {
+    state.index -= 1;
+    renderQuestion();
+  }
+}
 
-  document.getElementById("result-icon").textContent = TYPE_ICONS[typeKey] || "🌟";
+// ── 4軸2択決定木判定ロジック (computeType) ──────────────────────────────────
+function computeType(answers) {
+  // Axis 1: E vs B (Q1, Q2)
+  const eCount = (answers[1] === "E" ? 1 : 0) + (answers[2] === "E" ? 1 : 0);
+  const bCount = (answers[1] === "B" ? 1 : 0) + (answers[2] === "B" ? 1 : 0);
+  // 同点(1対1)の場合は本質的問Q1を優先
+  const axis1 = eCount > bCount ? "E" : (eCount < bCount ? "B" : answers[1]);
+
+  // Axis 2: S vs T (Q3, Q4)
+  const sCount = (answers[3] === "S" ? 1 : 0) + (answers[4] === "S" ? 1 : 0);
+  const tCount = (answers[3] === "T" ? 1 : 0) + (answers[4] === "T" ? 1 : 0);
+  const axis2 = sCount > tCount ? "S" : (sCount < tCount ? "T" : answers[3]);
+
+  // Axis 3: C vs Z (Q5, Q6)
+  const cCount = (answers[5] === "C" ? 1 : 0) + (answers[6] === "C" ? 1 : 0);
+  const zCount = (answers[5] === "Z" ? 1 : 0) + (answers[6] === "Z" ? 1 : 0);
+  const axis3 = cCount > zCount ? "C" : (cCount < zCount ? "Z" : answers[5]);
+
+  // Axis 4: I vs O (Q7, Q8)
+  const iCount = (answers[7] === "I" ? 1 : 0) + (answers[8] === "I" ? 1 : 0);
+  const oCount = (answers[7] === "O" ? 1 : 0) + (answers[8] === "O" ? 1 : 0);
+  const axis4 = iCount > oCount ? "I" : (iCount < oCount ? "O" : answers[7]);
+
+  return `${axis1}${axis2}${axis3}${axis4}`;
+}
+
+// ── Result Rendering ────────────────────────────────────────────────────────
+function showResultByCode(code) {
+  state.currentCode = code;
+  const type = state.types[code] || FALLBACK_TYPES[code] || FALLBACK_TYPES["ESCI"];
+
+  // URLの更新 (?code=ESCI)
+  if (window.history.pushState) {
+    const newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?code=${code}`;
+    window.history.pushState({ path: newUrl }, "", newUrl);
+  }
+
+  // 1. デジタルカードヘッダー
+  resultIcon.textContent = type.emoji || "🌟";
   resultTitle.textContent = type.title;
-  resultDescription.textContent = type.description;
-  renderNeighbors(recommendedNeighbors.slice(0, 3));
+  resultSubtitle.textContent = type.subtitle || code;
+  resultCatchphrase.textContent = type.catchphrase || "";
+  resultDescription.textContent = type.description || "";
+
+  // 4軸バッジ描画
+  renderBadges(type.axes || parseAxes(code));
+
+  // 2. おすすめネイバー（コード一致度ソート）
+  const recommendedNeighbors = getMatchedNeighbors(code);
+  renderNeighbors(recommendedNeighbors.slice(0, 4));
+
+  // 3. おすすめユーザーグループ (固定定義優先)
+  const recommendedGroups = getMatchedGroups(type.recommendedGroups);
   renderGroups(recommendedGroups.slice(0, 3));
-  renderFeatures(features);
+
+  // 4. おすすめSnowflake機能
+  renderFeatures(type.recommendedFeatures || []);
+
+  // 5. 直近イベント & アクション
   renderEvents(state.events.slice(0, 3));
-  renderActions(type.actionHints.slice(0, 3));
+  renderActions(type.actionHints || []);
 
   switchView("result");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function aggregateScores(answers) {
-  const base = { community: 0, build: 0, analysis: 0, creativity: 0, governance: 0, leadership: 0 };
-  answers.forEach((score) => {
-    Object.entries(score).forEach(([key, value]) => {
-      base[key] += value;
-    });
-  });
-  return base;
-}
-
-function getTopDimensions(scores) {
-  return Object.entries(scores)
-    .sort((a, b) => b[1] - a[1])
-    .map(([name]) => name)
-    .slice(0, 3);
-}
-
-function resolveType([first, second, third]) {
+function parseAxes(code) {
   const map = {
-    "analysis:build": "dataSuperhero",
-    "build:analysis": "dataSuperhero",
-    "community:leadership": "dreamTeamCreator",
-    "leadership:community": "dreamTeamCreator",
-    "analysis:governance": "insightNavigator",
-    "governance:analysis": "insightNavigator",
-    "build:creativity": "automationAlchemist",
-    "creativity:build": "automationAlchemist",
-    "governance:leadership": "trustGuardian",
-    "leadership:governance": "trustGuardian",
-    "creativity:community": "storySparkAmbassador",
-    "community:creativity": "storySparkAmbassador",
-    "build:community": "frontierExplorer",
-    "community:build": "frontierExplorer",
-    "leadership:analysis": "calmMentor",
-    "analysis:leadership": "calmMentor"
+    E: "Explorer", B: "Builder",
+    S: "Solo", T: "Team",
+    C: "Technical", Z: "Business",
+    I: "Innovator", O: "Optimizer"
   };
-  const pairKey = `${first}:${second}`;
-  if (map[pairKey]) {
-    return map[pairKey];
-  }
-  const fallbackByTop = {
-    analysis: "insightNavigator",
-    build: "automationAlchemist",
-    community: "dreamTeamCreator",
-    creativity: "storySparkAmbassador",
-    governance: "trustGuardian",
-    leadership: third === "analysis" ? "calmMentor" : "dreamTeamCreator"
-  };
-  return fallbackByTop[first] || "frontierExplorer";
+  return code.split("").map((char) => map[char] || char);
 }
 
-function getRecommendedGroups(type, topDimensions) {
-  const tags = [...type.tags, ...topDimensions.map(mapDimensionToTag)];
-  return state.groups
-    .map((group) => {
-      const match = group.tags.filter((tag) => tags.includes(tag)).length;
-      return { ...group, match };
-    })
-    .sort((a, b) => b.match - a.match)
-    .slice(0, 4);
+function renderBadges(axes) {
+  badgeContainer.innerHTML = "";
+  axes.forEach((axisName) => {
+    const chip = document.createElement("span");
+    chip.className = "badge-chip";
+    chip.textContent = `# ${axisName}`;
+    badgeContainer.appendChild(chip);
+  });
 }
 
-function getRecommendedNeighbors(type, topDimensions) {
-  const tags = [...type.tags, ...topDimensions];
-  return state.neighbors
+// ── Matched Neighbors (Code Match Sorting) ─────────────────────────────────
+function getMatchedNeighbors(targetCode) {
+  return [...state.neighbors]
     .map((neighbor) => {
-      const score = (neighbor.tags || []).filter((tag) => tags.includes(tag)).length;
-      return { ...neighbor, score };
+      const matchScore = computeCodeMatch(targetCode, neighbor.code || "");
+      return { ...neighbor, matchScore };
     })
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 5);
+    .sort((a, b) => b.matchScore - a.matchScore);
 }
 
-function mapDimensionToTag(dimension) {
-  const map = {
-    community: "community",
-    build: "engineering",
-    analysis: "data",
-    creativity: "app",
-    governance: "governance",
-    leadership: "event"
-  };
-  return map[dimension];
+function computeCodeMatch(codeA, codeB) {
+  if (!codeA || !codeB || codeA.length !== 4 || codeB.length !== 4) {
+    return 1; // デフォルトスコア
+  }
+  let score = 0;
+  for (let i = 0; i < 4; i++) {
+    if (codeA[i] === codeB[i]) score += 1;
+  }
+  return score;
 }
 
-function renderGroups(groups) {
-  groupList.innerHTML = "";
-  groups.forEach((group) => {
-    const card = document.createElement("article");
-    card.className = "group-card";
-    const link = group.techplayUrl || group.url || "";
-
-    // ロゴ: 画像URLがあれば<img>、なければ略称バッジ（onerrorで切り替え）
-    const abbr = getGroupAbbr(group);
-    const bgStyle = getGroupColorStyle(group.id);
-    let logoHtml;
-    if (group.logoUrl) {
-      logoHtml = `<img class="group-logo-img" src="${group.logoUrl}" alt="${group.name}" loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="group-logo-abbr" style="${bgStyle}display:none">${abbr}</div>`;
-    } else {
-      logoHtml = `<div class="group-logo-abbr" style="${bgStyle}">${abbr}</div>`;
-    }
-
-    card.innerHTML = `
-      <div class="group-logo-wrap">${logoHtml}</div>
-      <div class="group-info">
-        <strong class="group-name">${group.name}</strong>
-        <p class="group-desc">${group.description || ""}</p>
-        ${link ? `<a class="group-link" href="${link}" target="_blank" rel="noopener noreferrer">Tech Play で見る →</a>` : ""}
-      </div>
-    `;
-    groupList.appendChild(card);
-  });
+// ── Matched Groups ──────────────────────────────────────────────────────────
+function getMatchedGroups(recommendedIds) {
+  if (Array.isArray(recommendedIds) && recommendedIds.length > 0) {
+    const matched = recommendedIds
+      .map((id) => state.groups.find((g) => g.id === id))
+      .filter(Boolean);
+    if (matched.length > 0) return matched;
+  }
+  return state.groups.slice(0, 3);
 }
 
-function getGroupAbbr(group) {
-  if (group.abbr) return group.abbr;
-  const name = group.name || "";
-  const uppers = name.match(/[A-Z]/g);
-  if (uppers && uppers.length >= 2) return uppers.slice(0, 2).join("");
-  const words = name.split(/[\s・\-\/]/);
-  if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
-  return name.slice(0, 2).toUpperCase();
-}
-
-// グループIDをハッシュして一意のブランドカラーを返す
-const GROUP_COLOR_PALETTE = [
-  "#29B5E8", "#1a7fc1", "#0052cc", "#6B4FBB", "#00875A",
-  "#C05621", "#0077B6", "#36B37E", "#403294", "#B91C1C"
-];
-function getGroupColorStyle(id) {
-  let h = 0;
-  for (const c of (id || "")) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const color = GROUP_COLOR_PALETTE[h % GROUP_COLOR_PALETTE.length];
-  return `background:${color};`;
-}
-
+// ── Rendering Helper Functions ──────────────────────────────────────────────
 function renderNeighbors(neighbors) {
   neighborList.innerHTML = "";
   neighbors.forEach((neighbor) => {
@@ -555,13 +491,62 @@ function renderNeighbors(neighbors) {
     if (xLink) links.push(`<a class="neighbor-link" href="${xLink}" target="_blank" rel="noopener noreferrer">𝕏</a>`);
     if (liLink) links.push(`<a class="neighbor-link" href="${liLink}" target="_blank" rel="noopener noreferrer">in</a>`);
 
+    const isExactMatch = neighbor.code && neighbor.code === state.currentCode;
+    const matchBadgeHtml = isExactMatch ? `<span class="match-badge">同タイプ!</span>` : "";
+
     card.innerHTML = `
+      ${matchBadgeHtml}
       ${avatarHtml}
       <div class="neighbor-name">${neighbor.name}</div>
       <div class="neighbor-affiliation">${neighbor.affiliation || "Snow Village"}</div>
       <div class="neighbor-links">${links.join("")}</div>
     `;
+
+    // クリックでモーダル詳細開く
+    card.addEventListener("click", (e) => {
+      if (e.target.tagName !== "A") {
+        openNeighborModal(neighbor);
+      }
+    });
+
     neighborList.appendChild(card);
+  });
+}
+
+function renderGroups(groups) {
+  groupList.innerHTML = "";
+  groups.forEach((group) => {
+    const card = document.createElement("article");
+    card.className = "group-card";
+    const link = group.techplayUrl || group.url || "";
+    const abbr = getGroupAbbr(group);
+    const bgStyle = getGroupColorStyle(group.id);
+
+    let logoHtml;
+    if (group.logoUrl) {
+      logoHtml = `<img class="group-logo-img" src="${group.logoUrl}" alt="${group.name}" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="group-logo-abbr" style="${bgStyle}display:none">${abbr}</div>`;
+    } else {
+      logoHtml = `<div class="group-logo-abbr" style="${bgStyle}">${abbr}</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="group-logo-wrap">${logoHtml}</div>
+      <div class="group-info">
+        <strong class="group-name">${group.name}</strong>
+        <p class="group-desc">${group.description || ""}</p>
+        ${link ? `<a class="group-link" href="${link}" target="_blank" rel="noopener noreferrer">Tech Play でコミュニティを見る →</a>` : ""}
+      </div>
+    `;
+
+    card.addEventListener("click", (e) => {
+      if (e.target.tagName !== "A") {
+        openGroupModal(group);
+      }
+    });
+
+    groupList.appendChild(card);
   });
 }
 
@@ -569,7 +554,6 @@ function renderFeatures(features) {
   featureList.innerHTML = "";
   features.forEach((item) => {
     const li = document.createElement("li");
-    // features.json形式（{name, description, url}）と旧来の文字列どちらにも対応
     if (typeof item === "object" && item.name) {
       li.innerHTML = item.url
         ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.name}</a>`
@@ -611,10 +595,45 @@ function renderActions(actions) {
   });
 }
 
+// ── Modals & Utilities ──────────────────────────────────────────────────────
+function openNeighborModal(neighbor) {
+  const xLink = sanitizeUrl(neighbor.x_url);
+  const liLink = sanitizeUrl(neighbor.linkedin_url);
+
+  modalContent.innerHTML = `
+    <div style="text-align: center;">
+      ${neighbor.photo_url ? `<img src="${neighbor.photo_url}" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:0.8rem;border:3px solid var(--primary);">` : `<div style="font-size:3rem;margin-bottom:0.5rem;">🧑</div>`}
+      <h3 style="font-size:1.3rem;margin-bottom:0.3rem;">${neighbor.name}</h3>
+      <p style="color:var(--subtext);font-size:0.9rem;margin-bottom:1rem;">${neighbor.affiliation || "Snow Village コミュニティメンバー"}</p>
+      <div style="display:flex;justify-content:center;gap:0.8rem;margin-top:1rem;">
+        ${xLink ? `<a class="primary-button" href="${xLink}" target="_blank" rel="noopener noreferrer" style="padding:0.5rem 1.2rem;font-size:0.88rem;">𝕏 プロフィール</a>` : ""}
+        ${liLink ? `<a class="secondary-button" href="${liLink}" target="_blank" rel="noopener noreferrer" style="padding:0.5rem 1.2rem;font-size:0.88rem;">LinkedIn</a>` : ""}
+      </div>
+    </div>
+  `;
+  detailModal.classList.remove("hidden");
+}
+
+function openGroupModal(group) {
+  const link = group.techplayUrl || group.url || "";
+  modalContent.innerHTML = `
+    <div>
+      <h3 style="font-size:1.25rem;margin-bottom:0.6rem;color:var(--text);">${group.name}</h3>
+      <p style="color:var(--subtext);font-size:0.92rem;line-height:1.6;margin-bottom:1.2rem;">${group.description || "Snow Village傘下のコミュニティです。"}</p>
+      ${link ? `<a class="primary-button" href="${link}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:0.6rem 1.4rem;font-size:0.9rem;">Tech Play でイベント一覧・詳細を見る →</a>` : ""}
+    </div>
+  `;
+  detailModal.classList.remove("hidden");
+}
+
+function closeModal() {
+  detailModal.classList.add("hidden");
+}
+
+// ── Share & Copy ────────────────────────────────────────────────────────────
 function getShareMessage() {
-  const type = resultTitle.textContent || "Snow Villageタイプ";
-  const firstGroup = groupList.querySelector("strong")?.textContent || "おすすめコミュニティ";
-  return `私は「${type}」でした！ #snow_village_compass で診断して、${firstGroup} が気になっています。`;
+  const title = resultTitle.textContent || "Snow Villageタイプ";
+  return `私のSnow Village 診断タイプは「${title}」でした！ #SnowVillage #snow_village_compass で診断して、コミュニティとつながろう！`;
 }
 
 function shareToX() {
@@ -629,15 +648,52 @@ function shareByMail() {
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
+function copyResultLink() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    showToast("診断結果リンクをコピーしました！");
+  }).catch(() => {
+    showToast("コピーに失敗しました。URLを直接コピーしてください。");
+  });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById("copy-toast");
+  toast.textContent = msg;
+  toast.classList.remove("hidden");
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 2500);
+}
+
+// ── Normalization Utilities ─────────────────────────────────────────────────
+function getGroupAbbr(group) {
+  if (group.abbr) return group.abbr;
+  const name = group.name || "";
+  const uppers = name.match(/[A-Z]/g);
+  if (uppers && uppers.length >= 2) return uppers.slice(0, 2).join("");
+  const words = name.split(/[\s・\-\/]/);
+  if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
+}
+
+const GROUP_COLOR_PALETTE = [
+  "#29B5E8", "#1a7fc1", "#0052cc", "#6B4FBB", "#00875A",
+  "#C05621", "#0077B6", "#36B37E", "#403294", "#B91C1C"
+];
+function getGroupColorStyle(id) {
+  let h = 0;
+  for (const c of (id || "")) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const color = GROUP_COLOR_PALETTE[h % GROUP_COLOR_PALETTE.length];
+  return `background:${color};`;
+}
+
 function normalizeNeighbors(rawNeighbors) {
-  if (!Array.isArray(rawNeighbors)) {
-    return [];
-  }
+  if (!Array.isArray(rawNeighbors)) return [];
   return rawNeighbors
     .filter((entry) => entry && entry.name && entry.name !== "Neighbor")
     .map((entry) => {
       const affiliation = typeof entry.affiliation === "string" ? entry.affiliation.trim() : "";
-      // photo パス (例: ../../images/neighbors/abe_kota.png) からファイル名を取り出してURL構築
       let photo_url = "";
       if (entry.photo && typeof entry.photo === "string") {
         const filename = entry.photo.split("/").pop();
@@ -649,37 +705,29 @@ function normalizeNeighbors(rawNeighbors) {
         photo_url,
         x_url: sanitizeUrl(entry.x_url || entry.xUrl),
         linkedin_url: sanitizeUrl(entry.linkedInUrl || entry.linkedinUrl),
-        tags: inferNeighborTags(entry)
+        code: entry.code || inferNeighborCode(entry)
       };
     });
 }
 
-function inferNeighborTags(entry) {
+function inferNeighborCode(entry) {
   const source = `${entry.name || ""} ${entry.affiliation || ""}`.toLowerCase();
-  const tags = [];
-  if (source.includes("security")) tags.push("security", "governance");
-  if (source.includes("data")) tags.push("data", "analysis");
-  if (source.includes("studio")) tags.push("engineering", "build");
-  if (source.includes("snowflake")) tags.push("community", "event");
-  if (tags.length === 0) tags.push("community");
-  return tags;
+  let code = "ESCI";
+  if (source.includes("security")) code = "BSCO";
+  else if (source.includes("studio")) code = "BSCI";
+  else if (source.includes("snowflake")) code = "ETZI";
+  return code;
 }
 
 function sanitizeUrl(url) {
-  if (!url || typeof url !== "string") {
-    return "";
-  }
+  if (!url || typeof url !== "string") return "";
   const trimmed = url.trim();
-  if (!trimmed || trimmed === "--") {
-    return "";
-  }
+  if (!trimmed || trimmed === "--") return "";
   return trimmed;
 }
 
 function normalizeGroups(rawGroups) {
-  if (!Array.isArray(rawGroups)) {
-    return [];
-  }
+  if (!Array.isArray(rawGroups)) return [];
   return rawGroups
     .filter((entry) => entry && entry.name && (entry.url || entry.techplayUrl))
     .map((entry) => {
@@ -691,34 +739,7 @@ function normalizeGroups(rawGroups) {
         abbr: entry.abbr || "",
         logoUrl: entry.logoUrl || "",
         description: (entry.description || "").trim(),
-        techplayUrl: url,
-        tags: entry.tags || inferGroupTags(entry)
+        techplayUrl: url
       };
     });
-}
-
-function inferGroupTags(entry) {
-  const name = (entry.name || "").toLowerCase();
-  const desc = (entry.description || "").toLowerCase();
-  const url = (entry.url || "").toLowerCase();
-  const source = `${name} ${desc} ${url}`;
-  const tags = new Set(["community"]);
-
-  if (/金融|financial/.test(source)) tags.add("governance"), tags.add("security"), tags.add("analysis");
-  if (/データマネジメント|data.management/.test(source)) tags.add("governance"), tags.add("data"), tags.add("quality");
-  if (/rookies|初心者|beginner/.test(source)) tags.add("beginner-friendly"), tags.add("hands-on");
-  if (/west|関西/.test(source)) tags.add("event"), tags.add("hands-on");
-  if (/datascience|dataengineering|data.science|data.engineering/.test(source)) tags.add("analysis"), tags.add("engineering"), tags.add("data");
-  if (/女子|women/.test(source)) tags.add("support"), tags.add("hands-on");
-  if (/unconference/.test(source)) tags.add("event"), tags.add("leadership");
-  if (/kyushu|九州/.test(source)) tags.add("event");
-  if (/ai data|ai-data|ai_data/.test(source)) tags.add("challenge"), tags.add("data"), tags.add("app");
-  if (/ヘルスケア|healthcare|ライフサイエンス/.test(source)) tags.add("governance"), tags.add("analysis"), tags.add("data");
-  if (/salesforce|sf2ug/.test(source)) tags.add("engineering"), tags.add("app"), tags.add("build");
-  if (/central|中部/.test(source)) tags.add("event"), tags.add("data");
-  if (/サステナ|sustain/.test(source)) tags.add("story"), tags.add("governance"), tags.add("creativity");
-  if (/okinawa|沖縄/.test(source)) tags.add("event"), tags.add("beginner-friendly");
-  if (/data/.test(source)) tags.add("data");
-
-  return [...tags];
 }
