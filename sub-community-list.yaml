@@ -1,0 +1,102 @@
+- name: SnowVillage - Japan Snowflake User Group
+  url: https://techplay.jp/community/snowvillage
+  description: >
+    SnowVillageは、日本最大級のSnowflakeユーザーコミュニティです。
+    Snowflakeの活用事例や最新機能、データ活用、AI、データエンジニアリングなど幅広いテーマについて学び合い、
+    ユーザー同士がつながる場を提供しています。初心者から上級者まで、
+    Snowflakeに関わるすべての方の参加を歓迎しています。
+
+- name: Snowflake金融ユーザー会
+  url: https://techplay.jp/community/snowvillage-financial
+  description: >
+    金融業界におけるSnowflake活用をテーマとしたユーザーコミュニティです。
+    金融機関ならではのデータガバナンス、セキュリティ、分析基盤、運用ノウハウなどの知見を共有し、
+    業界横断で学び合う場を提供します。
+
+- name: SnowVillage - データマネジメント分科会 -
+  url: https://techplay.jp/community/snowvillage-data-management
+  description: >
+    Snowflakeのユーザー会であるSnowVillageにおける、
+    データマネジメント分科会です。
+
+- name: Snowflake Rookies Camp
+  url: https://techplay.jp/community/snowvillage-snowflake-rookies-camp
+  description: >
+    Snowflakeをこれから学びたい方や利用を始めたばかりの方を対象とした初心者向けコミュニティです。
+    ハンズオンや勉強会を通じて、Snowflakeの基本的な使い方やベストプラクティスを学べる場を提供しています。
+
+- name: Snowflake WEST User Group
+  url: https://techplay.jp/community/snowvillage-west
+  description: >
+    関西地域を中心としたSnowflakeユーザーコミュニティです。
+    Snowflakeの最新情報や活用事例の共有、ハンズオン、ミートアップなどを通じて、
+    西日本エリアのデータコミュニティ活性化を目指しています。
+
+- name: SnowVillage DataScience&DataEngineering支部
+  url: https://techplay.jp/community/snowvillage-datascience
+  description: >
+    SnowVillageにおけるDataScienceチャネルと
+    DataEngineeringチャネルに関するイベントを運営するコミュニティです。
+
+- name: Snowflake女子会
+  url: https://techplay.jp/community/snowvillage-women
+  description: >
+    女性の、女性による、女性のためのコミュニティ Snowflake女子会です。
+    女性エンジニア同士のつながりと活躍の場を作ることを目指し、
+    Snowflake初心者から経験者まで幅広く参加できる勉強会やハンズオンを開催しています。
+
+- name: SnowVillage Unconference支部 - Japan Snowflake User Group
+  url: https://techplay.jp/community/snowvillage-unconference
+  description: >
+    SnowflakeユーザーコミュニティのUnconference支部です。
+    Unconferenceイベントの企画・周知を行い、
+    参加者主体で知識共有と交流を深める場を提供しています。
+
+- name: Snowflake Kyushu User Group
+  url: https://techplay.jp/community/snowvillage-kyushu
+  description: >
+    Snowflake九州ユーザーグループです。
+    Snowflakeの良さを九州企業に届け、
+    データで九州を盛り上げることを目指しています。
+
+- name: SnowVillage AI DATA User Group
+  url: https://techplay.jp/community/snowvillage-ai-data-cloud
+  description: >
+    SnowflakeのAI関連機能をテーマに掲げ、
+    定期的な勉強会や情報交換を行うコミュニティです。
+    SnowflakeのAIエコシステムを継続的に学び続ける場を提供します。
+
+- name: Snowflakeヘルスケア・ライフサイエンスユーザー会
+  url: https://techplay.jp/community/snowvillage-healthcare
+  description: >
+    ヘルスケア・ライフサイエンス業界におけるSnowflake活用をテーマにしたユーザーコミュニティです。
+    医療、製薬、研究開発、データ活用、データガバナンスなどの事例共有を通じて、
+    業界全体の発展を目指します。
+
+- name: Snowflake x Salesforce User Group
+  url: https://techplay.jp/community/sf2ug
+  description: >
+    Snowflake と Salesforce を掛け合わせたデータ活用について議論するためのUser Groupです。
+    SnowVillageのSlackを中心に活動し、
+    オンライン・オフラインでのイベントはTECH PLAYで募集しています。
+
+- name: Snowflake CENTRAL User Group
+  url: https://techplay.jp/community/snowvillage-central
+  description: >
+    中部エリアを中心としたSnowflakeユーザーコミュニティです。
+    東海地区のユーザー同士が集まり、
+    活用事例や最新機能、データ分析に関する知見を共有する場を提供しています。
+
+- name: SnowVillage サステナvillage - Japan Snowflake User Group
+  url: https://techplay.jp/community/snowvillage-sustainability
+  description: >
+    SnowVillageから生まれたサステナビリティをテーマとするコミュニティです。
+    Snowflakeを活用しながら、
+    企業や個人のサステナブルな取り組みを後押しすることを目指しています。
+
+- name: Snowflake OKINAWA User Group
+  url: https://techplay.jp/community/snowvillage-okinawa
+  description: >
+    Snowflakeの技術情報やベストプラクティスを沖縄から発信し、
+    ユーザーコミュニティの活性化を目指すグループです。
+    沖縄在住者だけでなく、沖縄やSnowflakeに興味のある方の参加を歓迎しています。
