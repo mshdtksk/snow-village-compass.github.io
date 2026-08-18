@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2026-09-11",
+    "title": "Snowflake World Tokyo 2026 Day 1",
+    "location": "東京国際フォーラム",
+    "url": "https://www.snowflake.com/events/snowflake-world-tour/"
+  },
+  {
+    "date": "2026-09-12",
+    "title": "Snowflake World Tokyo 2026 Day 2 + ナイトパーティー",
+    "location": "東京国際フォーラム",
+    "url": "https://www.snowflake.com/events/snowflake-world-tour/"
+  },
+  {
+    "date": "2026-09-19",
+    "title": "Snow Village SWT振り返り回",
+    "location": "Online",
+    "url": "https://techplay.jp/community/snowvillage"
+  },
+  {
+    "date": "2026-10-02",
+    "title": "Snowflake Rookies Camp — SWT後ハンズオン",
+    "location": "Tokyo",
+    "url": "https://techplay.jp/community/snowvillage-snowflake-rookies-camp"
+  },
+  {
+    "date": "2026-10-15",
+    "title": "SnowVillage DataScience&DE 支部 勉強会",
+    "location": "Online",
+    "url": "https://techplay.jp/community/snowvillage-datascience"
+  },
+  {
+    "date": "2026-10-28",
+    "title": "SnowVillage AI DATA User Group 勉強会",
+    "location": "Tokyo / Hybrid",
+    "url": "https://techplay.jp/community/snowvillage-ai-data-cloud"
+  },
+  {
+    "date": "2026-11-13",
+    "title": "Snowflake WEST User Group ミートアップ",
+    "location": "大阪",
+    "url": "https://techplay.jp/community/snowvillage-west"
+  },
+  {
+    "date": "2026-11-20",
+    "title": "SnowVillage Unconference支部 イベント",
+    "location": "Tokyo",
+    "url": "https://techplay.jp/community/snowvillage-unconference"
+  },
+  {
+    "date": "2026-12-04",
+    "title": "Snowflake Kyushu User Group 忘年LT会",
+    "location": "福岡",
+    "url": "https://techplay.jp/community/snowvillage-kyushu"
+  },
+  {
+    "date": "2026-12-11",
+    "title": "Snow Village 年末振り返り & 2027展望",
+    "location": "Tokyo / Hybrid",
+    "url": "https://techplay.jp/community/snowvillage"
+  }
+]

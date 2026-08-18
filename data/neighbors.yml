@@ -1,0 +1,150 @@
+- name: "Aki Tanaka"
+  role: "Data Engineer"
+  strength: "パイプライン設計"
+  x_url: "https://x.com/aki_data"
+  tags: ["engineering", "data", "build", "hands-on"]
+- name: "Mika Sato"
+  role: "Community Organizer"
+  strength: "交流会運営"
+  x_url: "https://x.com/mika_community"
+  tags: ["community", "event", "leadership", "support"]
+- name: "Ryo Kondo"
+  role: "Analytics Engineer"
+  strength: "SQL最適化"
+  x_url: "https://x.com/ryo_sql"
+  tags: ["analysis", "data", "hands-on"]
+- name: "Yui Nishimura"
+  role: "Security Architect"
+  strength: "アクセス制御設計"
+  x_url: "https://x.com/yui_secure"
+  tags: ["governance", "security", "architecture"]
+- name: "Ken Morita"
+  role: "Product Builder"
+  strength: "アプリ試作"
+  x_url: "https://x.com/ken_builder"
+  tags: ["build", "app", "creativity"]
+- name: "Nao Ishida"
+  role: "Data Storyteller"
+  strength: "ダッシュボード表現"
+  x_url: "https://x.com/nao_story"
+  tags: ["story", "creativity", "community"]
+- name: "Tomo Fujii"
+  role: "Platform Ops"
+  strength: "運用改善"
+  x_url: "https://x.com/tomo_ops"
+  tags: ["ops", "governance", "leadership"]
+- name: "Shin Adachi"
+  role: "ML Engineer"
+  strength: "AI活用プロトタイプ"
+  x_url: "https://x.com/shin_ml"
+  tags: ["challenge", "build", "data"]
+- name: "Hina Ueda"
+  role: "Mentor"
+  strength: "初心者サポート"
+  x_url: "https://x.com/hina_mentor"
+  tags: ["mentoring", "support", "community"]
+- name: "Daichi Ono"
+  role: "Data Architect"
+  strength: "全体設計"
+  x_url: "https://x.com/daichi_arch"
+  tags: ["architecture", "analysis", "governance"]
+- name: "Kaho Arai"
+  role: "Event Host"
+  strength: "場づくり"
+  x_url: "https://x.com/kaho_host"
+  tags: ["event", "community", "leadership"]
+- name: "Jun Hashimoto"
+  role: "SQL Specialist"
+  strength: "パフォーマンス改善"
+  x_url: "https://x.com/jun_sql"
+  tags: ["analysis", "hands-on", "data"]
+- name: "Rina Okada"
+  role: "Native App Dev"
+  strength: "Snowflakeアプリ開発"
+  x_url: "https://x.com/rina_native"
+  tags: ["app", "engineering", "build"]
+- name: "Kohei Matsu"
+  role: "Security Lead"
+  strength: "監査運用"
+  x_url: "https://x.com/kohei_trust"
+  tags: ["security", "ops", "governance"]
+- name: "Emi Takagi"
+  role: "Facilitator"
+  strength: "対話促進"
+  x_url: "https://x.com/emi_facil"
+  tags: ["community", "leadership", "support"]
+- name: "Sora Kimura"
+  role: "Data Scientist"
+  strength: "インサイト抽出"
+  x_url: "https://x.com/sora_ds"
+  tags: ["analysis", "data", "challenge"]
+- name: "Ayaka Murakami"
+  role: "UX Designer"
+  strength: "体験設計"
+  x_url: "https://x.com/ayaka_ux"
+  tags: ["creativity", "app", "story"]
+- name: "Yuji Kawahara"
+  role: "Infra Engineer"
+  strength: "自動化運用"
+  x_url: "https://x.com/yuji_auto"
+  tags: ["automation", "engineering", "build"]
+- name: "Moe Sugita"
+  role: "Community Mentor"
+  strength: "オンボーディング"
+  x_url: "https://x.com/moe_mentor"
+  tags: ["community", "mentoring", "beginner-friendly"]
+- name: "Taiga Seki"
+  role: "Realtime Engineer"
+  strength: "ストリーミング分析"
+  x_url: "https://x.com/taiga_stream"
+  tags: ["engineering", "challenge", "data"]
+- name: "Chihiro Yamada"
+  role: "Governance PM"
+  strength: "ルール整備"
+  x_url: "https://x.com/chihiro_gov"
+  tags: ["governance", "leadership", "quality"]
+- name: "Masato Iwata"
+  role: "Developer Advocate"
+  strength: "技術発信"
+  x_url: "https://x.com/masato_adv"
+  tags: ["story", "community", "event"]
+- name: "Reina Fukumoto"
+  role: "Data QA"
+  strength: "品質チェック"
+  x_url: "https://x.com/reina_qa"
+  tags: ["quality", "analysis", "ops"]
+- name: "Kenta Hayashi"
+  role: "Snowpark Engineer"
+  strength: "アプリ実装"
+  x_url: "https://x.com/kenta_snowpark"
+  tags: ["build", "engineering", "app"]
+- name: "Megumi Endo"
+  role: "People Connector"
+  strength: "コミュニティ連携"
+  x_url: "https://x.com/megumi_connect"
+  tags: ["community", "network", "event"]
+- name: "Takuya Miura"
+  role: "Cost Optimizer"
+  strength: "FinOps"
+  x_url: "https://x.com/takuya_finops"
+  tags: ["ops", "analysis", "governance"]
+- name: "Riko Hoshino"
+  role: "Beginner Buddy"
+  strength: "初参加者フォロー"
+  x_url: "https://x.com/riko_buddy"
+  tags: ["support", "beginner-friendly", "community"]
+- name: "Yota Arima"
+  role: "Hackathon Coach"
+  strength: "実装伴走"
+  x_url: "https://x.com/yota_hack"
+  tags: ["hands-on", "build", "mentoring"]
+- name: "Mai Inoue"
+  role: "Story Coach"
+  strength: "伝え方改善"
+  x_url: "https://x.com/mai_story"
+  tags: ["story", "creativity", "mentoring"]
+- name: "Haru Kitagawa"
+  role: "Reliability Engineer"
+  strength: "安定運用"
+  x_url: "https://x.com/haru_reliability"
+  tags: ["ops", "security", "governance"]

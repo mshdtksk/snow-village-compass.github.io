@@ -1,0 +1,42 @@
+{
+  "dataSuperhero": [
+    { "name": "Snowpark",        "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",  "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index" },
+    { "name": "Dynamic Tables",  "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",              "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-intro" },
+    { "name": "Notebooks",       "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",           "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs" }
+  ],
+  "dreamTeamCreator": [
+    { "name": "Native Apps",               "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開", "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about" },
+    { "name": "Streamlit in Snowflake",    "description": "データアプリをコード1枚でSnowflake上に即デプロイ",       "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit" },
+    { "name": "Snowflake Marketplace",     "description": "データ・アプリ・モデルを社外と安全に共有・公開",           "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-marketplace" }
+  ],
+  "insightNavigator": [
+    { "name": "Horizon Catalog",      "description": "メタデータ・系譜・品質を一元管理するデータカタログ機能",     "url": "https://docs.snowflake.com/ja/guides-overview-govern" },
+    { "name": "Row Access Policy",    "description": "行レベルでのアクセス制御をポリシーで一元管理",               "url": "https://docs.snowflake.com/ja/user-guide/security-row-intro" },
+    { "name": "Data Quality Monitor", "description": "データの品質指標を継続的に計測・アラートで監視",              "url": "https://docs.snowflake.com/ja/user-guide/data-quality-intro" }
+  ],
+  "automationAlchemist": [
+    { "name": "Snowpipe",         "description": "ファイル到着をトリガーにリアルタイムでデータをロード",           "url": "https://docs.snowflake.com/ja/user-guide/data-load-snowpipe-intro" },
+    { "name": "Streams & Tasks",  "description": "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン", "url": "https://docs.snowflake.com/ja/user-guide/streams-intro" },
+    { "name": "Git Integration",  "description": "GitHubリポジトリを直接Snowflakeに接続してコードを管理",          "url": "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up" }
+  ],
+  "trustGuardian": [
+    { "name": "Object Tagging",     "description": "テーブル・列にタグを付与してガバナンス・分類を自動化",         "url": "https://docs.snowflake.com/ja/user-guide/object-tagging" },
+    { "name": "Access History",     "description": "誰がいつどのデータにアクセスしたかを完全な監査ログで追跡",     "url": "https://docs.snowflake.com/ja/sql-reference/account-usage/access_history" },
+    { "name": "Network Policies",   "description": "IPアドレス・プライベートリンクによる接続制限でセキュリティ強化", "url": "https://docs.snowflake.com/ja/user-guide/network-policies" }
+  ],
+  "storySparkAmbassador": [
+    { "name": "Snowsight",         "description": "インタラクティブなダッシュボードと可視化でデータをストーリーに", "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight" },
+    { "name": "Cortex Analyst",    "description": "自然言語でデータを問い合わせ・分析できるAIアシスタント",       "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/cortex-analyst" },
+    { "name": "Semantic Views",    "description": "ビジネス用語でデータモデルを定義しAIと人間が理解しやすく",     "url": "https://docs.snowflake.com/ja/user-guide/views-introduction" }
+  ],
+  "frontierExplorer": [
+    { "name": "Quickstarts",           "description": "Snowflakeを素早く試せるステップバイステップのガイド集",    "url": "https://quickstarts.snowflake.com/" },
+    { "name": "Snowflake ML",          "description": "Snowflake上でモデル学習から推論まで完結するML基盤",        "url": "https://docs.snowflake.com/ja/guides-overview-ml-functions" },
+    { "name": "Container Services",    "description": "Snowflakeのエコシステム内でコンテナアプリを実行",           "url": "https://docs.snowflake.com/ja/developer-guide/snowpark-container-services/overview" }
+  ],
+  "calmMentor": [
+    { "name": "Secure Data Sharing",  "description": "コピーなしでデータをリアルタイムに安全共有",               "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro" },
+    { "name": "Notebooks",            "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",   "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs" },
+    { "name": "Alerts",               "description": "データ変化やしきい値超過を検知して通知・アクション自動化",   "url": "https://docs.snowflake.com/ja/user-guide/alerts" }
+  ]
+}

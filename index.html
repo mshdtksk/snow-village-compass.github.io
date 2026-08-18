@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snow-village-compass | SWT 2026 コミュニティ診断</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <span class="header-icon">🧭</span>
+        <div>
+          <h1>snow-village-compass</h1>
+          <p>SWT 2026 コミュニティ診断</p>
+        </div>
+      </div>
+      <button id="theme-toggle" type="button">🌙 / ☀️</button>
+    </header>
+
+    <main class="container">
+
+      <!-- ── Intro ─────────────────────────────────────────── -->
+      <section id="intro-view" class="card">
+        <div class="intro-hero">
+          <div class="hero-icon">❄️🧭</div>
+          <h2>あなたに合う Snow Village を見つけよう</h2>
+          <p>8問・約2分で、あなたに合うコミュニティ・ネイバー・Snowflake機能を提案します。</p>
+          <div class="intro-features">
+            <div class="intro-feature">
+              <span class="fi">👥</span>
+              <span>初心者歓迎のユーザーグループ提案</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">🤝</span>
+              <span>会場で話しかけやすいネイバー紹介</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">⚡</span>
+              <span>あなたに合うSnowflake機能を紹介</span>
+            </div>
+            <div class="intro-feature">
+              <span class="fi">🎴</span>
+              <span>SWT連動: タイプ別カードと交流導線</span>
+            </div>
+          </div>
+          <button id="start-button" class="primary-button" type="button">🚀 診断をはじめる</button>
+          <p class="intro-note">個人情報は収集しません。その場限りのエンタメ診断です。</p>
+        </div>
+      </section>
+
+      <!-- ── Quiz ──────────────────────────────────────────── -->
+      <section id="quiz-view" class="card hidden">
+        <div class="progress-wrapper">
+          <div class="progress-meta">
+            <span id="progress-label">Q1 / 8</span>
+            <span id="progress-pct">12%</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+        <h2 id="question-text"></h2>
+        <div id="options" class="options"></div>
+      </section>
+
+      <!-- ── Result ─────────────────────────────────────────── -->
+      <section id="result-view" class="card hidden">
+
+        <div class="result-header">
+          <div class="result-header-icon" id="result-icon">🌟</div>
+          <div class="result-header-text">
+            <h2>あなたのタイプ</h2>
+            <p id="result-title" class="result-title"></p>
+            <p id="result-description" class="result-description"></p>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3>👥 おすすめネイバー</h3>
+          <div id="neighbor-list"></div>
+        </div>
+
+        <div class="result-section">
+          <h3>🏘️ おすすめユーザーグループ</h3>
+          <div id="group-list"></div>
+        </div>
+
+        <div class="result-section">
+          <h3>⚡ おすすめSnowflake機能</h3>
+          <ul id="feature-list" class="feature-pills"></ul>
+        </div>
+
+        <div class="result-section">
+          <h3>📅 直近イベント</h3>
+          <ul id="event-list" class="event-list"></ul>
+        </div>
+
+        <div class="result-section">
+          <h3>🎯 次のアクション</h3>
+          <ul id="action-list" class="action-list"></ul>
+        </div>
+
+        <div class="share-actions">
+          <button id="share-x" class="share-x" type="button">𝕏 Xで共有</button>
+          <button id="share-mail" class="share-mail" type="button">✉️ メールで送る</button>
+          <button id="restart" class="ghost-button" type="button">↺ もう一度診断する</button>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="js-yaml.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
