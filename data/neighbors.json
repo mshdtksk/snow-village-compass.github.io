@@ -1,0 +1,352 @@
+[
+  {
+    "name": "Sate Katsuaki",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/sate_katsuaki.png",
+    "x_url": "https://x.com/katsu_dailylake?s=11",
+    "linkedin_url": "",
+    "code": "ESCI"
+  },
+  {
+    "name": "安倍 航太",
+    "affiliation": "株式会社BeeX",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/abe_kota.png",
+    "x_url": "https://x.com/_coco_se",
+    "linkedin_url": "https://www.linkedin.com/in/kota-abe-220010398",
+    "code": "ESCO"
+  },
+  {
+    "name": "Daisuke Onoe",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/daisuke_onoe.png",
+    "x_url": "https://x.com/wonohe",
+    "linkedin_url": "",
+    "code": "ESZI"
+  },
+  {
+    "name": "山本 且秋",
+    "affiliation": "株式会社アシスト",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/kayamamoto.png",
+    "x_url": "https://x.com/kayamamoto_",
+    "linkedin_url": "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329",
+    "code": "ESZO"
+  },
+  {
+    "name": "Tatchan",
+    "affiliation": "AI Data Cloud",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/tatchan.png",
+    "x_url": "https://x.com/tad_ao",
+    "linkedin_url": "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/",
+    "code": "ETCI"
+  },
+  {
+    "name": "Kaori Nishimura",
+    "affiliation": "株式会社メソドロジック",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/nishimurakaori.jpg",
+    "x_url": "https://x.com/usakoyama",
+    "linkedin_url": "https://www.linkedin.com/in/kaori-nishimura-180368168/",
+    "code": "ETCO"
+  },
+  {
+    "name": "ぬん",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/guen.png",
+    "x_url": "https://x.com/guen",
+    "linkedin_url": "",
+    "code": "ETZI"
+  },
+  {
+    "name": "萩野谷 旭洋",
+    "affiliation": "インフォテック株式会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/haginoya_teruhiro.png",
+    "x_url": "https://x.com/_hgny_s67?s=11",
+    "linkedin_url": "",
+    "code": "ETZO"
+  },
+  {
+    "name": "山口 歩夢",
+    "affiliation": "DATUM STUDIO株式会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/yamaguchi_ayumu.png",
+    "x_url": "https://x.com/Yamaguchi_aaaaa",
+    "linkedin_url": "",
+    "code": "BSCI"
+  },
+  {
+    "name": "守川 耀",
+    "affiliation": "DATUM STUDIO株式会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/morikawa_yo.png",
+    "x_url": "https://x.com/elc_small",
+    "linkedin_url": "https://www.linkedin.com/in/yo-morikawa-68787234a",
+    "code": "BSCO"
+  },
+  {
+    "name": "tomo Wakamatsu",
+    "affiliation": "Snowflake合同会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/tomo.png",
+    "x_url": "https://x.com/tomowk1",
+    "linkedin_url": "https://www.linkedin.com/in/tomo-wakamatsu/",
+    "code": "BSZI"
+  },
+  {
+    "name": "森田 将之",
+    "affiliation": "株式会社ＪＥＲＡ",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/morita_masayuki.png",
+    "x_url": "https://x.com/mark_xxxx13",
+    "linkedin_url": "https://www.linkedin.com/in/masayuki-morita-710807215",
+    "code": "BSZO"
+  },
+  {
+    "name": "神谷 篤司",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "BTCI"
+  },
+  {
+    "name": "中山 晋一",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "BTCO"
+  },
+  {
+    "name": "アスタ",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/tsunoda_katsuma.png",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "BTZI"
+  },
+  {
+    "name": "ロー / LowSE01",
+    "affiliation": "ちゅらデータ株式会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/lowse01.jpg",
+    "x_url": "https://x.com/VizFantasista",
+    "linkedin_url": "https://www.linkedin.com/in/lowse01/",
+    "code": "BTZO"
+  },
+  {
+    "name": "伊佐 薫明",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "ESCI"
+  },
+  {
+    "name": "原田 雄斗",
+    "affiliation": "クオリサイトテクノロジーズ",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/harada_yuto.png",
+    "x_url": "https://x.com/HYuto30325",
+    "linkedin_url": "",
+    "code": "ESCO"
+  },
+  {
+    "name": "横澤 直樹",
+    "affiliation": "株式会社メディアフォース",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/naoki_yokozawa.jpeg",
+    "x_url": "https://x.com/naoki_yokozawa",
+    "linkedin_url": "",
+    "code": "ESZI"
+  },
+  {
+    "name": "Masaki Moriyama",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/masaki_moriyama.png",
+    "x_url": "https://x.com/masa_tectec?s=11&t=rnW8CmghyqmKbef-4BuvVg",
+    "linkedin_url": "",
+    "code": "ESZO"
+  },
+  {
+    "name": "柴田 祐大",
+    "affiliation": "株式会社ロイヤリティマーケティング",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/yoshihiro_shibata.png",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "ETCI"
+  },
+  {
+    "name": "加藤智也",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/tomoya_kato.png",
+    "x_url": "",
+    "linkedin_url": "https://www.linkedin.com/in/tomoya-kato-466875394",
+    "code": "ETCO"
+  },
+  {
+    "name": "滝川 皇",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/takigawa_mikoto.jpg",
+    "x_url": "https://x.com/takimiko_gohan",
+    "linkedin_url": "",
+    "code": "ETZI"
+  },
+  {
+    "name": "Ryo Toshiki",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "ETZO"
+  },
+  {
+    "name": "Kazuya Iwata",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "BSCI"
+  },
+  {
+    "name": "田代 学",
+    "affiliation": "",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "",
+    "x_url": "",
+    "linkedin_url": "",
+    "code": "BSCO"
+  },
+  {
+    "name": "Yuta Hishinuma",
+    "affiliation": "ちゅらデータ株式会社",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/yuta_hishinuma.jpg",
+    "x_url": "https://x.com/foursue",
+    "linkedin_url": "",
+    "code": "BSZI"
+  },
+  {
+    "name": "K T",
+    "affiliation": "Japan Community & Education Lead at Canva",
+    "title": "Founder of SnowVillage",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/KTProfile.png",
+    "x_url": "https://x.com/DATA_Saber",
+    "linkedin_url": "https://www.linkedin.com/in/datasaber/",
+    "code": "BSZO"
+  },
+  {
+    "name": "Yuya Matsubara",
+    "affiliation": "Principal Data Engineer at NTT DOCOMO, Inc.",
+    "title": "Snowflake Data Superheroes 2026 & Snowflake Squad",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/yuya_matsubara.jpeg",
+    "x_url": "https://x.com/matsubara_tech",
+    "linkedin_url": "https://www.linkedin.com/in/yuya-matsubara-b86278323",
+    "code": "BTCI"
+  },
+  {
+    "name": "Kosuke Kida",
+    "affiliation": "みんながコミュニティを楽しみ、成長するお手伝い。みんなの「褒められ」を後押しします！",
+    "title": "Community Engagement Lead",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/KosukeKida.jpg",
+    "x_url": "https://x.com/kkkida_twtr",
+    "linkedin_url": "https://www.linkedin.com/in/kosuke-kida-b03ab29a",
+    "code": "BTCO"
+  },
+  {
+    "name": "あれ",
+    "affiliation": "DATUM STUDIO株式会社 プリンシパルエンジニア",
+    "title": "Snowflake Data Superheroes 2024-2026",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/allllllllez.jpg",
+    "x_url": "https://x.com/__allllllllez__",
+    "linkedin_url": "https://www.linkedin.com/in/miho-kajiya-928847297",
+    "code": "BTZI"
+  },
+  {
+    "name": "Hiroki Murayama",
+    "affiliation": "まだ飽きないの？って最近よくいわれますが、まだまだ熱量高めです!!",
+    "title": "Community Operation Lead",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/Hiroki_Murayama.jpg",
+    "x_url": "https://x.com/piroki_0310",
+    "linkedin_url": "https://www.linkedin.com/in/hiroki-murayama-2481a84b",
+    "code": "BTZO"
+  },
+  {
+    "name": "すずき",
+    "affiliation": "船井総研ヒューマンキャピタルコンサルティング データチームマネージャー",
+    "title": "Brand部門リーダー / Snowflake Squad 2024-2026",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/ryo_suzuki.jpg",
+    "x_url": "https://x.com/suzupappa",
+    "linkedin_url": "https://www.linkedin.com/in/suzupappa",
+    "code": "ESCI"
+  },
+  {
+    "name": "サカトク",
+    "affiliation": "野生のデータエンジニア。コミュニティは学びと実践の場だよ兄貴！",
+    "title": "Snowflake Data Superheroes 2024-2025 / Slackでなんかうるさいやつ2号",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/akira_sakatoku.png",
+    "x_url": "https://x.com/AkSakatoku",
+    "linkedin_url": "https://www.linkedin.com/in/akira-sakatoku/",
+    "code": "ESCO"
+  },
+  {
+    "name": "Toru Hiyama",
+    "affiliation": "Data Engineer at SimpleForm, Inc.",
+    "title": "Growth部門リーダー / Snowflake Data Superheroes 2025-2026",
+    "kind": "mayor",
+    "photo": "https://snowvillage-cloud.github.io/images/organizers/toru_hiyama.png",
+    "x_url": "https://x.com/toru_data",
+    "linkedin_url": "https://www.linkedin.com/in/toru-hiyama-4232652a7/",
+    "code": "ESZI"
+  }
+]

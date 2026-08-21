@@ -425,6 +425,58 @@ a:hover { text-decoration: underline; }
 .neighbor-links { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
 .neighbor-link { font-size: 0.82rem; font-weight: 700; color: var(--primary-dk); }
 
+.role-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+}
+
+/* その他の類似するネイバー＆メイヤー（横スクロール） */
+.other-people {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--border);
+}
+.other-neighbor-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.other-neighbor-list::-webkit-scrollbar { height: 6px; }
+.other-neighbor-list::-webkit-scrollbar-track { background: transparent; }
+.other-neighbor-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+.other-neighbor-list::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+.other-neighbor-card {
+  flex: 0 0 132px;
+  scroll-snap-align: start;
+  padding: 0.85rem 0.5rem 0.7rem;
+}
+.other-neighbor-card .neighbor-avatar,
+.other-neighbor-card .neighbor-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.45rem;
+}
+.other-neighbor-card .neighbor-avatar-placeholder { font-size: 1.2rem; }
+.other-neighbor-card .neighbor-name { font-size: 0.8rem; }
+.other-neighbor-card .neighbor-affiliation { font-size: 0.68rem; }
+
 /* ── Group cards ─────────────────────────────────────────────── */
 #group-list { display: grid; gap: 0.8rem; }
 .group-card {
@@ -455,6 +507,59 @@ a:hover { text-decoration: underline; }
 .group-name { font-size: 0.98rem; color: var(--text); display: block; font-weight: 700; }
 .group-desc { font-size: 0.82rem; color: var(--subtext); margin-top: 0.2rem; line-height: 1.45; }
 .group-link { display: inline-block; font-size: 0.82rem; font-weight: 700; margin-top: 0.3rem; }
+
+/* ── Other Groups ────────────────────────────────────────────── */
+.other-groups {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--border);
+}
+.other-groups-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--subtext);
+  margin-bottom: 0.55rem;
+}
+.other-group-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.other-group-list::-webkit-scrollbar { height: 6px; }
+.other-group-list::-webkit-scrollbar-track { background: transparent; }
+.other-group-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+.other-group-list::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+/* おすすめカードと同じ構造のまま、横に並べるため幅を固定して縦組みにする */
+.other-group-card {
+  flex: 0 0 232px;
+  scroll-snap-align: start;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.85rem 0.9rem;
+}
+.other-group-card .group-logo-wrap { width: 40px; height: 40px; }
+.other-group-card .group-info { width: 100%; }
+.other-group-card .group-name { font-size: 0.88rem; line-height: 1.35; }
+.other-group-card .group-desc {
+  font-size: 0.76rem;
+  margin-top: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.other-group-card .group-link { font-size: 0.76rem; }
+.other-groups-note { margin-top: 0.6rem; font-size: 0.78rem; }
 
 /* ── Feature Pills ───────────────────────────────────────────── */
 .feature-pills { list-style: none; display: grid; gap: 0.65rem; }

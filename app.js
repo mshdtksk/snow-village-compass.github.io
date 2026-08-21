@@ -83,9 +83,9 @@ const questions = [
   }
 ];
 
-const NEIGHBORS_REMOTE_URL = "https://raw.githubusercontent.com/snowvillage-cloud/snowvillage-cloud.github.io/main/about/neighbors/userlist.yaml";
-const GROUPS_REMOTE_URL = "https://raw.githubusercontent.com/mshdtksk/snow-village-compass/main/sub-community-list.yaml";
 const NEIGHBOR_PHOTO_BASE = "https://snowvillage-cloud.github.io/images/neighbors/";
+// 推薦に載らなかったコミュニティの受け皿として案内する一覧ページ
+const TECHPLAY_ALL_GROUPS_URL = "https://techplay.jp/community_group/snowflake_users";
 
 // ── インライン埋め込みタイプ定義（types.json読み込み失敗時のフォールバック） ──
 const FALLBACK_TYPES = {
@@ -94,28 +94,27 @@ const FALLBACK_TYPES = {
     "emoji": "🦸", "catchphrase": "先端技術を自ら切り拓く、圧倒的データパイオニア",
     "description": "高い技術的好奇心と深い探求心を持ち、一人で最先端機能を検証・実装して驚くべき成果を出すタイプ。",
     "axes": ["Explorer", "Solo", "Technical", "Innovator"],
-    "recommendedGroups": ["snowvillage-datascience", "snowvillage-ai-data-cloud", "snowvillage-main"],
     "recommendedFeatures": [{ "name": "Snowpark", "description": "Python/Java/Scalaでデータパイプライン実装", "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index" }],
     "actionHints": ["ハンズオンブースで新機能を体験する", "DataScience/DE支部のイベントに参加する"]
   }
 };
 
 const INLINE_GROUPS = [
-  { id: "snowvillage-main", abbr: "SV", logoUrl: "logo/snowvillage.webp", name: "SnowVillage - Japan Snowflake User Group", description: "日本最大級のSnowflakeユーザーコミュニティ。初心者から上級者まで参加歓迎。", techplayUrl: "https://techplay.jp/community/snowvillage", tags: ["community", "beginner-friendly", "event", "data"] },
-  { id: "snowvillage-financial", abbr: "金融", logoUrl: "logo/snowvillage-financial.webp", name: "Snowflake金融ユーザー会", description: "金融業界でのSnowflake活用をテーマに、ガバナンス・セキュリティ・分析の知見を共有。", techplayUrl: "https://techplay.jp/community/snowvillage-financial", tags: ["governance", "security", "analysis", "data"] },
-  { id: "snowvillage-data-management", abbr: "DM", logoUrl: "logo/snowvillage-data-management.webp", name: "SnowVillage - データマネジメント分科会 -", description: "データ品質・カタログ・メタデータ管理を深掘りする分科会。", techplayUrl: "https://techplay.jp/community/snowvillage-data-management", tags: ["governance", "data", "quality", "architecture"] },
-  { id: "snowflake-rookies-camp", abbr: "RC", logoUrl: "logo/snowvillage-snowflake-rookies-camp.webp", name: "Snowflake Rookies Camp", description: "Snowflakeをこれから学びたい方向けの初心者コミュニティ。ハンズオンでベストプラクティスを学べる。", techplayUrl: "https://techplay.jp/community/snowvillage-snowflake-rookies-camp", tags: ["beginner-friendly", "hands-on", "community", "support"] },
-  { id: "snowvillage-west", abbr: "WEST", logoUrl: "logo/snowvillage-west.webp", name: "Snowflake WEST User Group", description: "関西地域を中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-west", tags: ["community", "event", "hands-on"] },
-  { id: "snowvillage-datascience", abbr: "DS/DE", logoUrl: "logo/snowvillage-datascience.webp", name: "SnowVillage DataScience&DataEngineering支部", description: "DataScience・DataEngineeringチャネルのイベントを運営するコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-datascience", tags: ["analysis", "engineering", "data"] },
-  { id: "snowvillage-women", abbr: "女子会", logoUrl: "logo/snowvillage-women.webp", name: "Snowflake女子会", description: "女性エンジニア同士のつながりと活躍の場を作るコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-women", tags: ["community", "support"] },
-  { id: "snowvillage-unconference", abbr: "UNC", logoUrl: "logo/snowvillage-unconference.webp", name: "SnowVillage Unconference支部", description: "参加者主体で知識共有と交流を深めるUnconferenceイベントを運営。", techplayUrl: "https://techplay.jp/community/snowvillage-unconference", tags: ["event", "community"] },
-  { id: "snowvillage-kyushu", abbr: "九州", logoUrl: "logo/snowvillage-kyushu.webp", name: "Snowflake Kyushu User Group", description: "Snowflakeの良さを九州企業に届け、データで九州を盛り上げることを目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-kyushu", tags: ["community", "event"] },
-  { id: "snowvillage-ai-data-cloud", abbr: "AI", logoUrl: "logo/snowvillage-ai-data-cloud.webp", name: "SnowVillage AI DATA User Group", description: "SnowflakeのAI関連機能をテーマに定期的な勉強会を行うコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-ai-data-cloud", tags: ["data", "app"] },
-  { id: "snowvillage-healthcare", abbr: "HC", logoUrl: "logo/snowvillage-healthcare.webp", name: "Snowflakeヘルスケア・ライフサイエンスユーザー会", description: "ヘルスケア・ライフサイエンス業界でのSnowflake活用をテーマとするユーザー会。", techplayUrl: "https://techplay.jp/community/snowvillage-healthcare", tags: ["governance", "data"] },
-  { id: "sf2ug", abbr: "SF×SF", logoUrl: "logo/sf2ug.webp", name: "Snowflake x Salesforce User Group", description: "Snowflake と Salesforce を掛け合わせたデータ活用について議論する User Group。", techplayUrl: "https://techplay.jp/community/sf2ug", tags: ["engineering", "app"] },
-  { id: "snowvillage-central", abbr: "中部", logoUrl: "logo/snowvillage-central.webp", name: "Snowflake CENTRAL User Group", description: "中部エリアを中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-central", tags: ["community", "event"] },
-  { id: "snowvillage-sustainability", abbr: "🌱SV", logoUrl: "logo/snowvillage-sustainability.webp", name: "SnowVillage サステナvillage", description: "サステナビリティをテーマとするコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-sustainability", tags: ["story", "community"] },
-  { id: "snowvillage-okinawa", abbr: "沖縄", logoUrl: "logo/snowvillage-okinawa.webp", name: "Snowflake OKINAWA User Group", description: "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-okinawa", tags: ["community", "event"] }
+  { id: "snowvillage-main", abbr: "SV", logoUrl: "logo/snowvillage.webp", name: "SnowVillage - Japan Snowflake User Group", description: "日本最大級のSnowflakeユーザーコミュニティ。初心者から上級者まで参加歓迎。", techplayUrl: "https://techplay.jp/community/snowvillage", tags: ["latest", "lt", "meetup", "beginner", "ai"] },
+  { id: "snowvillage-financial", abbr: "金融", logoUrl: "logo/snowvillage-financial.webp", name: "Snowflake金融ユーザー会", description: "金融業界でのSnowflake活用をテーマに、ガバナンス・セキュリティ・分析の知見を共有。", techplayUrl: "https://techplay.jp/community/snowvillage-financial", tags: ["industry", "governance", "security", "ops", "usecase"] },
+  { id: "snowvillage-data-management", abbr: "DM", logoUrl: "logo/snowvillage-data-management.webp", name: "SnowVillage - データマネジメント分科会 -", description: "データ品質・カタログ・メタデータ管理を深掘りする分科会。", techplayUrl: "https://techplay.jp/community/snowvillage-data-management", tags: ["governance", "architecture", "ops", "analysis"] },
+  { id: "snowflake-rookies-camp", abbr: "RC", logoUrl: "logo/snowvillage-snowflake-rookies-camp.webp", name: "Snowflake Rookies Camp", description: "Snowflakeをこれから学びたい方向けの初心者コミュニティ。ハンズオンでベストプラクティスを学べる。", techplayUrl: "https://techplay.jp/community/snowvillage-snowflake-rookies-camp", tags: ["beginner", "hands-on", "meetup", "ops"] },
+  { id: "snowvillage-west", abbr: "WEST", logoUrl: "logo/snowvillage-west.webp", name: "Snowflake WEST User Group", description: "関西地域を中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-west", tags: ["hands-on", "meetup", "lt", "integration", "usecase", "latest"] },
+  { id: "snowvillage-datascience", abbr: "DS/DE", logoUrl: "logo/snowvillage-datascience.webp", name: "SnowVillage DataScience&DataEngineering支部", description: "DataScience・DataEngineeringチャネルのイベントを運営するコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-datascience", tags: ["datascience", "ai", "engineering", "meetup"] },
+  { id: "snowvillage-women", abbr: "女子会", logoUrl: "logo/snowvillage-women.webp", name: "Snowflake女子会", description: "女性エンジニア同士のつながりと活躍の場を作るコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-women", tags: ["career", "hands-on", "ai", "app", "integration", "discussion"] },
+  { id: "snowvillage-unconference", abbr: "UNC", logoUrl: "logo/snowvillage-unconference.webp", name: "SnowVillage Unconference支部", description: "参加者主体で知識共有と交流を深めるUnconferenceイベントを運営。", techplayUrl: "https://techplay.jp/community/snowvillage-unconference", tags: ["discussion", "meetup", "lt", "beginner"] },
+  { id: "snowvillage-kyushu", abbr: "九州", logoUrl: "logo/snowvillage-kyushu.webp", name: "Snowflake Kyushu User Group", description: "Snowflakeの良さを九州企業に届け、データで九州を盛り上げることを目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-kyushu", tags: ["latest", "meetup", "usecase"] },
+  { id: "snowvillage-ai-data-cloud", abbr: "AI", logoUrl: "logo/snowvillage-ai-data-cloud.webp", name: "SnowVillage AI DATA User Group", description: "SnowflakeのAI関連機能をテーマに定期的な勉強会を行うコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-ai-data-cloud", tags: ["ai", "latest", "lt", "meetup"] },
+  { id: "snowvillage-healthcare", abbr: "HC", logoUrl: "logo/snowvillage-healthcare.webp", name: "Snowflakeヘルスケア・ライフサイエンスユーザー会", description: "ヘルスケア・ライフサイエンス業界でのSnowflake活用をテーマとするユーザー会。", techplayUrl: "https://techplay.jp/community/snowvillage-healthcare", tags: ["industry", "usecase", "engineering", "analysis"] },
+  { id: "sf2ug", abbr: "SF×SF", logoUrl: "logo/sf2ug.webp", name: "Snowflake x Salesforce User Group", description: "Snowflake と Salesforce を掛け合わせたデータ活用について議論する User Group。", techplayUrl: "https://techplay.jp/community/sf2ug", tags: ["integration", "app", "meetup", "usecase"] },
+  { id: "snowvillage-central", abbr: "中部", logoUrl: "logo/snowvillage-central.webp", name: "Snowflake CENTRAL User Group", description: "中部エリアを中心としたSnowflakeユーザーコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-central", tags: ["analysis", "latest", "lt", "architecture", "ops", "discussion"] },
+  { id: "snowvillage-sustainability", abbr: "🌱SV", logoUrl: "logo/snowvillage-sustainability.webp", name: "SnowVillage サステナvillage", description: "サステナビリティをテーマとするコミュニティ。", techplayUrl: "https://techplay.jp/community/snowvillage-sustainability", tags: ["sustainability", "usecase", "lt", "meetup"] },
+  { id: "snowvillage-okinawa", abbr: "沖縄", logoUrl: "logo/snowvillage-okinawa.webp", name: "Snowflake OKINAWA User Group", description: "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-okinawa", tags: ["latest", "lt", "analysis", "meetup"] }
 ];
 
 const INLINE_NEIGHBORS = [
@@ -125,15 +124,15 @@ const INLINE_NEIGHBORS = [
   { name: "山本 且秋", affiliation: "株式会社アシスト", photo_url: NEIGHBOR_PHOTO_BASE+"kayamamoto.png", x_url: "https://x.com/kayamamoto_", linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", code: "ESCO", tags: ["data", "analysis"] },
   { name: "Tatchan", affiliation: "AI Data Cloud", photo_url: NEIGHBOR_PHOTO_BASE+"tatchan.png", x_url: "https://x.com/tad_ao", linkedin_url: "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/", code: "ETCI", tags: ["data", "community"] },
   { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ETZO", tags: ["community", "event"] },
-  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ETZI", tags: ["community"] },
-  { name: "萩野谷 旭洋", affiliation: "インフォテック株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png", x_url: "https://x.com/_hgny_s67", linkedin_url: "", code: "BSCI", tags: ["engineering", "data"] },
+  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ESZI", tags: ["community"] },
+  { name: "萩野谷 旭洋", affiliation: "インフォテック株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png", x_url: "https://x.com/_hgny_s67", linkedin_url: "", code: "BTCO", tags: ["engineering", "data"] },
   { name: "山口 歩夢", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"yamaguchi_ayumu.png", x_url: "https://x.com/Yamaguchi_aaaaa", linkedin_url: "", code: "BTCI", tags: ["engineering", "build"] },
   { name: "守川 耀", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png", x_url: "https://x.com/elc_small", linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", code: "BSZI", tags: ["engineering", "build"] },
-  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "ETZI", tags: ["community", "event"] },
+  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "BTZI", tags: ["community", "event"] },
   { name: "森田 将之", affiliation: "株式会社ＪＥＲＡ", photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png", x_url: "https://x.com/mark_xxxx13", linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", code: "ESZO", tags: ["data", "analysis"] },
   { name: "神谷 篤司", affiliation: "セキュリティ系の会社", photo_url: NEIGHBOR_PHOTO_BASE+"atsushi_kamiya.jpg", x_url: "https://x.com/baihebu", linkedin_url: "https://www.linkedin.com/in/atsushi-kamiya-93584571", code: "BSCO", tags: ["security", "governance"] },
   { name: "中山 晋一", affiliation: "株式会社電通総研", photo_url: NEIGHBOR_PHOTO_BASE+"nakayama_shinichi.jpg", x_url: "https://x.com/datashin360", linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", code: "ETCO", tags: ["data", "analysis"] },
-  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BSZI", tags: ["creativity", "app"] }
+  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BTZO", tags: ["creativity", "app"] }
 ];
 
 const INLINE_EVENTS = [
@@ -175,7 +174,10 @@ const resultDescription = document.getElementById("result-description");
 const badgeContainer = document.getElementById("badge-container");
 
 const groupList = document.getElementById("group-list");
+const otherGroupList = document.getElementById("other-group-list");
+const otherGroupLink = document.getElementById("other-group-link");
 const neighborList = document.getElementById("neighbor-list");
+const otherNeighborList = document.getElementById("other-neighbor-list");
 const featureList = document.getElementById("feature-list");
 const eventList = document.getElementById("event-list");
 const actionList = document.getElementById("action-list");
@@ -235,20 +237,16 @@ async function loadGroupsData() {
     const res = await fetch("data/user-groups.json");
     if (!res.ok) throw new Error(`status ${res.status}`);
     return normalizeGroups(await res.json());
-  } catch { /* fallthrough */ }
-  try {
-    const res = await fetch(GROUPS_REMOTE_URL);
-    if (!res.ok) throw new Error(`status ${res.status}`);
-    return normalizeGroups(jsyaml.load(await res.text()));
-  } catch { /* fallthrough */ }
-  return INLINE_GROUPS;
+  } catch {
+    return INLINE_GROUPS;
+  }
 }
 
 async function loadNeighborsData() {
   try {
-    const res = await fetch(NEIGHBORS_REMOTE_URL);
+    const res = await fetch("data/neighbors.json");
     if (!res.ok) throw new Error(`status ${res.status}`);
-    return normalizeNeighbors(jsyaml.load(await res.text()));
+    return normalizeNeighbors(await res.json());
   } catch {
     return INLINE_NEIGHBORS;
   }
@@ -399,13 +397,15 @@ function showResultByCode(code) {
   // 4軸バッジ描画
   renderBadges(type.axes || parseAxes(code));
 
-  // 2. おすすめネイバー（コード一致度ソート）
-  const recommendedNeighbors = getMatchedNeighbors(code);
-  renderNeighbors(recommendedNeighbors.slice(0, 4));
+  // 2. おすすめネイバー＆メイヤー（コード一致度ソート）。上位は大きく、残りは横並びで出す。
+  const matchedPeople = getMatchedNeighbors(code);
+  renderNeighbors(matchedPeople.slice(0, 4));
+  renderOtherNeighbors(matchedPeople.slice(4, 16));
 
-  // 3. おすすめユーザーグループ (固定定義優先)
-  const recommendedGroups = getMatchedGroups(type.recommendedGroups);
-  renderGroups(recommendedGroups.slice(0, 3));
+  // 3. おすすめユーザーグループ（タグ一致度で算出。件数はタイプにより変動）
+  const { recommended, others } = getMatchedGroups(code);
+  renderGroups(recommended);
+  renderOtherGroups(others);
 
   // 4. おすすめSnowflake機能
   renderFeatures(type.recommendedFeatures || []);
@@ -459,23 +459,92 @@ function computeCodeMatch(codeA, codeB) {
   return score;
 }
 
-// ── Matched Groups ──────────────────────────────────────────────────────────
-function getMatchedGroups(recommendedIds) {
-  if (Array.isArray(recommendedIds) && recommendedIds.length > 0) {
-    const matched = recommendedIds
-      .map((id) => state.groups.find((g) => g.id === id))
-      .filter(Boolean);
-    if (matched.length > 0) return matched;
+// ── Matched Groups (Tag Scoring) ────────────────────────────────────────────
+// 各軸が「求めるタグ」と重み。グループ側のタグ(user-groups.json)と突き合わせて採点する。
+// タグはTechPlayの公式タグと各コミュニティの実イベント履歴をもとに付与している。
+const AXIS_TAG_WEIGHTS = {
+  E: { analysis: 2, datascience: 2, latest: 2, ai: 1, usecase: 1 },
+  B: { engineering: 2, architecture: 2, app: 2, integration: 1, governance: 1 },
+  S: { "hands-on": 2, architecture: 1, datascience: 1, governance: 1, security: 1 },
+  T: { meetup: 2, lt: 2, discussion: 2, career: 1, beginner: 1 },
+  C: { engineering: 2, architecture: 2, security: 2, datascience: 1, "hands-on": 1, app: 1 },
+  Z: { industry: 2, usecase: 2, sustainability: 2, governance: 1, career: 1, analysis: 1 },
+  I: { ai: 2, latest: 2, app: 1, datascience: 1 },
+  O: { ops: 2, governance: 2, security: 1, architecture: 1, beginner: 1 }
+};
+
+// どのタイプにとっても入口になる属性は、全軸が求めるものとして扱う
+const UNIVERSAL_TAGS = { beginner: 1 };
+
+// 推薦とみなす下限（最高得点に対する比率）と表示件数の上下限
+const GROUP_SCORE_RATIO = 0.75;
+const GROUP_MAX = 5;
+const GROUP_MIN = 2;
+
+function computeGroupScore(code, group) {
+  const tags = new Set(group.tags || []);
+  if (tags.size === 0) return 0;
+  let score = 0;
+  for (const axis of code) {
+    const weights = AXIS_TAG_WEIGHTS[axis] || {};
+    for (const [tag, weight] of Object.entries(weights)) {
+      if (tags.has(tag)) score += weight;
+    }
   }
-  return state.groups.slice(0, 3);
+  for (const [tag, weight] of Object.entries(UNIVERSAL_TAGS)) {
+    if (tags.has(tag)) score += weight * code.length;
+  }
+  // タグ数が多いだけで有利にならないよう正規化する
+  return score / Math.sqrt(tags.size);
+}
+
+// おすすめと「その他」に振り分ける。おすすめの件数はタイプごとに変動する。
+function getMatchedGroups(code) {
+  const scored = state.groups
+    .map((group) => ({ group, score: computeGroupScore(code, group) }))
+    .sort((a, b) => b.score - a.score);
+
+  if (scored.length === 0) return { recommended: [], others: [] };
+
+  const best = scored[0].score;
+  let cut = scored.filter((x) => x.score > 0 && x.score >= best * GROUP_SCORE_RATIO);
+  if (cut.length > GROUP_MAX) cut = cut.slice(0, GROUP_MAX);
+  if (cut.length < GROUP_MIN) cut = scored.slice(0, GROUP_MIN);
+
+  const chosen = new Set(cut.map((x) => x.group.id));
+  return {
+    recommended: cut.map((x) => x.group),
+    others: scored.filter((x) => !chosen.has(x.group.id)).map((x) => x.group)
+  };
 }
 
 // ── Rendering Helper Functions ──────────────────────────────────────────────
 function renderNeighbors(neighbors) {
   neighborList.innerHTML = "";
   neighbors.forEach((neighbor) => {
+    neighborList.appendChild(createPersonCard(neighbor));
+  });
+}
+
+function renderOtherNeighbors(neighbors) {
+  otherNeighborList.innerHTML = "";
+  neighbors.forEach((neighbor) => {
+    otherNeighborList.appendChild(createPersonCard(neighbor, "other-neighbor-card"));
+  });
+}
+
+// メイヤーは所属欄に自己紹介文が入っていることがあるため、肩書きを優先して出す
+function getPersonSubtitle(person) {
+  if (person.kind === "mayor") {
+    return person.title || person.affiliation || "Snow Village";
+  }
+  return person.affiliation || "Snow Village";
+}
+
+function createPersonCard(neighbor, extraClass) {
+  {
     const card = document.createElement("article");
-    card.className = "neighbor-card";
+    card.className = extraClass ? `neighbor-card ${extraClass}` : "neighbor-card";
     const xLink = sanitizeUrl(neighbor.x_url);
     const liLink = sanitizeUrl(neighbor.linkedin_url);
 
@@ -493,12 +562,14 @@ function renderNeighbors(neighbors) {
 
     const isExactMatch = neighbor.code && neighbor.code === state.currentCode;
     const matchBadgeHtml = isExactMatch ? `<span class="match-badge">同タイプ!</span>` : "";
+    const roleBadgeHtml = neighbor.kind === "mayor" ? `<span class="role-badge">Mayor</span>` : "";
 
     card.innerHTML = `
       ${matchBadgeHtml}
+      ${roleBadgeHtml}
       ${avatarHtml}
       <div class="neighbor-name">${neighbor.name}</div>
-      <div class="neighbor-affiliation">${neighbor.affiliation || "Snow Village"}</div>
+      <div class="neighbor-affiliation">${getPersonSubtitle(neighbor)}</div>
       <div class="neighbor-links">${links.join("")}</div>
     `;
 
@@ -509,45 +580,55 @@ function renderNeighbors(neighbors) {
       }
     });
 
-    neighborList.appendChild(card);
+    return card;
+  }
+}
+
+function createGroupCard(group, extraClass) {
+  const card = document.createElement("article");
+  card.className = extraClass ? `group-card ${extraClass}` : "group-card";
+  const link = group.techplayUrl || group.url || "";
+  const abbr = getGroupAbbr(group);
+  const bgStyle = getGroupColorStyle(group.id);
+
+  let logoHtml;
+  if (group.logoUrl) {
+    logoHtml = `<img class="group-logo-img" src="${group.logoUrl}" alt="${group.name}" loading="lazy"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="group-logo-abbr" style="${bgStyle}display:none">${abbr}</div>`;
+  } else {
+    logoHtml = `<div class="group-logo-abbr" style="${bgStyle}">${abbr}</div>`;
+  }
+
+  card.innerHTML = `
+    <div class="group-logo-wrap">${logoHtml}</div>
+    <div class="group-info">
+      <strong class="group-name">${group.name}</strong>
+      <p class="group-desc">${group.description || ""}</p>
+      ${link ? `<a class="group-link" href="${link}" target="_blank" rel="noopener noreferrer">Tech Play でコミュニティを見る →</a>` : ""}
+    </div>
+  `;
+
+  card.addEventListener("click", (e) => {
+    if (e.target.tagName !== "A") {
+      openGroupModal(group);
+    }
   });
+
+  return card;
 }
 
 function renderGroups(groups) {
   groupList.innerHTML = "";
+  groups.forEach((group) => groupList.appendChild(createGroupCard(group)));
+}
+
+function renderOtherGroups(groups) {
+  otherGroupList.innerHTML = "";
   groups.forEach((group) => {
-    const card = document.createElement("article");
-    card.className = "group-card";
-    const link = group.techplayUrl || group.url || "";
-    const abbr = getGroupAbbr(group);
-    const bgStyle = getGroupColorStyle(group.id);
-
-    let logoHtml;
-    if (group.logoUrl) {
-      logoHtml = `<img class="group-logo-img" src="${group.logoUrl}" alt="${group.name}" loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="group-logo-abbr" style="${bgStyle}display:none">${abbr}</div>`;
-    } else {
-      logoHtml = `<div class="group-logo-abbr" style="${bgStyle}">${abbr}</div>`;
-    }
-
-    card.innerHTML = `
-      <div class="group-logo-wrap">${logoHtml}</div>
-      <div class="group-info">
-        <strong class="group-name">${group.name}</strong>
-        <p class="group-desc">${group.description || ""}</p>
-        ${link ? `<a class="group-link" href="${link}" target="_blank" rel="noopener noreferrer">Tech Play でコミュニティを見る →</a>` : ""}
-      </div>
-    `;
-
-    card.addEventListener("click", (e) => {
-      if (e.target.tagName !== "A") {
-        openGroupModal(group);
-      }
-    });
-
-    groupList.appendChild(card);
+    otherGroupList.appendChild(createGroupCard(group, "other-group-card"));
   });
+  otherGroupLink.href = TECHPLAY_ALL_GROUPS_URL;
 }
 
 function renderFeatures(features) {
@@ -604,7 +685,8 @@ function openNeighborModal(neighbor) {
     <div style="text-align: center;">
       ${neighbor.photo_url ? `<img src="${neighbor.photo_url}" style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:0.8rem;border:3px solid var(--primary);">` : `<div style="font-size:3rem;margin-bottom:0.5rem;">🧑</div>`}
       <h3 style="font-size:1.3rem;margin-bottom:0.3rem;">${neighbor.name}</h3>
-      <p style="color:var(--subtext);font-size:0.9rem;margin-bottom:1rem;">${neighbor.affiliation || "Snow Village コミュニティメンバー"}</p>
+      ${neighbor.kind === "mayor" ? `<p style="font-size:0.8rem;font-weight:800;color:var(--accent);margin-bottom:0.2rem;">Mayor</p>` : ""}
+      <p style="color:var(--subtext);font-size:0.9rem;margin-bottom:1rem;">${getPersonSubtitle(neighbor)}</p>
       <div style="display:flex;justify-content:center;gap:0.8rem;margin-top:1rem;">
         ${xLink ? `<a class="primary-button" href="${xLink}" target="_blank" rel="noopener noreferrer" style="padding:0.5rem 1.2rem;font-size:0.88rem;">𝕏 プロフィール</a>` : ""}
         ${liLink ? `<a class="secondary-button" href="${liLink}" target="_blank" rel="noopener noreferrer" style="padding:0.5rem 1.2rem;font-size:0.88rem;">LinkedIn</a>` : ""}
@@ -694,29 +776,25 @@ function normalizeNeighbors(rawNeighbors) {
     .filter((entry) => entry && entry.name && entry.name !== "Neighbor")
     .map((entry) => {
       const affiliation = typeof entry.affiliation === "string" ? entry.affiliation.trim() : "";
-      let photo_url = "";
-      if (entry.photo && typeof entry.photo === "string") {
-        const filename = entry.photo.split("/").pop();
-        if (filename) photo_url = NEIGHBOR_PHOTO_BASE + filename;
+      // photo は絶対URL（メイヤーとネイバーで画像フォルダが異なる）。
+      // ファイル名だけの旧形式もネイバー画像として受け付ける。
+      let photo_url = entry.photo_url || "";
+      if (!photo_url && typeof entry.photo === "string" && entry.photo) {
+        photo_url = /^https?:\/\//.test(entry.photo)
+          ? entry.photo
+          : NEIGHBOR_PHOTO_BASE + entry.photo.split("/").pop();
       }
       return {
         name: entry.name,
         affiliation: affiliation && affiliation !== "--" && affiliation !== "ー" ? affiliation : "",
+        title: (entry.title || "").trim(),
+        kind: entry.kind === "mayor" ? "mayor" : "neighbor",
         photo_url,
         x_url: sanitizeUrl(entry.x_url || entry.xUrl),
         linkedin_url: sanitizeUrl(entry.linkedInUrl || entry.linkedinUrl),
-        code: entry.code || inferNeighborCode(entry)
+        code: entry.code || ""
       };
     });
-}
-
-function inferNeighborCode(entry) {
-  const source = `${entry.name || ""} ${entry.affiliation || ""}`.toLowerCase();
-  let code = "ESCI";
-  if (source.includes("security")) code = "BSCO";
-  else if (source.includes("studio")) code = "BSCI";
-  else if (source.includes("snowflake")) code = "ETZI";
-  return code;
 }
 
 function sanitizeUrl(url) {
@@ -739,7 +817,8 @@ function normalizeGroups(rawGroups) {
         abbr: entry.abbr || "",
         logoUrl: entry.logoUrl || "",
         description: (entry.description || "").trim(),
-        techplayUrl: url
+        techplayUrl: url,
+        tags: Array.isArray(entry.tags) ? entry.tags : []
       };
     });
 }
