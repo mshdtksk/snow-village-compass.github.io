@@ -791,7 +791,7 @@ function normalizeNeighbors(rawNeighbors) {
         kind: entry.kind === "mayor" ? "mayor" : "neighbor",
         photo_url,
         x_url: sanitizeUrl(entry.x_url || entry.xUrl),
-        linkedin_url: sanitizeUrl(entry.linkedInUrl || entry.linkedinUrl),
+        linkedin_url: sanitizeUrl(entry.linkedin_url || entry.linkedInUrl || entry.linkedinUrl),
         code: entry.code || ""
       };
     });
