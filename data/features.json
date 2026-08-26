@@ -2,7 +2,7 @@
   "dataSuperhero": [
     { "name": "Snowpark",        "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",  "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index" },
     { "name": "Dynamic Tables",  "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",              "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-intro" },
-    { "name": "Notebooks",       "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",           "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs" }
+    { "name": "Notebooks",       "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",           "url": "https://docs.snowflake.com/ja/developer-guide/snowflake-cli/notebooks/use-notebooks" }
   ],
   "dreamTeamCreator": [
     { "name": "Native Apps",               "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開", "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about" },
