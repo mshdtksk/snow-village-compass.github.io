@@ -388,7 +388,7 @@ function showResultByCode(code) {
   }
 
   // 1. デジタルカードヘッダー
-  resultIcon.textContent = type.emoji || "🌟";
+  renderResultIcon(type);
   resultTitle.textContent = type.title;
   resultSubtitle.textContent = type.subtitle || code;
   resultCatchphrase.textContent = type.catchphrase || "";
@@ -416,6 +416,24 @@ function showResultByCode(code) {
 
   switchView("result");
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// アイコン画像があれば使い、無い・読めない場合は絵文字にフォールバックする
+function renderResultIcon(type) {
+  const emoji = type.emoji || "🌟";
+  resultIcon.innerHTML = "";
+  if (!type.iconUrl) {
+    resultIcon.textContent = emoji;
+    return;
+  }
+  const img = document.createElement("img");
+  img.className = "result-icon-img";
+  img.src = type.iconUrl;
+  img.alt = type.title || type.code || "";
+  img.addEventListener("error", () => {
+    resultIcon.textContent = emoji;
+  });
+  resultIcon.appendChild(img);
 }
 
 function parseAxes(code) {

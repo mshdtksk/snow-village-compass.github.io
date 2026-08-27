@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="ETZO">
+  <title>ETZO</title>
+  <defs><clipPath id="badge-ETZO"><polygon points="109.0,64.0 86.5,103.0 41.5,103.0 19.0,64.0 41.5,25.0 86.5,25.0"/></clipPath></defs>
+  <polygon points="64,64 122.0,64.0 93.0,114.2" fill="#1370A8"/>
+  <polygon points="64,64 93.0,114.2 35.0,114.2" fill="#0F5485"/>
+  <polygon points="64,64 35.0,114.2 6.0,64.0" fill="#0F5485"/>
+  <polygon points="64,64 6.0,64.0 35.0,13.8" fill="#1370A8"/>
+  <polygon points="64,64 35.0,13.8 93.0,13.8" fill="#29B5E8"/>
+  <polygon points="64,64 93.0,13.8 122.0,64.0" fill="#46CCF7"/>
+  <polygon points="109.0,64.0 86.5,103.0 41.5,103.0 19.0,64.0 41.5,25.0 86.5,25.0" fill="#0F5485" opacity="0.92"/>
+  <polygon points="122.0,64.0 93.0,114.2 35.0,114.2 6.0,64.0 35.0,13.8 93.0,13.8" fill="none" stroke="#E6F7FD" stroke-width="3" stroke-linejoin="round"/>
+  <g clip-path="url(#badge-ETZO)">
+  <polygon points="28,102 33,82 40,75 51,75 58,82 62,102" fill="#E6F7FD"/>
+  <polygon points="45.0,66.0 35.5,60.5 35.5,49.5 45.0,44.0 54.5,49.5 54.5,60.5" fill="#E6F7FD"/>
+  <polygon points="66,102 70,82 77,75 88,75 95,82 100,102" fill="#FFFFFF"/>
+  <polygon points="83.0,66.0 73.5,60.5 73.5,49.5 83.0,44.0 92.5,49.5 92.5,60.5" fill="#FFFFFF"/>
+  <rect x="57" y="79" width="14" height="7" fill="#46CCF7"/>
+  </g>
+</svg>
