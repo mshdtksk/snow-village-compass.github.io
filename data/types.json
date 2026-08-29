@@ -14,25 +14,25 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Snowpark",
+        "name": "Snowpark API",
         "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",
         "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index"
       },
       {
-        "name": "Dynamic Tables",
+        "name": "動的テーブル",
         "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",
-        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-intro"
+        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-about"
       },
       {
-        "name": "Notebooks",
+        "name": "Snowflake Notebooks",
         "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",
-        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs"
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight/notebooks-in-workspaces/notebooks-in-workspaces-overview"
       }
     ],
     "actionHints": [
       "会場でハンズオンブースを体験して新機能を試す",
       "DataScience & DE支部のイベントに参加してみる",
-      "会場でおすすめネイバーを探して技術的なディスカッションをする"
+      "会場でおすすめNeighborsを探して技術的なディスカッションをする"
     ]
   },
   "ESZI": {
@@ -60,15 +60,15 @@
         "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
       },
       {
-        "name": "Notebooks",
+        "name": "Snowflake Notebooks",
         "description": "Snowflake上でインタラクティブにデータ探索・分析・可視化",
-        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-notebooks-gs"
+        "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight/notebooks-in-workspaces/notebooks-in-workspaces-overview"
       }
     ],
     "actionHints": [
       "事例セッションに参加して他社のビジネス活用例を収集する",
       "サステナvillageやAI関連の分科会を覗いてみる",
-      "気になったネイバーとビジネス活用事例について情報交換する"
+      "気になったNeighborsとビジネス活用事例について情報交換する"
     ]
   },
   "ETCI": {
@@ -122,24 +122,24 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Native Apps",
+        "name": "Snowflake Native App Framework",
         "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開",
         "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about"
       },
       {
         "name": "Snowflake Marketplace",
         "description": "データ・アプリ・モデルを社外と安全に共有・公開",
-        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-marketplace"
+        "url": "https://docs.snowflake.com/ja/collaboration/collaboration-marketplace-about"
       },
       {
-        "name": "Snowsight Dashboards",
+        "name": "Snowsight ダッシュボード",
         "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
         "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
       }
     ],
     "actionHints": [
       "SnowVillage本会や地域ユーザーグループ（WEST/九州等）に登録する",
-      "会場で気になったネイバーに積極的に話しかけてみる",
+      "会場で気になったNeighborsに積極的に話しかけてみる",
       "次回コミュニティイベントの予定をその場で確定する"
     ]
   },
@@ -158,24 +158,24 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Horizon Catalog",
+        "name": "Snowflake Horizon カタログ",
         "description": "メタデータ・系譜・品質を一元管理するデータカタログ機能",
-        "url": "https://docs.snowflake.com/ja/guides-overview-govern"
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-horizon"
       },
       {
-        "name": "Semantic Views",
+        "name": "セマンティックビュー",
         "description": "ビジネス用語でデータモデルを定義しAIと人間が理解しやすく",
-        "url": "https://docs.snowflake.com/ja/user-guide/views-introduction"
+        "url": "https://docs.snowflake.com/ja/user-guide/views-semantic/overview"
       },
       {
-        "name": "Data Quality Monitor",
+        "name": "データ品質チェック",
         "description": "データの品質指標を継続的に計測・アラートで監視",
         "url": "https://docs.snowflake.com/ja/user-guide/data-quality-intro"
       }
     ],
     "actionHints": [
       "データマネジメント分科会の勉強会に参加する",
-      "ガバナンスやデータモデル設計が得意なネイバーに相談してみる",
+      "ガバナンスやデータモデル設計が得意なNeighborsに相談してみる",
       "社内のデータカタログやセマンティック層の整理を計画する"
     ]
   },
@@ -211,7 +211,7 @@
     ],
     "actionHints": [
       "ヘルスケアや金融など業界特化ユーザー会の活用事例をチェックする",
-      "会場でビジネス分析・活用を得意とするネイバーと対話する",
+      "会場でビジネス分析・活用を得意とするNeighborsと対話する",
       "自社のデータ分析プロセスの効率化アイデアを整理する"
     ]
   },
@@ -230,24 +230,24 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Horizon Catalog",
+        "name": "Snowflake Horizon カタログ",
         "description": "メタデータ・系譜・品質を一元管理するデータカタログ機能",
-        "url": "https://docs.snowflake.com/ja/guides-overview-govern"
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-horizon"
       },
       {
-        "name": "Row Access Policy",
+        "name": "行アクセスポリシー",
         "description": "行レベルでのアクセス制御をポリシーで一元管理",
         "url": "https://docs.snowflake.com/ja/user-guide/security-row-intro"
       },
       {
-        "name": "Streams & Tasks",
+        "name": "ストリームとタスク",
         "description": "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン",
-        "url": "https://docs.snowflake.com/ja/user-guide/streams-intro"
+        "url": "https://docs.snowflake.com/ja/user-guide/data-pipelines-intro"
       }
     ],
     "actionHints": [
       "データマネジメント分科会やSF2UGでアーキテクチャ設計論を議論する",
-      "会場でデータアーキテクトのネイバーを探してベストプラクティスを聞く",
+      "会場でデータアーキテクトのNeighborsを探してベストプラクティスを聞く",
       "自社のデータパイプライン全体図の見直しを行う"
     ]
   },
@@ -271,19 +271,19 @@
         "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
       },
       {
-        "name": "Snowsight Dashboards",
+        "name": "Snowsight ダッシュボード",
         "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
         "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
       },
       {
-        "name": "Alerts",
+        "name": "アラート",
         "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
         "url": "https://docs.snowflake.com/ja/user-guide/alerts"
       }
     ],
     "actionHints": [
       "SnowVillage本会や女子会・中部UGなどの交流型イベントに参加する",
-      "会場でコミュニティ運営や組織活用に詳しいネイバーと繋がる",
+      "会場でコミュニティ運営や組織活用に詳しいNeighborsと繋がる",
       "チームメンバーと一緒にコミュニティ勉強会に申し込む"
     ]
   },
@@ -302,7 +302,7 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Snowpark",
+        "name": "Snowpark API",
         "description": "Python/Java/ScalaでSnowflake上に直接データパイプラインやMLを実装",
         "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index"
       },
@@ -312,14 +312,14 @@
         "url": "https://docs.snowflake.com/ja/user-guide/data-load-snowpipe-intro"
       },
       {
-        "name": "Dynamic Tables",
+        "name": "動的テーブル",
         "description": "宣言的にデータ変換パイプラインを定義し自動的に最新化",
-        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-intro"
+        "url": "https://docs.snowflake.com/ja/user-guide/dynamic-tables-about"
       }
     ],
     "actionHints": [
       "Rookies CampやDataScience支部のハンズオン勉強会に参加する",
-      "会場でデータパイプライン構築を得意とするネイバーと技術トークする",
+      "会場でデータパイプライン構築を得意とするNeighborsと技術トークする",
       "Snowparkを使った新しいパイプライン構築を自社で試す"
     ]
   },
@@ -343,20 +343,20 @@
         "url": "https://docs.snowflake.com/ja/developer-guide/streamlit/about-streamlit"
       },
       {
-        "name": "Native Apps",
+        "name": "Snowflake Native App Framework",
         "description": "Snowflakeマーケットプレイスで配布できるアプリを構築・公開",
         "url": "https://docs.snowflake.com/ja/developer-guide/native-apps/native-apps-about"
       },
       {
-        "name": "Cortex Functions",
+        "name": "Snowflake Cortex AISQL",
         "description": "Snowflake内で直接LLMや機械学習関数を呼び出してアプリを高度化",
-        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/llm-functions"
+        "url": "https://docs.snowflake.com/ja/user-guide/snowflake-cortex/aisql"
       }
     ],
     "actionHints": [
       "AI DATA UGの勉強会でデータアプリの事例をチェックする",
       "自分で作ったStreamlitアプリの事例をコミュニティで発表してみる",
-      "会場でアプリ開発が得意なネイバーにデモを見せてもらう"
+      "会場でアプリ開発が得意なNeighborsにデモを見せてもらう"
     ]
   },
   "BTCI": {
@@ -386,12 +386,12 @@
       {
         "name": "Snowflake ML",
         "description": "Snowflake上でモデル学習から推論まで完結するML基盤",
-        "url": "https://docs.snowflake.com/ja/guides-overview-ml-functions"
+        "url": "https://docs.snowflake.com/ja/developer-guide/snowflake-ml/overview"
       }
     ],
     "actionHints": [
       "DataScience/DE支部やUnconference支部で開発環境の議論に参加する",
-      "会場でプラットフォームエンジニアのネイバーと情報交換する",
+      "会場でプラットフォームエンジニアのNeighborsと情報交換する",
       "チーム開発におけるGit連携やCI/CD基盤を強化する"
     ]
   },
@@ -412,10 +412,10 @@
       {
         "name": "Snowflake Marketplace",
         "description": "データ・アプリ・モデルを社外と安全に共有・公開",
-        "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-marketplace"
+        "url": "https://docs.snowflake.com/ja/collaboration/collaboration-marketplace-about"
       },
       {
-        "name": "Snowsight Dashboards",
+        "name": "Snowsight ダッシュボード",
         "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
         "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
       },
@@ -427,7 +427,7 @@
     ],
     "actionHints": [
       "SnowVillage本会や地域ユーザー会で他社のDX変革事例を学ぶ",
-      "会場で組織推進を担当するネイバーと話して横の繋がりを作る",
+      "会場で組織推進を担当するNeighborsと話して横の繋がりを作る",
       "自社のデータ活用文化醸成のための勉強会を企画する"
     ]
   },
@@ -446,24 +446,24 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Object Tagging",
+        "name": "オブジェクトタグ",
         "description": "テーブル・列にタグを付与してガバナンス・分類を自動化",
-        "url": "https://docs.snowflake.com/ja/user-guide/object-tagging"
+        "url": "https://docs.snowflake.com/ja/user-guide/object-tagging/introduction"
       },
       {
-        "name": "Access History",
+        "name": "ACCESS_HISTORY ビュー",
         "description": "誰がいつどのデータにアクセスしたかを完全な監査ログで追跡",
         "url": "https://docs.snowflake.com/ja/sql-reference/account-usage/access_history"
       },
       {
-        "name": "Network Policies",
+        "name": "ネットワークポリシー",
         "description": "IPアドレス・プライベートリンクによる接続制限でセキュリティ強化",
         "url": "https://docs.snowflake.com/ja/user-guide/network-policies"
       }
     ],
     "actionHints": [
       "金融ユーザー会やデータマネジメント分科会でセキュリティ設計を勉強する",
-      "会場でセキュリティやガバナンスに強いネイバーと相談する",
+      "会場でセキュリティやガバナンスに強いNeighborsと相談する",
       "自社アカウントのAccess Historyやタグ付けルールを見直す"
     ]
   },
@@ -492,14 +492,14 @@
         "url": "https://docs.snowflake.com/ja/user-guide/data-sharing-intro"
       },
       {
-        "name": "Alerts",
+        "name": "アラート",
         "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
         "url": "https://docs.snowflake.com/ja/user-guide/alerts"
       }
     ],
     "actionHints": [
       "ヘルスケア会や金融会など実務適用が活発なユーザー会に参加する",
-      "会場でダッシュボード活用が得意なネイバーと知見を共有する",
+      "会場でダッシュボード活用が得意なNeighborsと知見を共有する",
       "社内ユーザー向けのBI使いやすさ向上施策を検討する"
     ]
   },
@@ -518,9 +518,9 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Streams & Tasks",
+        "name": "ストリームとタスク",
         "description": "変更データキャプチャ(CDC)とスケジュール実行で自動化パイプライン",
-        "url": "https://docs.snowflake.com/ja/user-guide/streams-intro"
+        "url": "https://docs.snowflake.com/ja/user-guide/data-pipelines-intro"
       },
       {
         "name": "Git Integration",
@@ -528,14 +528,14 @@
         "url": "https://docs.snowflake.com/ja/developer-guide/git/git-setting-up"
       },
       {
-        "name": "Data Quality Monitor",
+        "name": "データ品質チェック",
         "description": "データの品質指標を継続的に計測・アラートで監視",
         "url": "https://docs.snowflake.com/ja/user-guide/data-quality-intro"
       }
     ],
     "actionHints": [
       "データマネジメント分科会やSF2UGでDataOpsの運用ノウハウを交換する",
-      "会場でDevOps/DataOpsが得意なネイバーと情報交換する",
+      "会場でDevOps/DataOpsが得意なNeighborsと情報交換する",
       "チーム内のデータ運用標準化ドキュメントを作成する"
     ]
   },
@@ -554,12 +554,12 @@
     ],
     "recommendedFeatures": [
       {
-        "name": "Snowsight Dashboards",
+        "name": "Snowsight ダッシュボード",
         "description": "チームや組織で直感的に使えるグラフィカルなダッシュボード",
         "url": "https://docs.snowflake.com/ja/user-guide/ui-snowsight-dashboards"
       },
       {
-        "name": "Alerts",
+        "name": "アラート",
         "description": "データ変化やしきい値超過を検知して通知・アクション自動化",
         "url": "https://docs.snowflake.com/ja/user-guide/alerts"
       },
@@ -571,7 +571,7 @@
     ],
     "actionHints": [
       "SnowVillage本会や地方ユーザー会（中部・沖縄等）の運営セッションに参加する",
-      "会場でプロジェクト推進が得意なネイバーと知り合う",
+      "会場でプロジェクト推進が得意なNeighborsと知り合う",
       "社内のデータ利用フローのボトルネック改善計画を立てる"
     ]
   }

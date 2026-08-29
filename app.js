@@ -135,13 +135,10 @@ const INLINE_NEIGHBORS = [
   { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BTZO", tags: ["creativity", "app"] }
 ];
 
-const INLINE_EVENTS = [
-  { date: "2026-09-11", title: "Snowflake World Tokyo 2026 Day 1", location: "東京国際フォーラム", url: "https://www.snowflake.com/events/snowflake-world-tour/" },
-  { date: "2026-09-12", title: "Snowflake World Tokyo 2026 Day 2 + ナイトパーティー", location: "東京国際フォーラム", url: "https://www.snowflake.com/events/snowflake-world-tour/" },
-  { date: "2026-09-19", title: "Snow Village SWT振り返り回", location: "Online", url: "https://techplay.jp/community/snowvillage" },
-  { date: "2026-10-02", title: "Snowflake Rookies Camp — SWT後ハンズオン", location: "Tokyo", url: "https://techplay.jp/community/snowvillage-snowflake-rookies-camp" },
-  { date: "2026-10-15", title: "SnowVillage DataScience&DE 支部 勉強会", location: "Online", url: "https://techplay.jp/community/snowvillage-datascience" }
-];
+// data/events.json が読めなかったときの保険。実在しないイベントを出さないよう
+// あえて空にしてある（イベント欄は自動で非表示になる）。
+// 中身は tools/sync-events.py が TechPlay から取得して更新する。
+const INLINE_EVENTS = [];
 
 // ── State Management ────────────────────────────────────────────────────────
 const state = {
@@ -180,6 +177,7 @@ const neighborList = document.getElementById("neighbor-list");
 const otherNeighborList = document.getElementById("other-neighbor-list");
 const featureList = document.getElementById("feature-list");
 const eventList = document.getElementById("event-list");
+const eventSection = document.getElementById("event-section");
 const actionList = document.getElementById("action-list");
 const detailModal = document.getElementById("detail-modal");
 const modalContent = document.getElementById("modal-content");
@@ -397,7 +395,7 @@ function showResultByCode(code) {
   // 4軸バッジ描画
   renderBadges(type.axes || parseAxes(code));
 
-  // 2. おすすめネイバー＆メイヤー（コード一致度ソート）。上位は大きく、残りは横並びで出す。
+  // 2. おすすめNeighbors & Mayors（コード一致度ソート）。上位は大きく、残りは横並びで出す。
   const matchedPeople = getMatchedNeighbors(code);
   renderNeighbors(matchedPeople.slice(0, 4));
   renderOtherNeighbors(matchedPeople.slice(4, 16));
@@ -533,7 +531,7 @@ function renderOtherNeighbors(neighbors) {
   });
 }
 
-// メイヤーは所属欄に自己紹介文が入っていることがあるため、肩書きを優先して出す
+// Mayorsは所属欄に自己紹介文が入っていることがあるため、肩書きを優先して出す
 function getPersonSubtitle(person) {
   if (person.kind === "mayor") {
     return person.title || person.affiliation || "Snow Village";
@@ -654,6 +652,8 @@ function renderFeatures(features) {
 
 function renderEvents(events) {
   eventList.innerHTML = "";
+  // 開催予定が無い時期は見出しだけ残ると不自然なので、節ごと隠す
+  eventSection.classList.toggle("hidden", events.length === 0);
   events.forEach((event) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -776,8 +776,8 @@ function normalizeNeighbors(rawNeighbors) {
     .filter((entry) => entry && entry.name && entry.name !== "Neighbor")
     .map((entry) => {
       const affiliation = typeof entry.affiliation === "string" ? entry.affiliation.trim() : "";
-      // photo は絶対URL（メイヤーとネイバーで画像フォルダが異なる）。
-      // ファイル名だけの旧形式もネイバー画像として受け付ける。
+      // photo は絶対URL（MayorsとNeighborsで画像フォルダが異なる）。
+      // ファイル名だけの旧形式もNeighbors画像として受け付ける。
       let photo_url = entry.photo_url || "";
       if (!photo_url && typeof entry.photo === "string" && entry.photo) {
         photo_url = /^https?:\/\//.test(entry.photo)
