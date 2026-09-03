@@ -270,6 +270,26 @@
     "code": "BSZI"
   },
   {
+    "name": "Ph.D. Masahide TAKASUKA",
+    "affiliation": "NTT西日本株式会社 / 法政大学",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://avatars.githubusercontent.com/u/101690796?s=96&v=4",
+    "x_url": "https://x.com/mshdtksk",
+    "linkedin_url": "https://www.linkedin.com/in/%E5%B0%86%E7%A7%80-%E9%AB%98%E9%A0%88%E8%B3%80-a2607121a/",
+    "code": "ESZO"
+  },
+  {
+    "name": "Yuji Matsumoto",
+    "affiliation": "AI×データの技術系コンサル",
+    "title": "",
+    "kind": "neighbor",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/yuji_matsumoto.png",
+    "x_url": "https://x.com/ym_tech_info",
+    "linkedin_url": "",
+    "code": "ETCI"
+  },
+  {
     "name": "K T",
     "affiliation": "Japan Community & Education Lead at Canva",
     "title": "Founder of SnowVillage",
@@ -348,15 +368,5 @@
     "x_url": "https://x.com/toru_data",
     "linkedin_url": "https://www.linkedin.com/in/toru-hiyama-4232652a7/",
     "code": "ESZI"
-  },
-  {
-    "name": "Ph.D. Masahide TAKASUKA",
-    "affiliation": "NTT西日本株式会社 / 法政大学",
-    "title": "",
-    "kind": "neighbor",
-    "photo": "https://avatars.githubusercontent.com/u/101690796?s=96&v=4",
-    "x_url": "https://x.com/mshdtksk",
-    "linkedin_url": "https://www.linkedin.com/in/%E5%B0%86%E7%A7%80-%E9%AB%98%E9%A0%88%E8%B3%80-a2607121a/",
-    "code": "ESZO"
   }
 ]
