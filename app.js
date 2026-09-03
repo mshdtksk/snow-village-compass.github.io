@@ -713,6 +713,19 @@ function renderFeatures(features) {
   });
 }
 
+// 会場で使うアプリなので、日付そのものより「今日か明日か」が伝わる形にする
+function formatEventDate(dateStr) {
+  const target = new Date(`${dateStr}T00:00:00`);
+  if (Number.isNaN(target.getTime())) return dateStr;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const days = Math.round((target - today) / 86400000);
+  if (days === 0) return "今日";
+  if (days === 1) return "明日";
+  if (days > 1 && days <= 7) return `${days}日後`;
+  return dateStr.slice(5).replace("-", "/");
+}
+
 function renderEvents(events) {
   eventList.innerHTML = "";
   // 開催予定が無い時期は見出しだけ残ると不自然なので、節ごと隠す
@@ -720,7 +733,7 @@ function renderEvents(events) {
   events.forEach((event) => {
     const li = document.createElement("li");
     li.innerHTML = `
-      <span class="event-date">${event.date}</span>
+      <span class="event-date">${formatEventDate(event.date)}</span>
       <span>
         <a href="${event.url}" target="_blank" rel="noopener noreferrer">${event.title}</a>
         <span class="event-location"> — ${event.location}</span>
