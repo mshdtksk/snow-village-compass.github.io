@@ -33,7 +33,9 @@
       "会場でハンズオンブースを体験して新機能を試す",
       "DataScience & DE支部のイベントに参加してみる",
       "会場でおすすめNeighborsを探して技術的なディスカッションをする"
-    ]
+    ],
+    "iconUrl": "logo/types/ESCI.png",
+    "colorGroup": "craft"
   },
   "ESVI": {
     "code": "ESVI",
@@ -69,7 +71,9 @@
       "事例セッションに参加して他社のビジネス活用例を収集する",
       "サステナvillageやAI関連の分科会を覗いてみる",
       "気になったNeighborsとビジネス活用事例について情報交換する"
-    ]
+    ],
+    "iconUrl": "logo/types/ESVI.png",
+    "colorGroup": "value"
   },
   "ETCI": {
     "code": "ETCI",
@@ -105,7 +109,9 @@
       "Unconference支部のイベントでライトニングトークや発信をしてみる",
       "Xで診断結果を投稿してコミュニティと交流を開始する",
       "ナイトパーティーで同タイプのエンジニア仲間を見つける"
-    ]
+    ],
+    "iconUrl": "logo/types/ETCI.png",
+    "colorGroup": "craft"
   },
   "ETVI": {
     "code": "ETVI",
@@ -141,7 +147,9 @@
       "SnowVillage本会や地域ユーザーグループ（WEST/九州等）に登録する",
       "会場で気になったNeighborsに積極的に話しかけてみる",
       "次回コミュニティイベントの予定をその場で確定する"
-    ]
+    ],
+    "iconUrl": "logo/types/ETVI.png",
+    "colorGroup": "value"
   },
   "ESCO": {
     "code": "ESCO",
@@ -177,7 +185,9 @@
       "データマネジメント分科会の勉強会に参加する",
       "ガバナンスやデータモデル設計が得意なNeighborsに相談してみる",
       "社内のデータカタログやセマンティック層の整理を計画する"
-    ]
+    ],
+    "iconUrl": "logo/types/ESCO.png",
+    "colorGroup": "craft"
   },
   "ESVO": {
     "code": "ESVO",
@@ -213,7 +223,9 @@
       "ヘルスケアや金融など業界特化ユーザー会の活用事例をチェックする",
       "会場でビジネス分析・活用を得意とするNeighborsと対話する",
       "自社のデータ分析プロセスの効率化アイデアを整理する"
-    ]
+    ],
+    "iconUrl": "logo/types/ESVO.png",
+    "colorGroup": "value"
   },
   "ETCO": {
     "code": "ETCO",
@@ -249,7 +261,9 @@
       "データマネジメント分科会やSF2UGでアーキテクチャ設計論を議論する",
       "会場でデータアーキテクトのNeighborsを探してベストプラクティスを聞く",
       "自社のデータパイプライン全体図の見直しを行う"
-    ]
+    ],
+    "iconUrl": "logo/types/ETCO.png",
+    "colorGroup": "craft"
   },
   "ETVO": {
     "code": "ETVO",
@@ -285,7 +299,9 @@
       "SnowVillage本会や女子会・中部UGなどの交流型イベントに参加する",
       "会場でコミュニティ運営や組織活用に詳しいNeighborsと繋がる",
       "チームメンバーと一緒にコミュニティ勉強会に申し込む"
-    ]
+    ],
+    "iconUrl": "logo/types/ETVO.png",
+    "colorGroup": "value"
   },
   "BSCI": {
     "code": "BSCI",
@@ -321,7 +337,9 @@
       "Rookies CampやDataScience支部のハンズオン勉強会に参加する",
       "会場でデータパイプライン構築を得意とするNeighborsと技術トークする",
       "Snowparkを使った新しいパイプライン構築を自社で試す"
-    ]
+    ],
+    "iconUrl": "logo/types/BSCI.png",
+    "colorGroup": "innovator"
   },
   "BSVI": {
     "code": "BSVI",
@@ -357,7 +375,9 @@
       "AI DATA UGの勉強会でデータアプリの事例をチェックする",
       "自分で作ったStreamlitアプリの事例をコミュニティで発表してみる",
       "会場でアプリ開発が得意なNeighborsにデモを見せてもらう"
-    ]
+    ],
+    "iconUrl": "logo/types/BSVI.png",
+    "colorGroup": "innovator"
   },
   "BTCI": {
     "code": "BTCI",
@@ -393,7 +413,9 @@
       "DataScience/DE支部やUnconference支部で開発環境の議論に参加する",
       "会場でプラットフォームエンジニアのNeighborsと情報交換する",
       "チーム開発におけるGit連携やCI/CD基盤を強化する"
-    ]
+    ],
+    "iconUrl": "logo/types/BTCI.png",
+    "colorGroup": "innovator"
   },
   "BTVI": {
     "code": "BTVI",
@@ -429,7 +451,9 @@
       "SnowVillage本会や地域ユーザー会で他社のDX変革事例を学ぶ",
       "会場で組織推進を担当するNeighborsと話して横の繋がりを作る",
       "自社のデータ活用文化醸成のための勉強会を企画する"
-    ]
+    ],
+    "iconUrl": "logo/types/BTVI.png",
+    "colorGroup": "innovator"
   },
   "BSCO": {
     "code": "BSCO",
@@ -465,7 +489,9 @@
       "金融ユーザー会やデータマネジメント分科会でセキュリティ設計を勉強する",
       "会場でセキュリティやガバナンスに強いNeighborsと相談する",
       "自社アカウントのAccess Historyやタグ付けルールを見直す"
-    ]
+    ],
+    "iconUrl": "logo/types/BSCO.png",
+    "colorGroup": "optimizer"
   },
   "BSVO": {
     "code": "BSVO",
@@ -501,7 +527,9 @@
       "ヘルスケア会や金融会など実務適用が活発なユーザー会に参加する",
       "会場でダッシュボード活用が得意なNeighborsと知見を共有する",
       "社内ユーザー向けのBI使いやすさ向上施策を検討する"
-    ]
+    ],
+    "iconUrl": "logo/types/BSVO.png",
+    "colorGroup": "optimizer"
   },
   "BTCO": {
     "code": "BTCO",
@@ -537,7 +565,9 @@
       "データマネジメント分科会やSF2UGでDataOpsの運用ノウハウを交換する",
       "会場でDevOps/DataOpsが得意なNeighborsと情報交換する",
       "チーム内のデータ運用標準化ドキュメントを作成する"
-    ]
+    ],
+    "iconUrl": "logo/types/BTCO.png",
+    "colorGroup": "optimizer"
   },
   "BTVO": {
     "code": "BTVO",
@@ -573,6 +603,8 @@
       "SnowVillage本会や地方ユーザー会（中部・沖縄等）の運営セッションに参加する",
       "会場でプロジェクト推進が得意なNeighborsと知り合う",
       "社内のデータ利用フローのボトルネック改善計画を立てる"
-    ]
+    ],
+    "iconUrl": "logo/types/BTVO.png",
+    "colorGroup": "optimizer"
   }
 }

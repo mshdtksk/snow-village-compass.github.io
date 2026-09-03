@@ -170,6 +170,7 @@ const resultSubtitle = document.getElementById("result-subtitle");
 const resultCatchphrase = document.getElementById("result-catchphrase");
 const resultDescription = document.getElementById("result-description");
 const badgeContainer = document.getElementById("badge-container");
+const resultCard = document.querySelector(".result-digital-card");
 
 const groupList = document.getElementById("group-list");
 const otherGroupList = document.getElementById("other-group-list");
@@ -401,7 +402,9 @@ function showResultByCode(code) {
   }
 
   // 1. デジタルカードヘッダー
-  resultIcon.textContent = type.emoji || "🌟";
+  renderResultIcon(type);
+  // アイコンの色に合わせてカードの配色を切り替える
+  resultCard.dataset.color = type.colorGroup || "";
   resultTitle.textContent = type.title;
   resultSubtitle.textContent = type.subtitle || code;
   resultCatchphrase.textContent = type.catchphrase || "";
@@ -431,6 +434,24 @@ function showResultByCode(code) {
 
   switchView("result");
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// アイコン画像があれば使い、読めない場合は絵文字にフォールバックする
+function renderResultIcon(type) {
+  const emoji = type.emoji || "🌟";
+  resultIcon.innerHTML = "";
+  if (!type.iconUrl) {
+    resultIcon.textContent = emoji;
+    return;
+  }
+  const img = document.createElement("img");
+  img.className = "result-icon-img";
+  img.src = type.iconUrl;
+  img.alt = type.title || type.code || "";
+  img.addEventListener("error", () => {
+    resultIcon.textContent = emoji;
+  });
+  resultIcon.appendChild(img);
 }
 
 function parseAxes(code) {

@@ -273,6 +273,26 @@ a:hover { text-decoration: underline; }
   position: relative;
   overflow: hidden;
 }
+
+/* 結果カードの配色。アイコン画像の色に合わせて4分類に分ける。
+   赤=Explorer×Craft / 青=Explorer×Value / 黄=Builder×Innovator / 緑=Builder×Optimizer */
+.result-digital-card[data-color="craft"] {
+  background: linear-gradient(135deg, #4A0206 0%, #8E1E1F 55%, #CD554B 100%);
+  box-shadow: 0 8px 32px rgba(74, 2, 6, 0.3);
+}
+.result-digital-card[data-color="value"] {
+  background: linear-gradient(135deg, #002852 0%, #12599E 55%, #2E95E3 100%);
+  box-shadow: 0 8px 32px rgba(0, 40, 82, 0.3);
+}
+.result-digital-card[data-color="innovator"] {
+  background: linear-gradient(135deg, #4A4404 0%, #A67806 55%, #E8B62A 100%);
+  box-shadow: 0 8px 32px rgba(74, 68, 4, 0.3);
+}
+.result-digital-card[data-color="optimizer"] {
+  background: linear-gradient(135deg, #0B3D12 0%, #2A7A1C 55%, #78B84A 100%);
+  box-shadow: 0 8px 32px rgba(11, 61, 18, 0.3);
+}
+
 .result-digital-card::before {
   content: "";
   position: absolute;
@@ -309,7 +329,23 @@ a:hover { text-decoration: underline; }
   gap: 1.1rem;
   margin-bottom: 0.8rem;
 }
-.result-header-icon { font-size: 3.4rem; flex-shrink: 0; line-height: 1; }
+.result-header-icon {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  line-height: 1;
+  font-size: 5.5rem;          /* 画像が無く絵文字にフォールバックしたとき用 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.28));
+}
 .type-tag {
   font-size: 0.72rem;
   font-weight: 800;
@@ -684,6 +720,7 @@ a:hover { text-decoration: underline; }
   .container { padding: 1rem 0.6rem 2rem; }
   .card { padding: 1.2rem; }
   .result-header-content { flex-direction: column; text-align: center; }
+  .result-header-icon { width: 96px; height: 96px; font-size: 4.6rem; }
   .card-badge-row { justify-content: center; }
   .result-catchphrase { border-left: none; border-top: 3px solid #fff; border-radius: 0 0 8px 8px; }
   .share-actions { flex-direction: column; }
