@@ -148,6 +148,7 @@ const state = {
   groups: [],
   neighbors: [],
   events: [],
+  preferences: {},
   currentCode: null
 };
 
@@ -175,6 +176,8 @@ const otherGroupList = document.getElementById("other-group-list");
 const otherGroupLink = document.getElementById("other-group-link");
 const neighborList = document.getElementById("neighbor-list");
 const otherNeighborList = document.getElementById("other-neighbor-list");
+const neighborSection = document.getElementById("neighbor-section");
+const otherPeopleBlock = document.getElementById("other-people");
 const featureList = document.getElementById("feature-list");
 const eventList = document.getElementById("event-list");
 const eventSection = document.getElementById("event-section");
@@ -201,16 +204,18 @@ const dataReady = initializeData();
 
 // ── Initialization & Data Load ──────────────────────────────────────────────
 async function initializeData() {
-  const [types, groups, neighbors, events] = await Promise.all([
+  const [types, groups, neighbors, events, prefs] = await Promise.all([
     loadTypesData(),
     loadGroupsData(),
     loadNeighborsData(),
-    loadEventsData()
+    loadEventsData(),
+    loadTypePreferences()
   ]);
   state.types = types;
   state.groups = groups;
   state.neighbors = neighbors;
   state.events = events;
+  state.preferences = prefs;
 
   // URLパーマリンクチェック (?code=ESCI)
   const urlParams = new URLSearchParams(window.location.search);
@@ -247,6 +252,16 @@ async function loadNeighborsData() {
     return normalizeNeighbors(await res.json());
   } catch {
     return INLINE_NEIGHBORS;
+  }
+}
+
+async function loadTypePreferences() {
+  try {
+    const res = await fetch("data/type-preferences.json");
+    if (!res.ok) throw new Error(`status ${res.status}`);
+    return await res.json();
+  } catch {
+    return {};
   }
 }
 
@@ -399,6 +414,8 @@ function showResultByCode(code) {
   const matchedPeople = getMatchedNeighbors(code);
   renderNeighbors(matchedPeople.slice(0, 4));
   renderOtherNeighbors(matchedPeople.slice(4, 16));
+  neighborSection.classList.toggle("hidden", matchedPeople.length === 0);
+  otherPeopleBlock.classList.toggle("hidden", matchedPeople.length <= 4);
 
   // 3. おすすめユーザーグループ（タグ一致度で算出。件数はタイプにより変動）
   const { recommended, others } = getMatchedGroups(code);
@@ -406,7 +423,7 @@ function showResultByCode(code) {
   renderOtherGroups(others);
 
   // 4. おすすめSnowflake機能
-  renderFeatures(type.recommendedFeatures || []);
+  renderFeatures(orderFeaturesByPreference(code, type.recommendedFeatures || []));
 
   // 5. 直近イベント & アクション
   renderEvents(state.events.slice(0, 3));
@@ -438,7 +455,10 @@ function renderBadges(axes) {
 
 // ── Matched Neighbors (Code Match Sorting) ─────────────────────────────────
 function getMatchedNeighbors(targetCode) {
-  return [...state.neighbors]
+  // アンケート未回答の人は code を持たない。仮の値で別人が「同タイプ」として
+  // 出てしまう事故があったため、確定した人だけを対象にする。
+  return state.neighbors
+    .filter((n) => n.code)
     .map((neighbor) => {
       const matchScore = computeCodeMatch(targetCode, neighbor.code || "");
       return { ...neighbor, matchScore };
@@ -498,6 +518,13 @@ function computeGroupScore(code, group) {
 
 // おすすめと「その他」に振り分ける。おすすめの件数はタイプごとに変動する。
 function getMatchedGroups(code) {
+  // そのタイプの人が実際に挙げたグループを最優先で出す（人数の多い順）。
+  // 足りない分と「その他」はタグ計算で補う。
+  const wanted = (state.preferences[code] || {}).groups || [];
+  const picked = wanted
+    .map((id) => state.groups.find((g) => g.id === id))
+    .filter(Boolean);
+
   const scored = state.groups
     .map((group) => ({ group, score: computeGroupScore(code, group) }))
     .sort((a, b) => b.score - a.score);
@@ -509,9 +536,14 @@ function getMatchedGroups(code) {
   if (cut.length > GROUP_MAX) cut = cut.slice(0, GROUP_MAX);
   if (cut.length < GROUP_MIN) cut = scored.slice(0, GROUP_MIN);
 
-  const chosen = new Set(cut.map((x) => x.group.id));
+  const recommended = [...picked];
+  for (const x of cut) {
+    if (recommended.length >= GROUP_MAX) break;
+    if (!recommended.some((g) => g.id === x.group.id)) recommended.push(x.group);
+  }
+  const chosen = new Set(recommended.map((g) => g.id));
   return {
-    recommended: cut.map((x) => x.group),
+    recommended,
     others: scored.filter((x) => !chosen.has(x.group.id)).map((x) => x.group)
   };
 }
@@ -627,6 +659,16 @@ function renderOtherGroups(groups) {
     otherGroupList.appendChild(createGroupCard(group, "other-group-card"));
   });
   otherGroupLink.href = TECHPLAY_ALL_GROUPS_URL;
+}
+
+// そのタイプの人が挙げた機能を前に出す。挙がっていない機能はその後ろに残す。
+function orderFeaturesByPreference(code, features) {
+  const wanted = (state.preferences[code] || {}).features || [];
+  if (wanted.length === 0) return features;
+  const byName = new Map(features.map((f) => [f.name, f]));
+  const head = wanted.map((n) => byName.get(n)).filter(Boolean);
+  const rest = features.filter((f) => !wanted.includes(f.name));
+  return [...head, ...rest];
 }
 
 function renderFeatures(features) {
