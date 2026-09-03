@@ -215,5 +215,33 @@
       "analysis",
       "meetup"
     ]
+  },
+  {
+    "id": "streamlit-community",
+    "name": "Streamlit Community",
+    "description": "Streamlitに関するイベントや情報共有を行うコミュニティ。ハンズオンやMeetupを通じて、データアプリ開発やAIアプリ開発の知見を共有。", 
+    "category": [
+      "Streamlit",
+      "Python",
+      "Data Apps",
+      "AI"
+    ],
+    "url": "https://techplay.jp/community/streamlit-community",
+    "platform": "TECH PLAY",
+    "active": true
+  },
+  {
+    "id": "frosty-friday",
+    "name": "Frosty Friday",
+    "description": "SnowflakeのSQL・データエンジニアリング課題に取り組む学習コミュニティ。SnowVillageによるライブチャレンジ動画を通じて学習可能。",
+    "category": [
+      "Snowflake",
+      "SQL",
+      "Data Engineering",
+      "Hands-on"
+    ],
+    "url": "https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR",
+    "platform": "YouTube",
+    "active": true
   }
 ]
