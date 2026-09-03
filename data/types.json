@@ -9,7 +9,7 @@
     "axes": [
       "Explorer",
       "Solo",
-      "Technical",
+      "Craft",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -35,8 +35,8 @@
       "会場でおすすめNeighborsを探して技術的なディスカッションをする"
     ]
   },
-  "ESZI": {
-    "code": "ESZI",
+  "ESVI": {
+    "code": "ESVI",
     "title": "ビジョナリーアナリスト",
     "subtitle": "Visionary Analyst (Data Scientist)",
     "emoji": "🔮",
@@ -45,7 +45,7 @@
     "axes": [
       "Explorer",
       "Solo",
-      "Business",
+      "Value",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -81,7 +81,7 @@
     "axes": [
       "Explorer",
       "Team",
-      "Technical",
+      "Craft",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -107,8 +107,8 @@
       "ナイトパーティーで同タイプのエンジニア仲間を見つける"
     ]
   },
-  "ETZI": {
-    "code": "ETZI",
+  "ETVI": {
+    "code": "ETVI",
     "title": "ドリームチームクリエイター",
     "subtitle": "Dream Team Creator (Community Leader)",
     "emoji": "🌟",
@@ -117,7 +117,7 @@
     "axes": [
       "Explorer",
       "Team",
-      "Business",
+      "Value",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -153,7 +153,7 @@
     "axes": [
       "Explorer",
       "Solo",
-      "Technical",
+      "Craft",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -179,8 +179,8 @@
       "社内のデータカタログやセマンティック層の整理を計画する"
     ]
   },
-  "ESZO": {
-    "code": "ESZO",
+  "ESVO": {
+    "code": "ESVO",
     "title": "ストラテジックオプティマイザー",
     "subtitle": "Strategic Optimizer (Business Analyst)",
     "emoji": "🎯",
@@ -189,7 +189,7 @@
     "axes": [
       "Explorer",
       "Solo",
-      "Business",
+      "Value",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -225,7 +225,7 @@
     "axes": [
       "Explorer",
       "Team",
-      "Technical",
+      "Craft",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -251,8 +251,8 @@
       "自社のデータパイプライン全体図の見直しを行う"
     ]
   },
-  "ETZO": {
-    "code": "ETZO",
+  "ETVO": {
+    "code": "ETVO",
     "title": "コミュニティハーモナイザー",
     "subtitle": "Community Harmonizer (Data Strategist)",
     "emoji": "🤝",
@@ -261,7 +261,7 @@
     "axes": [
       "Explorer",
       "Team",
-      "Business",
+      "Value",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -297,7 +297,7 @@
     "axes": [
       "Builder",
       "Solo",
-      "Technical",
+      "Craft",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -323,8 +323,8 @@
       "Snowparkを使った新しいパイプライン構築を自社で試す"
     ]
   },
-  "BSZI": {
-    "code": "BSZI",
+  "BSVI": {
+    "code": "BSVI",
     "title": "プロダクトイノベーター",
     "subtitle": "Product Innovator (Data Product Owner)",
     "emoji": "🚀",
@@ -333,7 +333,7 @@
     "axes": [
       "Builder",
       "Solo",
-      "Business",
+      "Value",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -369,7 +369,7 @@
     "axes": [
       "Builder",
       "Team",
-      "Technical",
+      "Craft",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -395,8 +395,8 @@
       "チーム開発におけるGit連携やCI/CD基盤を強化する"
     ]
   },
-  "BTZI": {
-    "code": "BTZI",
+  "BTVI": {
+    "code": "BTVI",
     "title": "トランスフォーメーションリーダー",
     "subtitle": "Transformation Leader (Data DX Leader)",
     "emoji": "🦋",
@@ -405,7 +405,7 @@
     "axes": [
       "Builder",
       "Team",
-      "Business",
+      "Value",
       "Innovator"
     ],
     "recommendedFeatures": [
@@ -441,7 +441,7 @@
     "axes": [
       "Builder",
       "Solo",
-      "Technical",
+      "Craft",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -467,8 +467,8 @@
       "自社アカウントのAccess Historyやタグ付けルールを見直す"
     ]
   },
-  "BSZO": {
-    "code": "BSZO",
+  "BSVO": {
+    "code": "BSVO",
     "title": "ビジネスエンジニア",
     "subtitle": "Business Engineer (BI Developer)",
     "emoji": "📊",
@@ -477,7 +477,7 @@
     "axes": [
       "Builder",
       "Solo",
-      "Business",
+      "Value",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -513,7 +513,7 @@
     "axes": [
       "Builder",
       "Team",
-      "Technical",
+      "Craft",
       "Optimizer"
     ],
     "recommendedFeatures": [
@@ -539,8 +539,8 @@
       "チーム内のデータ運用標準化ドキュメントを作成する"
     ]
   },
-  "BTZO": {
-    "code": "BTZO",
+  "BTVO": {
+    "code": "BTVO",
     "title": "オペレーションキャプテン",
     "subtitle": "Operation Captain (Data Program Manager)",
     "emoji": "🎖️",
@@ -549,7 +549,7 @@
     "axes": [
       "Builder",
       "Team",
-      "Business",
+      "Value",
       "Optimizer"
     ],
     "recommendedFeatures": [

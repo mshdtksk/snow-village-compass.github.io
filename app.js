@@ -1,7 +1,7 @@
 // ── 8問・2択の設問定義（4軸×2問） ──────────────────────────────────────────
 // Axis 1 (E/B): Explorer (E) vs Builder (B) — データとの向き合い方
 // Axis 2 (S/T): Solo (S) vs Team (T) — コラボレーションスタイル
-// Axis 3 (C/Z): Technical (C) vs Business (Z) — 関心領域
+// Axis 3 (C/V): Craft (C) vs Value (V) — 関心領域
 // Axis 4 (I/O): Innovator (I) vs Optimizer (O) — アプローチ
 
 const questions = [
@@ -43,23 +43,23 @@ const questions = [
       { text: "参加者同士の交流やナイトパーティーでの会話", val: "T" }
     ]
   },
-  // Axis 3: C vs Z
+  // Axis 3: C vs V
   {
     id: 5,
-    axis: "CZ",
+    axis: "CV",
     text: "会場やコミュニティで会話したいトピックは？",
     options: [
       { text: "最新のSQL・アーキテクチャ・技術的な裏側", val: "C" },
-      { text: "データ活用によるビジネス成果・ユースケース", val: "Z" }
+      { text: "データ活用によるビジネス成果・ユースケース", val: "V" }
     ]
   },
   {
     id: 6,
-    axis: "CZ",
+    axis: "CV",
     text: "参加したい勉強会やセッションのタイプは？",
     options: [
       { text: "技術的な深さやコードレベルのベストプラクティス", val: "C" },
-      { text: "他社の導入事例やROI、組織活用の話", val: "Z" }
+      { text: "他社の導入事例やROI、組織活用の話", val: "V" }
     ]
   },
   // Axis 4: I vs O
@@ -93,7 +93,7 @@ const FALLBACK_TYPES = {
     "code": "ESCI", "title": "データスーパーヒーロー", "subtitle": "Data Superhero (Advanced Technologist)",
     "emoji": "🦸", "catchphrase": "先端技術を自ら切り拓く、圧倒的データパイオニア",
     "description": "高い技術的好奇心と深い探求心を持ち、一人で最先端機能を検証・実装して驚くべき成果を出すタイプ。",
-    "axes": ["Explorer", "Solo", "Technical", "Innovator"],
+    "axes": ["Explorer", "Solo", "Craft", "Innovator"],
     "recommendedFeatures": [{ "name": "Snowpark", "description": "Python/Java/Scalaでデータパイプライン実装", "url": "https://docs.snowflake.com/ja/developer-guide/snowpark/index" }],
     "actionHints": ["ハンズオンブースで新機能を体験する", "DataScience/DE支部のイベントに参加する"]
   }
@@ -120,19 +120,19 @@ const INLINE_GROUPS = [
 const INLINE_NEIGHBORS = [
   { name: "Sate Katsuaki", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"sate_katsuaki.png", x_url: "https://x.com/katsu_dailylake", linkedin_url: "", code: "ESCI", tags: ["community", "data"] },
   { name: "安倍 航太", affiliation: "株式会社BeeX", photo_url: NEIGHBOR_PHOTO_BASE+"abe_kota.png", x_url: "https://x.com/_coco_se", linkedin_url: "https://www.linkedin.com/in/kota-abe-220010398", code: "BSCI", tags: ["engineering", "build"] },
-  { name: "Daisuke Onoe", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"daisuke_onoe.png", x_url: "https://x.com/wonohe", linkedin_url: "", code: "ETZI", tags: ["community", "data"] },
+  { name: "Daisuke Onoe", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"daisuke_onoe.png", x_url: "https://x.com/wonohe", linkedin_url: "", code: "ETVI", tags: ["community", "data"] },
   { name: "山本 且秋", affiliation: "株式会社アシスト", photo_url: NEIGHBOR_PHOTO_BASE+"kayamamoto.png", x_url: "https://x.com/kayamamoto_", linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", code: "ESCO", tags: ["data", "analysis"] },
   { name: "Tatchan", affiliation: "AI Data Cloud", photo_url: NEIGHBOR_PHOTO_BASE+"tatchan.png", x_url: "https://x.com/tad_ao", linkedin_url: "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/", code: "ETCI", tags: ["data", "community"] },
-  { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ETZO", tags: ["community", "event"] },
-  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ESZI", tags: ["community"] },
+  { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ETVO", tags: ["community", "event"] },
+  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ESVI", tags: ["community"] },
   { name: "萩野谷 旭洋", affiliation: "インフォテック株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png", x_url: "https://x.com/_hgny_s67", linkedin_url: "", code: "BTCO", tags: ["engineering", "data"] },
   { name: "山口 歩夢", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"yamaguchi_ayumu.png", x_url: "https://x.com/Yamaguchi_aaaaa", linkedin_url: "", code: "BTCI", tags: ["engineering", "build"] },
-  { name: "守川 耀", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png", x_url: "https://x.com/elc_small", linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", code: "BSZI", tags: ["engineering", "build"] },
-  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "BTZI", tags: ["community", "event"] },
-  { name: "森田 将之", affiliation: "株式会社ＪＥＲＡ", photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png", x_url: "https://x.com/mark_xxxx13", linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", code: "ESZO", tags: ["data", "analysis"] },
+  { name: "守川 耀", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png", x_url: "https://x.com/elc_small", linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", code: "BSVI", tags: ["engineering", "build"] },
+  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "BTVI", tags: ["community", "event"] },
+  { name: "森田 将之", affiliation: "株式会社ＪＥＲＡ", photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png", x_url: "https://x.com/mark_xxxx13", linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", code: "ESVO", tags: ["data", "analysis"] },
   { name: "神谷 篤司", affiliation: "セキュリティ系の会社", photo_url: NEIGHBOR_PHOTO_BASE+"atsushi_kamiya.jpg", x_url: "https://x.com/baihebu", linkedin_url: "https://www.linkedin.com/in/atsushi-kamiya-93584571", code: "BSCO", tags: ["security", "governance"] },
   { name: "中山 晋一", affiliation: "株式会社電通総研", photo_url: NEIGHBOR_PHOTO_BASE+"nakayama_shinichi.jpg", x_url: "https://x.com/datashin360", linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", code: "ETCO", tags: ["data", "analysis"] },
-  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BTZO", tags: ["creativity", "app"] }
+  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BTVO", tags: ["creativity", "app"] }
 ];
 
 // data/events.json が読めなかったときの保険。実在しないイベントを出さないよう
@@ -376,10 +376,10 @@ function computeType(answers) {
   const tCount = (answers[3] === "T" ? 1 : 0) + (answers[4] === "T" ? 1 : 0);
   const axis2 = sCount > tCount ? "S" : (sCount < tCount ? "T" : answers[3]);
 
-  // Axis 3: C vs Z (Q5, Q6)
+  // Axis 3: C vs V (Q5, Q6)
   const cCount = (answers[5] === "C" ? 1 : 0) + (answers[6] === "C" ? 1 : 0);
-  const zCount = (answers[5] === "Z" ? 1 : 0) + (answers[6] === "Z" ? 1 : 0);
-  const axis3 = cCount > zCount ? "C" : (cCount < zCount ? "Z" : answers[5]);
+  const vCount = (answers[5] === "V" ? 1 : 0) + (answers[6] === "V" ? 1 : 0);
+  const axis3 = cCount > vCount ? "C" : (cCount < vCount ? "V" : answers[5]);
 
   // Axis 4: I vs O (Q7, Q8)
   const iCount = (answers[7] === "I" ? 1 : 0) + (answers[8] === "I" ? 1 : 0);
@@ -437,7 +437,7 @@ function parseAxes(code) {
   const map = {
     E: "Explorer", B: "Builder",
     S: "Solo", T: "Team",
-    C: "Technical", Z: "Business",
+    C: "Craft", V: "Value",
     I: "Innovator", O: "Optimizer"
   };
   return code.split("").map((char) => map[char] || char);
@@ -486,7 +486,7 @@ const AXIS_TAG_WEIGHTS = {
   S: { "hands-on": 2, architecture: 1, datascience: 1, governance: 1, security: 1 },
   T: { meetup: 2, lt: 2, discussion: 2, career: 1, beginner: 1 },
   C: { engineering: 2, architecture: 2, security: 2, datascience: 1, "hands-on": 1, app: 1 },
-  Z: { industry: 2, usecase: 2, sustainability: 2, governance: 1, career: 1, analysis: 1 },
+  V: { industry: 2, usecase: 2, sustainability: 2, governance: 1, career: 1, analysis: 1 },
   I: { ai: 2, latest: 2, app: 1, datascience: 1 },
   O: { ops: 2, governance: 2, security: 1, architecture: 1, beginner: 1 }
 };

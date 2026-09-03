@@ -574,6 +574,12 @@ a:hover { text-decoration: underline; }
 .feature-desc { color: var(--subtext); font-size: 0.85rem; }
 
 /* ── Events & Actions ────────────────────────────────────────── */
+.event-lead {
+  font-size: 0.85rem;
+  color: var(--subtext);
+  margin: -0.4rem 0 0.7rem;
+}
+
 .event-list, .action-list { list-style: none; display: grid; gap: 0.5rem; }
 .event-list li, .action-list li {
   background: var(--primary-lt);

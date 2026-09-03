@@ -41,7 +41,7 @@
       "オブジェクトタグ"
     ]
   },
-  "BTZI": {
+  "BTVI": {
     "groups": [
       "snowvillage-datascience",
       "snowvillage-west"
@@ -64,7 +64,7 @@
       "アラート"
     ]
   },
-  "ESZI": {
+  "ESVI": {
     "groups": [
       "snowvillage-main",
       "snowvillage-kyushu",
@@ -108,7 +108,7 @@
       "セマンティックビュー"
     ]
   },
-  "ETZO": {
+  "ETVO": {
     "groups": [
       "snowvillage-financial",
       "snowvillage-healthcare"
