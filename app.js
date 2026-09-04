@@ -476,10 +476,14 @@ function renderBadges(axes) {
 
 // ── Matched Neighbors (Code Match Sorting) ─────────────────────────────────
 function getMatchedNeighbors(targetCode) {
-  // アンケート未回答の人は code を持たない。仮の値で別人が「同タイプ」として
-  // 出てしまう事故があったため、確定した人だけを対象にする。
+  // 表示するのは次の両方を満たす人だけ。
+  //   1. code がある = アンケートに回答済み。仮の値で別人が「同タイプ」として
+  //      出てしまう事故があったため、確定した人に限る
+  //   2. 写真がある = プロフィールが揃っている。写真が無いとカードが
+  //      ほぼ空になり、来場者には情報として役に立たないため出さない
+  // 条件を満たさない人もデータ自体は残るので、後から写真が入れば自動で出る。
   return state.neighbors
-    .filter((n) => n.code)
+    .filter((n) => n.code && n.photo_url)
     .map((neighbor) => {
       const matchScore = computeCodeMatch(targetCode, neighbor.code || "");
       return { ...neighbor, matchScore };
@@ -601,8 +605,9 @@ function createPersonCard(neighbor, extraClass) {
 
     let avatarHtml;
     if (neighbor.photo_url) {
-      avatarHtml = `<img class="neighbor-avatar" src="${neighbor.photo_url}" alt="${neighbor.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="neighbor-avatar-placeholder" style="display:none">🧑</div>`;
+      // 写真のURLはあるが読めなかった場合はカードごと消す。
+      // 空のプレースホルダだけが並ぶと来場者には何の情報にもならないため。
+      avatarHtml = `<img class="neighbor-avatar" src="${neighbor.photo_url}" alt="${neighbor.name}" loading="lazy" onerror="this.closest('.neighbor-card').remove()">`;
     } else {
       avatarHtml = `<div class="neighbor-avatar-placeholder">🧑</div>`;
     }
