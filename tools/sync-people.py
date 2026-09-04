@@ -28,7 +28,7 @@ RAW = "https://raw.githubusercontent.com/snowvillage-cloud/snowvillage-cloud.git
 UA = {'User-Agent': 'Mozilla/5.0 (snow-village-compass sync)'}
 OUT = 'data/neighbors.json'
 MANUAL = 'data/people-manual.json'
-CODES = [a + b + c + d for a in 'EB' for b in 'ST' for c in 'CZ' for d in 'IO']
+CODES = [a + b + c + d for a in 'EB' for b in 'ST' for c in 'CV' for d in 'IO']
 
 
 def get(path):
@@ -130,19 +130,20 @@ def main():
             existing[e['name']] = e.get('code')
     used = {c: 0 for c in CODES}
     for p in people:
+        # 診断コードはアンケート回答があった人だけが持つ。
+        # ここで機械的に仮の値を振ると、別人が「同タイプ」として
+        # 表示される事故につながるため、無い人は null のままにする。
+        # コードの付与は tools/apply-survey.py が行う。
         c = existing.get(p['name'])
-        if c in used:
-            p['code'] = c
-            used[c] += 1
-    for p in people:
-        if 'code' not in p:
-            c = min(CODES, key=lambda x: (used[x], CODES.index(x)))
-            p['code'] = c
+        p['code'] = c if c in used else None
+        if p['code']:
             used[c] += 1
 
     uncovered = [c for c, n in used.items() if n == 0]
-    print(f"合計{len(people)}名 / コード網羅 {16 - len(uncovered)}/16"
-          + (f" (未割当: {', '.join(uncovered)})" if uncovered else ""))
+    confirmed = sum(1 for p in people if p['code'])
+    print(f"合計{len(people)}名（コード確定 {confirmed}名 / 未回答 {len(people) - confirmed}名）"
+          f" / コード網羅 {16 - len(uncovered)}/16"
+          + (f" (該当者なし: {', '.join(uncovered)})" if uncovered else ""))
 
     # 同じフォルダに一時ファイルを作ってから置き換える（書き込み失敗で壊さないため）
     text = json.dumps(people, ensure_ascii=False, indent=2) + "\n"
