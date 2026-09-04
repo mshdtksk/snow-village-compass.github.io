@@ -13,7 +13,7 @@
    data/type-preferences.json に集計する。複数人が挙げたものを優先し、
    同数なら回答に出てきた順を保つ。
 """
-import json, os, sys, io, tempfile, collections
+import json, os, re, sys, io, tempfile, collections, unicodedata
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
@@ -25,6 +25,14 @@ OUT_PREF = 'data/type-preferences.json'
 
 # シート表記のゆらぎをグループIDに寄せる
 GROUP_ALIASES = {'frostyfriday': 'Frosty Friday'}
+
+MANUAL = 'data/people-manual.json'
+
+
+def norm(name):
+    """表記ゆれを吸収して名前を突き合わせる。
+    全角空白・連続空白・大文字小文字の違いで別人扱いにしないため。"""
+    return re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', name or '')).strip().lower()
 
 # アンケートは改名前の機能名で回答されているため、現行の表記に寄せる
 FEATURE_ALIASES = {
@@ -74,23 +82,39 @@ def main():
             unknown_type.append((r['name'], r['type'])); continue
         ans[r['name']] = code
 
+    # 名前は表記ゆれを吸収して突き合わせる
+    by_norm = {norm(n): c for n, c in ans.items()}
     confirmed = cleared = 0
-    missing = []
+    matched = set()
     for p in people:
-        if p['name'] in ans:
-            p['code'] = ans[p['name']]; confirmed += 1
+        key = norm(p['name'])
+        if key in by_norm:
+            p['code'] = by_norm[key]; confirmed += 1; matched.add(key)
         else:
             p['code'] = None; cleared += 1
-    for n in ans:
-        if not any(p['name'] == n for p in people):
-            missing.append(n)
+
+    # 回答はあるが名簿に居ない人は、警告で終わらせず名簿に足す。
+    # 大元サイトに載っていない人でも、回答したタイプが必ず反映されるようにする。
+    added = [n for n in ans if norm(n) not in matched]
+    if added:
+        manual = json.load(open(MANUAL, encoding='utf-8')) if os.path.exists(MANUAL) else []
+        known = {norm(m['name']) for m in manual}
+        for n in added:
+            people.append({'name': n, 'affiliation': '', 'title': '', 'kind': 'neighbor',
+                           'photo': '', 'x_url': '', 'linkedin_url': '', 'code': ans[n]})
+            confirmed += 1
+            if norm(n) not in known:
+                manual.append({'name': n, 'affiliation': '', 'kind': 'neighbor',
+                               'photo': '', 'x_url': '', 'linkedin_url': ''})
+        save(MANUAL, manual)
+        print(f"名簿に無かった回答者{len(added)}名を追加しました: {', '.join(added)}")
+        print(f"  （{MANUAL} にも登録したので sync-people.py を再実行しても残ります）")
+
     save(NEIGHBORS, people)
 
     print(f"回答あり（確定）: {confirmed}名 / 回答なし（code=null）: {cleared}名")
     if unknown_type:
         print("★ タイプ名が types.json に無い:", unknown_type)
-    if missing:
-        print("★ neighbors.json に居ない回答者:", missing)
 
     dist = collections.Counter(p['code'] for p in people if p['code'])
     covered = sorted(dist)
