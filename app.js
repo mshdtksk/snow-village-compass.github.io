@@ -429,7 +429,7 @@ function showResultByCode(code) {
   renderFeatures(orderFeaturesByPreference(code, type.recommendedFeatures || []));
 
   // 5. 直近イベント & アクション
-  renderEvents(state.events.slice(0, 3));
+  renderEvents(upcomingEvents().slice(0, 3));
   renderActions(type.actionHints || []);
 
   switchView("result");
@@ -710,6 +710,17 @@ function renderFeatures(features) {
       li.textContent = String(item);
     }
     featureList.appendChild(li);
+  });
+}
+
+// events.json は生成時点で未来のものだけを持つが、日が経つと過去になる。
+// 終了したイベントを出し続けないよう、表示前にもう一度ふるいにかける。
+function upcomingEvents() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return state.events.filter((e) => {
+    const d = new Date(`${e.date}T00:00:00`);
+    return Number.isNaN(d.getTime()) || d >= today;
   });
 }
 

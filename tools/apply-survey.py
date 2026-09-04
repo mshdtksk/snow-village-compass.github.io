@@ -94,7 +94,7 @@ def main():
 
     dist = collections.Counter(p['code'] for p in people if p['code'])
     covered = sorted(dist)
-    allcodes = [a+b+c+d for a in 'EB' for b in 'ST' for c in 'CZ' for d in 'IO']
+    allcodes = [a+b+c+d for a in 'EB' for b in 'ST' for c in 'CV' for d in 'IO']
     print(f"\n確定コードの分布（{len(covered)}/16タイプ）:")
     for c in allcodes:
         mark = f"{dist[c]}名" if dist[c] else "— 該当者なし"
