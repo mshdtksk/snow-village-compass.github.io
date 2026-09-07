@@ -807,17 +807,10 @@ function closeModal() {
 }
 
 // ── Share & Copy ────────────────────────────────────────────────────────────
-// Xへ投稿するときに付けるタグ。文面に直接書かず intent の hashtags に渡すのは、
-// Xが本文・URL・タグを組み立て直すため、二重に付くのを避けるため。
-// snow_village_compass はこのアプリ自身のタグで、初版から使っている。
 const BASE_HASHTAGS = ["SnowVillage", "snow_village_compass"];
 
-// SWT Tokyo 2026 の会期。この期間の投稿にだけイベントタグを付ける。
-// 会期が終わってからも付いたままだと、終わったイベントのタグに投稿が
-// 流れ込んでしまうため、時刻で自動的に外す。
-// 東京開催のイベントなので、端末のタイムゾーンではなく現地時間(JST)で
-// 区切る。端末の日付で判定すると、時計を海外に合わせた来場者だけ会期の
-// 一部でタグが外れてしまう。期間を変えるならこの2つだけ直す。
+// 会期後の投稿にも付いたままだと、終わったイベントのタグに流れ込むため
+// 時刻で自動的に外す。東京開催なので端末のTZではなくJSTで区切る。
 const EVENT_HASHTAG = {
   tag: "SWTTokyo26",
   from: "2026-09-10T00:00:00+09:00",
@@ -832,19 +825,21 @@ function getShareHashtags(now = new Date()) {
 
 function getShareMessage() {
   const title = resultTitle.textContent || "Snow Villageタイプ";
-  return `私のSnow Village 診断タイプは「${title}」でした！
-あなたも診断して、コミュニティとつながろう！`;
+  return [
+    `私のSnow Village 診断タイプは「${title}」でした！`,
+    "あなたも診断して、コミュニティとつながろう！"
+  ].join("\n");
 }
 
-// タイムラインで読みやすいよう、本文・タグ・リンクを行で分けて組み立てる。
-// url と hashtags のパラメータは使わない。Xがそれらを本文の後ろへ空白で
-// つなぐため、こちらで入れた改行が活きずに一続きの塊で表示されるため。
+// intent の url と hashtags は使わない。Xが本文の後ろへ空白でつなぐため、
+// 行を分けた見た目にならない。
 function shareToX() {
-  const tags = getShareHashtags().map((h) => `#${h}`).join(" ");
-  const body = `${getShareMessage()}
-
-${tags}
-${window.location.href}`;
+  const body = [
+    getShareMessage(),
+    "",
+    getShareHashtags().map((h) => `#${h}`).join(" "),
+    window.location.href
+  ].join("\n");
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(body)}`, "_blank", "noopener");
 }
 
