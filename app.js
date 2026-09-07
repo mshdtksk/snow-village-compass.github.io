@@ -807,15 +807,40 @@ function closeModal() {
 }
 
 // ── Share & Copy ────────────────────────────────────────────────────────────
-function getShareMessage() {
-  const title = resultTitle.textContent || "Snow Villageタイプ";
-  return `私のSnow Village 診断タイプは「${title}」でした！ #SnowVillage #snow_village_compass で診断して、コミュニティとつながろう！`;
+const BASE_HASHTAGS = ["SnowVillage", "snow_village_compass"];
+
+// 会期後の投稿にも付いたままだと、終わったイベントのタグに流れ込むため
+// 時刻で自動的に外す。東京開催なので端末のTZではなくJSTで区切る。
+const EVENT_HASHTAG = {
+  tag: "SWTTokyo26",
+  from: "2026-09-10T00:00:00+09:00",
+  until: "2026-09-12T00:00:00+09:00" // 9/11 いっぱい（この時刻は含まない）
+};
+
+function getShareHashtags(now = new Date()) {
+  const t = now.getTime();
+  const inPeriod = t >= Date.parse(EVENT_HASHTAG.from) && t < Date.parse(EVENT_HASHTAG.until);
+  return inPeriod ? [EVENT_HASHTAG.tag, ...BASE_HASHTAGS] : [...BASE_HASHTAGS];
 }
 
+function getShareMessage() {
+  const title = resultTitle.textContent || "Snow Villageタイプ";
+  return [
+    `私のSnow Village 診断タイプは「${title}」でした！`,
+    "あなたも診断して、コミュニティとつながろう！"
+  ].join("\n");
+}
+
+// intent の url と hashtags は使わない。Xが本文の後ろへ空白でつなぐため、
+// 行を分けた見た目にならない。
 function shareToX() {
-  const text = encodeURIComponent(getShareMessage());
-  const url = encodeURIComponent(window.location.href);
-  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank", "noopener");
+  const body = [
+    getShareMessage(),
+    "",
+    window.location.href,
+    getShareHashtags().map((h) => `#${h}`).join(" ")
+  ].join("\n");
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(body)}`, "_blank", "noopener");
 }
 
 function shareByMail() {
