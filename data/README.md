@@ -75,3 +75,23 @@ TechPlay の全コミュニティページから **開催予定のものだけ**
 `logo/types/<コード>.png`。`types.json` の `iconUrl` が参照する。
 `colorGroup` が結果カードの配色（craft / value / innovator / optimizer）を決め、
 実際の色は `styles.css` の `.result-digital-card[data-color=...]` にある。
+
+## 共有リンクのプレビュー画像（OGP）
+
+Xやチャットにリンクを貼ったとき、タイプごとのカードを画像で出すための一式。
+
+```
+python tools/build-share-assets.py
+```
+
+`og/<コード>.png`（1200×630）と `t/<コード>.html` を書き出す。アプリの共有ボタンは
+`t/<コード>.html` を渡し、このページを人が開いた場合は `?code=<コード>` へ転送する。
+
+クローラは JavaScript を実行しないため、`?code=` のクエリだけではタイプを読み取れない。
+静的なページを別に置いているのはこのため。
+
+`types.json` のタイトル・キャッチコピー・`colorGroup`・アイコンを変えたら実行し直す。
+画像は作り直すまで残り続けるので、開催年など時期に縛られる文言は入れない。
+
+日本語フォントを使う。見つからない場合は `tools/build-share-assets.py` の
+`FONT_CANDIDATES` に環境のフォントを足す。

@@ -823,6 +823,14 @@ function getShareHashtags(now = new Date()) {
   return inPeriod ? [EVENT_HASHTAG.tag, ...BASE_HASHTAGS] : [...BASE_HASHTAGS];
 }
 
+// 共有には t/<CODE>.html を渡す。Xやチャットのクローラは JavaScript を
+// 実行しないため、?code= のクエリではタイプごとのカード画像を出せない。
+// このページはOGPだけを持ち、人が開いたときはアプリの結果画面へ転送する。
+function getShareUrl() {
+  if (!state.currentCode) return window.location.href;
+  return new URL(`t/${state.currentCode}.html`, window.location.href).href;
+}
+
 function getShareMessage() {
   const title = resultTitle.textContent || "Snow Villageタイプ";
   return [
@@ -837,7 +845,7 @@ function shareToX() {
   const body = [
     getShareMessage(),
     "",
-    window.location.href,
+    getShareUrl(),
     getShareHashtags().map((h) => `#${h}`).join(" ")
   ].join("\n");
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(body)}`, "_blank", "noopener");
@@ -845,12 +853,12 @@ function shareToX() {
 
 function shareByMail() {
   const subject = encodeURIComponent("Snow Village Compass 診断結果");
-  const body = encodeURIComponent(`${getShareMessage()}\n${window.location.href}`);
+  const body = encodeURIComponent(`${getShareMessage()}\n${getShareUrl()}`);
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
 function copyResultLink() {
-  const url = window.location.href;
+  const url = getShareUrl();
   navigator.clipboard.writeText(url).then(() => {
     showToast("診断結果リンクをコピーしました！");
   }).catch(() => {
