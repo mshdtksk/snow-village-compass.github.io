@@ -807,15 +807,38 @@ function closeModal() {
 }
 
 // ── Share & Copy ────────────────────────────────────────────────────────────
+// Xへ投稿するときに付けるタグ。文面に直接書かず intent の hashtags に渡すのは、
+// Xが本文・URL・タグを組み立て直すため、二重に付くのを避けるため。
+const BASE_HASHTAGS = ["SnowVillage"];
+
+// SWT Tokyo 2026 の会期。この期間の投稿にだけイベントタグを付ける。
+// 会期が終わってからも付いたままだと、終わったイベントのタグに投稿が
+// 流れ込んでしまうため、時刻で自動的に外す。
+// 東京開催のイベントなので、端末のタイムゾーンではなく現地時間(JST)で
+// 区切る。端末の日付で判定すると、時計を海外に合わせた来場者だけ会期の
+// 一部でタグが外れてしまう。期間を変えるならこの2つだけ直す。
+const EVENT_HASHTAG = {
+  tag: "SWTTokyo26",
+  from: "2026-09-10T00:00:00+09:00",
+  until: "2026-09-12T00:00:00+09:00" // 9/11 いっぱい（この時刻は含まない）
+};
+
+function getShareHashtags(now = new Date()) {
+  const t = now.getTime();
+  const inPeriod = t >= Date.parse(EVENT_HASHTAG.from) && t < Date.parse(EVENT_HASHTAG.until);
+  return inPeriod ? [EVENT_HASHTAG.tag, ...BASE_HASHTAGS] : [...BASE_HASHTAGS];
+}
+
 function getShareMessage() {
   const title = resultTitle.textContent || "Snow Villageタイプ";
-  return `私のSnow Village 診断タイプは「${title}」でした！ #SnowVillage #snow_village_compass で診断して、コミュニティとつながろう！`;
+  return `私のSnow Village 診断タイプは「${title}」でした！ あなたも診断して、コミュニティとつながろう！`;
 }
 
 function shareToX() {
   const text = encodeURIComponent(getShareMessage());
   const url = encodeURIComponent(window.location.href);
-  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank", "noopener");
+  const hashtags = encodeURIComponent(getShareHashtags().join(","));
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`, "_blank", "noopener");
 }
 
 function shareByMail() {
