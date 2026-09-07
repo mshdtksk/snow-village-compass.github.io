@@ -117,22 +117,24 @@ const INLINE_GROUPS = [
   { id: "snowvillage-okinawa", abbr: "沖縄", logoUrl: "logo/snowvillage-okinawa.webp", name: "Snowflake OKINAWA User Group", description: "Snowflakeの技術情報を沖縄から発信し、ユーザーコミュニティの活性化を目指すグループ。", techplayUrl: "https://techplay.jp/community/snowvillage-okinawa", tags: ["latest", "lt", "analysis", "meetup"] }
 ];
 
+// data/neighbors.json の取得に失敗したときだけ使う控え。
+// 中身は同ファイルの「code と photo が揃った行」をそのまま写したもので、
+// 手打ちの仮コードは置かない。仮コードを置くと通信失敗時だけ別人が
+// 「同じタイプ」として出てしまうため。名簿を更新したらここも入れ替える。
 const INLINE_NEIGHBORS = [
-  { name: "Sate Katsuaki", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"sate_katsuaki.png", x_url: "https://x.com/katsu_dailylake", linkedin_url: "", code: "ESCI", tags: ["community", "data"] },
-  { name: "安倍 航太", affiliation: "株式会社BeeX", photo_url: NEIGHBOR_PHOTO_BASE+"abe_kota.png", x_url: "https://x.com/_coco_se", linkedin_url: "https://www.linkedin.com/in/kota-abe-220010398", code: "BSCI", tags: ["engineering", "build"] },
-  { name: "Daisuke Onoe", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"daisuke_onoe.png", x_url: "https://x.com/wonohe", linkedin_url: "", code: "ETVI", tags: ["community", "data"] },
-  { name: "山本 且秋", affiliation: "株式会社アシスト", photo_url: NEIGHBOR_PHOTO_BASE+"kayamamoto.png", x_url: "https://x.com/kayamamoto_", linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", code: "ESCO", tags: ["data", "analysis"] },
-  { name: "Tatchan", affiliation: "AI Data Cloud", photo_url: NEIGHBOR_PHOTO_BASE+"tatchan.png", x_url: "https://x.com/tad_ao", linkedin_url: "https://www.linkedin.com/in/tadashi-aobayashi-a93790126/", code: "ETCI", tags: ["data", "community"] },
-  { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", photo_url: NEIGHBOR_PHOTO_BASE+"nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ETVO", tags: ["community", "event"] },
-  { name: "ぬん", affiliation: "", photo_url: NEIGHBOR_PHOTO_BASE+"guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ESVI", tags: ["community"] },
-  { name: "萩野谷 旭洋", affiliation: "インフォテック株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"haginoya_teruhiro.png", x_url: "https://x.com/_hgny_s67", linkedin_url: "", code: "BTCO", tags: ["engineering", "data"] },
-  { name: "山口 歩夢", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"yamaguchi_ayumu.png", x_url: "https://x.com/Yamaguchi_aaaaa", linkedin_url: "", code: "BTCI", tags: ["engineering", "build"] },
-  { name: "守川 耀", affiliation: "DATUM STUDIO株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"morikawa_yo.png", x_url: "https://x.com/elc_small", linkedin_url: "https://www.linkedin.com/in/yo-morikawa-68787234a", code: "BSVI", tags: ["engineering", "build"] },
-  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", photo_url: NEIGHBOR_PHOTO_BASE+"tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "BTVI", tags: ["community", "event"] },
-  { name: "森田 将之", affiliation: "株式会社ＪＥＲＡ", photo_url: NEIGHBOR_PHOTO_BASE+"morita_masayuki.png", x_url: "https://x.com/mark_xxxx13", linkedin_url: "https://www.linkedin.com/in/masayuki-morita-710807215", code: "ESVO", tags: ["data", "analysis"] },
-  { name: "神谷 篤司", affiliation: "セキュリティ系の会社", photo_url: NEIGHBOR_PHOTO_BASE+"atsushi_kamiya.jpg", x_url: "https://x.com/baihebu", linkedin_url: "https://www.linkedin.com/in/atsushi-kamiya-93584571", code: "BSCO", tags: ["security", "governance"] },
-  { name: "中山 晋一", affiliation: "株式会社電通総研", photo_url: NEIGHBOR_PHOTO_BASE+"nakayama_shinichi.jpg", x_url: "https://x.com/datashin360", linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", code: "ETCO", tags: ["data", "analysis"] },
-  { name: "ロー / LowSE01", affiliation: "ちゅらデータ株式会社", photo_url: NEIGHBOR_PHOTO_BASE+"lowse01.jpg", x_url: "https://x.com/VizFantasista", linkedin_url: "https://www.linkedin.com/in/lowse01/", code: "BTVO", tags: ["creativity", "app"] }
+  { name: "安倍 航太", affiliation: "株式会社BeeX", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/abe_kota.png", x_url: "https://x.com/_coco_se", linkedin_url: "https://www.linkedin.com/in/kota-abe-220010398", code: "ESVI" },
+  { name: "Daisuke Onoe", affiliation: "", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/daisuke_onoe.png", x_url: "https://x.com/wonohe", linkedin_url: "", code: "ETCI" },
+  { name: "山本 且秋", affiliation: "株式会社アシスト", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/kayamamoto.png", x_url: "https://x.com/kayamamoto_", linkedin_url: "https://www.linkedin.com/in/katsuaki-yamamoto-2b3692329", code: "ETCI" },
+  { name: "Kaori Nishimura", affiliation: "株式会社メソドロジック", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/nishimurakaori.jpg", x_url: "https://x.com/usakoyama", linkedin_url: "https://www.linkedin.com/in/kaori-nishimura-180368168/", code: "ESCI" },
+  { name: "ぬん", affiliation: "", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/guen.png", x_url: "https://x.com/guen", linkedin_url: "", code: "ETVO" },
+  { name: "tomo Wakamatsu", affiliation: "Snowflake合同会社", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/tomo.png", x_url: "https://x.com/tomowk1", linkedin_url: "https://www.linkedin.com/in/tomo-wakamatsu/", code: "ESVI" },
+  { name: "中山 晋一", affiliation: "株式会社電通総研", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/nakayama_shinichi.jpg", x_url: "https://x.com/datashin360", linkedin_url: "https://www.linkedin.com/in/shinichi-nakayama-280902191/", code: "ETCI" },
+  { name: "原田 雄斗", affiliation: "クオリサイトテクノロジーズ", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/harada_yuto.png", x_url: "https://x.com/HYuto30325", linkedin_url: "", code: "BSCI" },
+  { name: "横澤 直樹", affiliation: "株式会社メディアフォース", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/naoki_yokozawa.jpeg", x_url: "https://x.com/naoki_yokozawa", linkedin_url: "", code: "ETCO" },
+  { name: "Masaki Moriyama", affiliation: "", title: "", kind: "neighbor", photo: "https://snowvillage-cloud.github.io/images/neighbors/masaki_moriyama.png", x_url: "https://x.com/masa_tectec?s=11&t=rnW8CmghyqmKbef-4BuvVg", linkedin_url: "", code: "BSCO" },
+  { name: "Ph.D. Masahide TAKASUKA", affiliation: "NTT西日本株式会社 / 法政大学", title: "", kind: "neighbor", photo: "https://avatars.githubusercontent.com/u/101690796?s=96&v=4", x_url: "https://x.com/mshdtksk", linkedin_url: "https://www.linkedin.com/in/%E5%B0%86%E7%A7%80-%E9%AB%98%E9%A0%88%E8%B3%80-a2607121a/", code: "BTVI" },
+  { name: "Kosuke Kida", affiliation: "みんながコミュニティを楽しみ、成長するお手伝い。みんなの「褒められ」を後押しします！", title: "Community Engagement Lead", kind: "mayor", photo: "https://snowvillage-cloud.github.io/images/organizers/KosukeKida.jpg", x_url: "https://x.com/kkkida_twtr", linkedin_url: "https://www.linkedin.com/in/kosuke-kida-b03ab29a", code: "BTCI" },
+  { name: "あれ", affiliation: "DATUM STUDIO株式会社 プリンシパルエンジニア", title: "Snowflake Data Superheroes 2024-2026", kind: "mayor", photo: "https://snowvillage-cloud.github.io/images/organizers/allllllllez.jpg", x_url: "https://x.com/__allllllllez__", linkedin_url: "https://www.linkedin.com/in/miho-kajiya-928847297", code: "BSCI" }
 ];
 
 // data/events.json が読めなかったときの保険。実在しないイベントを出さないよう
@@ -252,7 +254,7 @@ async function loadNeighborsData() {
     if (!res.ok) throw new Error(`status ${res.status}`);
     return normalizeNeighbors(await res.json());
   } catch {
-    return INLINE_NEIGHBORS;
+    return normalizeNeighbors(INLINE_NEIGHBORS);
   }
 }
 

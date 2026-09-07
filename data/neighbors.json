@@ -121,22 +121,22 @@
   },
   {
     "name": "神谷 篤司",
-    "affiliation": "",
+    "affiliation": "セキュリティ系の会社",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
-    "x_url": "",
-    "linkedin_url": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/atsushi_kamiya.jpg",
+    "x_url": "https://x.com/baihebu",
+    "linkedin_url": "https://www.linkedin.com/in/atsushi-kamiya-93584571",
     "code": null
   },
   {
     "name": "中山 晋一",
-    "affiliation": "",
+    "affiliation": "株式会社電通総研",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
-    "x_url": "",
-    "linkedin_url": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/nakayama_shinichi.jpg",
+    "x_url": "https://x.com/datashin360",
+    "linkedin_url": "https://www.linkedin.com/in/shinichi-nakayama-280902191/",
     "code": "ETCI"
   },
   {
@@ -145,8 +145,8 @@
     "title": "",
     "kind": "neighbor",
     "photo": "https://snowvillage-cloud.github.io/images/neighbors/tsunoda_katsuma.png",
-    "x_url": "",
-    "linkedin_url": "",
+    "x_url": "https://x.com/ASTOUND_",
+    "linkedin_url": "https://www.linkedin.com/in/katsunoda-0339313a8",
     "code": null
   },
   {
@@ -164,9 +164,9 @@
     "affiliation": "",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
-    "x_url": "",
-    "linkedin_url": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/nobu_13.jpg",
+    "x_url": "https://x.com/Nobu13tech",
+    "linkedin_url": "https://www.linkedin.com/in/no-isa/",
     "code": null
   },
   {
@@ -226,7 +226,7 @@
     "kind": "neighbor",
     "photo": "https://snowvillage-cloud.github.io/images/neighbors/takigawa_mikoto.jpg",
     "x_url": "https://x.com/takimiko_gohan",
-    "linkedin_url": "",
+    "linkedin_url": "https://www.linkedin.com/in/mikoto-takigawa-baa587373",
     "code": null
   },
   {
@@ -234,29 +234,29 @@
     "affiliation": "",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
-    "x_url": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/t_ryo.jpg",
+    "x_url": "https://x.com/tryo_sing",
     "linkedin_url": "",
     "code": null
   },
   {
     "name": "Kazuya Iwata",
-    "affiliation": "",
+    "affiliation": "DATUM STUDIO株式会社",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/iwata.png",
     "x_url": "",
     "linkedin_url": "",
     "code": null
   },
   {
     "name": "田代 学",
-    "affiliation": "",
+    "affiliation": "ちゅらデータ株式会社",
     "title": "",
     "kind": "neighbor",
-    "photo": "",
-    "x_url": "",
-    "linkedin_url": "",
+    "photo": "https://snowvillage-cloud.github.io/images/neighbors/gaku_tashiro.jpg",
+    "x_url": "https://x.com/gak_t12",
+    "linkedin_url": "https://www.linkedin.com/in/gakut12/",
     "code": null
   },
   {

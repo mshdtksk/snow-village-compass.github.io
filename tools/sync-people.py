@@ -53,13 +53,15 @@ def clean(v):
 def fetch_neighbors():
     people, cur = [], None
     for line in get("about/neighbors/userlist.yaml").splitlines():
-        m = re.match(r'^-\s+name:\s*(.+)$', line)
+        m = re.match(r'^-\s+name\s*:\s*(.+)$', line)
         if m:
             if cur:
                 people.append(cur)
             cur = {'name': clean(m.group(1))}
             continue
-        m = re.match(r'^\s+([a-zA-Z_]+):\s*(.*)$', line)
+        # 大元のYAMLには「photo : x」のようにキー名の後ろへ空白を入れた行があり、
+        # コロン直結だけを見ていると写真・所属・SNSをまるごと取りこぼす。
+        m = re.match(r'^\s+([a-zA-Z_]+)\s*:\s*(.*)$', line)
         if m and cur is not None:
             cur[m.group(1)] = clean(m.group(2))
     if cur:
