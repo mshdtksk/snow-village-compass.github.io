@@ -809,7 +809,8 @@ function closeModal() {
 // ── Share & Copy ────────────────────────────────────────────────────────────
 // Xへ投稿するときに付けるタグ。文面に直接書かず intent の hashtags に渡すのは、
 // Xが本文・URL・タグを組み立て直すため、二重に付くのを避けるため。
-const BASE_HASHTAGS = ["SnowVillage"];
+// snow_village_compass はこのアプリ自身のタグで、初版から使っている。
+const BASE_HASHTAGS = ["SnowVillage", "snow_village_compass"];
 
 // SWT Tokyo 2026 の会期。この期間の投稿にだけイベントタグを付ける。
 // 会期が終わってからも付いたままだと、終わったイベントのタグに投稿が
@@ -831,14 +832,20 @@ function getShareHashtags(now = new Date()) {
 
 function getShareMessage() {
   const title = resultTitle.textContent || "Snow Villageタイプ";
-  return `私のSnow Village 診断タイプは「${title}」でした！ あなたも診断して、コミュニティとつながろう！`;
+  return `私のSnow Village 診断タイプは「${title}」でした！
+あなたも診断して、コミュニティとつながろう！`;
 }
 
+// タイムラインで読みやすいよう、本文・タグ・リンクを行で分けて組み立てる。
+// url と hashtags のパラメータは使わない。Xがそれらを本文の後ろへ空白で
+// つなぐため、こちらで入れた改行が活きずに一続きの塊で表示されるため。
 function shareToX() {
-  const text = encodeURIComponent(getShareMessage());
-  const url = encodeURIComponent(window.location.href);
-  const hashtags = encodeURIComponent(getShareHashtags().join(","));
-  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`, "_blank", "noopener");
+  const tags = getShareHashtags().map((h) => `#${h}`).join(" ");
+  const body = `${getShareMessage()}
+
+${tags}
+${window.location.href}`;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(body)}`, "_blank", "noopener");
 }
 
 function shareByMail() {
