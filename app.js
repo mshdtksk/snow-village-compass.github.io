@@ -837,8 +837,8 @@ function shareToX() {
   const body = [
     getShareMessage(),
     "",
-    getShareHashtags().map((h) => `#${h}`).join(" "),
-    window.location.href
+    window.location.href,
+    getShareHashtags().map((h) => `#${h}`).join(" ")
   ].join("\n");
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(body)}`, "_blank", "noopener");
 }
