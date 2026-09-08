@@ -213,4 +213,3 @@ for f in data/*.json; do python -c "import json,io,sys;json.load(io.open(sys.arg
 - **人物写真の参照**: `https://snowvillage-cloud.github.io/images/` を参照するため、公式サイト側で画像が移動・削除されると表示されなくなります。読み込めなかった場合はカードごと非表示にします。
 - **ブランド表記**: 「SnowVillage」に統一します。語の間にスペースを入れた表記は使用しません。
 - **個人情報**: 回答内容の送信および保存は行いません。ブラウザに保存するのはライト／ダークテーマの選択のみです（`localStorage` の `svc-theme`）。
-- **未使用のファイル**: `js-yaml.min.js` と `data/types_matrix.tsv` は、現在どこからも参照されていません。名簿を YAML で読み込んでいた頃の名残です。
